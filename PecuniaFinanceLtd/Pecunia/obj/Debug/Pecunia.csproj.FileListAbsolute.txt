@@ -1,0 +1,7 @@
+C:\Pecunia\PecuniaFinanceLtd\Pecunia\bin\Debug\Pecunia.exe.config
+C:\Pecunia\PecuniaFinanceLtd\Pecunia\bin\Debug\Pecunia.exe
+C:\Pecunia\PecuniaFinanceLtd\Pecunia\bin\Debug\Pecunia.pdb
+C:\Pecunia\PecuniaFinanceLtd\Pecunia\obj\Debug\Pecunia.csprojAssemblyReference.cache
+C:\Pecunia\PecuniaFinanceLtd\Pecunia\obj\Debug\Pecunia.csproj.CoreCompileInputs.cache
+C:\Pecunia\PecuniaFinanceLtd\Pecunia\obj\Debug\Pecunia.exe
+C:\Pecunia\PecuniaFinanceLtd\Pecunia\obj\Debug\Pecunia.pdb
