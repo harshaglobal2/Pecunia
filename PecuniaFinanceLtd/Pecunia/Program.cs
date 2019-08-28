@@ -1,4 +1,15 @@
-﻿class EntryScreen
+﻿//child class at other project
+class OtherCustomer : Customer
+{
+    public void Method3()
+    {
+        CustomerName = "stu"; //accessible
+        Mobile = "1234"; //accessible
+    }
+}
+
+//Other class at Other project
+class EntryScreen
 {
     static void Main()
     {
