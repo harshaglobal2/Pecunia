@@ -37,12 +37,28 @@ class EntryScreen
                 customer.Mobile = System.Console.ReadLine();
                 System.Console.WriteLine("Enter Email");
                 customer.Email = System.Console.ReadLine();
+                System.Console.WriteLine("Enter Gender");
+                customer.Gender = System.Console.ReadLine()[0];
 
                 System.Console.WriteLine("Customer details are:");
                 System.Console.WriteLine("Customer ID " + customer.CustomerID);
-                System.Console.WriteLine("Customer Name " + customer.CustomerName);
+                System.Console.WriteLine("Customer Name " + customer.GetTitle() + customer.GetCustomerName());
                 System.Console.WriteLine("Mobile " + customer.Mobile);
                 System.Console.WriteLine("Email " + customer.Email);
+                System.Console.WriteLine("Branch " + Customer.GetBranchName());
+                System.Console.WriteLine("Country " + customer.Country);
+                //customer.Country = "UK"; //we can't assign value into readonly
+
+                Customer customer2;
+                customer2 = new Customer();
+
+                Account account = new Account();
+                account.CurrentBalance = 10000;
+                double dep = 2000;
+                double bal = account.Deposit(ref dep, 10);
+                System.Console.WriteLine(dep); //Output: 5000
+
+                System.Console.WriteLine(account.CurrentBalance); //Output: 10100
             }
             else if (choice == 2)
             {

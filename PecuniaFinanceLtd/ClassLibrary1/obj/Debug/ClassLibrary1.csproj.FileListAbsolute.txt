@@ -1,2 +1,6 @@
 C:\Pecunia\PecuniaFinanceLtd\ClassLibrary1\obj\Debug\ClassLibrary1.csprojAssemblyReference.cache
 C:\Pecunia\PecuniaFinanceLtd\ClassLibrary1\obj\Debug\ClassLibrary1.csproj.CoreCompileInputs.cache
+C:\Pecunia\PecuniaFinanceLtd\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+C:\Pecunia\PecuniaFinanceLtd\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+C:\Pecunia\PecuniaFinanceLtd\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+C:\Pecunia\PecuniaFinanceLtd\ClassLibrary1\obj\Debug\ClassLibrary1.pdb

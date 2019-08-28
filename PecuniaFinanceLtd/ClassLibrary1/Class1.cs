@@ -1,38 +1,73 @@
 ﻿//Same class
 public class Customer
 {
-    private int CustomerID;
-    private protected string CustomerName;
-    protected internal string Mobile;
+    public int CustomerID;
+    public string CustomerName;
+    private string _mobile;
     public string Email;
+    public char Gender;
+    public static string BranchName = "Mumbai";
+    public readonly string Country;
 
-    public void Method1()
+    //Constructor
+    public Customer()
     {
-        CustomerID = 0; //accessible
-        CustomerName = "abc"; //accessible
-        Mobile = "1234"; //accessible
+        Country = "India";
+    }
+
+    //method
+    public string GetCustomerName()
+    {
+        return CustomerName;
+    }
+
+    //method
+    public string GetTitle()
+    {
+        if (this.Gender == 'M')
+        {
+            return "Mr.";
+        }
+        else
+        {
+            return "Ms.";
+        }
+    }
+
+    //static method
+    public static string GetBranchName()
+    {
+        return BranchName;
+    }
+
+    //property
+    public string Mobile
+    {
+        set
+        {
+            if (value.Length == 10)
+                _mobile = value;
+        }
+        get
+        {
+            return _mobile;
+        }
     }
 }
 
-//Child class at same project
-public class PriviligedCustomer : Customer
+public class Account
 {
-    public void Method3()
-    {
-        CustomerID = 0; //not accessible
-        CustomerName = "xyz"; //accessible
-        Mobile = "1234"; //accessible
-    }
-}
+    public double CurrentBalance = 0;
 
-//Other class at same project
-public class Supplier
-{
-    public void Method2()
+    public void Deposit(double DepositAmount = 100)
     {
-        Customer customer = new Customer();
-        customer.CustomerID = 1; //not accessible
-        customer.CustomerName = "pqr"; //Not accessible
-        customer.Mobile = "1234"; //accessible
+        CurrentBalance = CurrentBalance + DepositAmount;
+    }
+
+    public double Deposit(ref double DepositAmount, double InterestRate)
+    {
+        DepositAmount = 4000; //not allowed
+        CurrentBalance = CurrentBalance + DepositAmount + (DepositAmount * InterestRate / 100);
+        return CurrentBalance;
     }
 }

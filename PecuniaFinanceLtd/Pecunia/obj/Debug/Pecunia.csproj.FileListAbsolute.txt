@@ -5,3 +5,6 @@ C:\Pecunia\PecuniaFinanceLtd\Pecunia\obj\Debug\Pecunia.csprojAssemblyReference.c
 C:\Pecunia\PecuniaFinanceLtd\Pecunia\obj\Debug\Pecunia.csproj.CoreCompileInputs.cache
 C:\Pecunia\PecuniaFinanceLtd\Pecunia\obj\Debug\Pecunia.exe
 C:\Pecunia\PecuniaFinanceLtd\Pecunia\obj\Debug\Pecunia.pdb
+C:\Pecunia\PecuniaFinanceLtd\Pecunia\bin\Debug\ClassLibrary1.dll
+C:\Pecunia\PecuniaFinanceLtd\Pecunia\bin\Debug\ClassLibrary1.pdb
+C:\Pecunia\PecuniaFinanceLtd\Pecunia\obj\Debug\Pecunia.csproj.CopyComplete
