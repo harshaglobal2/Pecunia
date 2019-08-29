@@ -1,7 +1,7 @@
 ﻿//Same class
 public class Customer
 {
-    private int _customerID;
+    private int _customerID = 5;
     private string _customerName;
     private string _mobile;
     private string _email;
@@ -17,7 +17,7 @@ public class Customer
     //field for indexer
     private string[] _contactNumbers;
 
-    //indexer
+    //property
     public string[] ContactNumbers
     {
         set
@@ -30,10 +30,31 @@ public class Customer
         }
     }
 
+    //indexer
+    public string this[int index]
+    {
+        set
+        {
+            _contactNumbers[index] = value;
+        }
+        get
+        {
+            return _contactNumbers[index];
+        }
+    }
+
     //Constructor
     public Customer()
     {
         _country = "India";
+    }
+
+    public Customer(int customerID, string customerName, string mobile)
+    {
+        //field = parameter
+        _customerID = customerID;
+        _customerName = customerName;
+        _mobile = mobile;
     }
 
     //method
@@ -43,7 +64,7 @@ public class Customer
     }
 
     //method
-    public string GetTitle()
+    public virtual string GetTitle()
     {
         if (this.Gender == 'M')
         {
@@ -106,6 +127,54 @@ public class Customer
             _state = value;
         }
     }
+}
+
+public class PriviligedCustomer : Customer
+{
+    public string MaritalStatus { get; set; }
+
+    //method hiding (overwriting)
+    //public new string GetTitle()
+    //{
+    //    if (this.Gender == 'M')
+    //    {
+    //        return "Mr.";
+    //    }
+    //    else
+    //    {
+    //        if (MaritalStatus == "Unmarried")
+    //        {
+    //            return "Miss.";
+    //        }
+    //        else
+    //        {
+    //            return "Mrs.";
+    //        }
+    //    }
+    //}
+
+    //method overriding (extending the parent class's method)
+    public override string GetTitle()
+    {
+        string t = base.GetTitle();
+        if (t == "Ms.")
+        {
+            if (MaritalStatus == "Unmarried")
+            {
+                return "Miss.";
+            }
+            else
+            {
+                return "Mrs.";
+            }
+        }
+        return t;
+    }
+}
+
+public class CorporateCustomer : Customer
+{
+
 }
 
 public class Account

@@ -27,6 +27,7 @@ class EntryScreen
             choice = int.Parse(System.Console.ReadLine());
             if (choice == 1)
             {
+                //object 1
                 Customer customer;
                 customer = new Customer();
                 System.Console.WriteLine("Enter Customer ID");
@@ -49,8 +50,11 @@ class EntryScreen
                 System.Console.WriteLine("Country " + customer.Country);
                 //customer.Country = "UK"; //we can't assign value into readonly
 
-                Customer customer2;
-                customer2 = new Customer();
+                //object 2
+                Customer customer2 = new Customer(1, "sample 1", "1234");
+                Customer customer3 = new Customer(2, "sample 2", "897");
+                Customer customer4 = new Customer(3, "sample 3", "6677");
+                Customer customer5 = new Customer() { CustomerName = "some name", Gender = 'M', Email = "some@something.com" };
 
                 Account account = new Account();
                 account.CurrentBalance = 10000;
