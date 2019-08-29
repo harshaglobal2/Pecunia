@@ -59,6 +59,17 @@ class EntryScreen
                 System.Console.WriteLine(dep); //Output: 5000
 
                 System.Console.WriteLine(account.CurrentBalance); //Output: 10100
+
+                //indexer
+                customer.ContactNumbers = new string[3] { "123", "456", "789" }; //Invokes set accessor of the property
+                System.Console.WriteLine(customer.ContactNumbers[0]); //Invokes get accessor of the property
+                System.Console.WriteLine(customer.ContactNumbers[1]); //Invokes get accessor of the property
+                System.Console.WriteLine(customer.ContactNumbers[2]); //Invokes get accessor of the property
+
+                System.Console.WriteLine(customer[2]); //Invokes get accessor of the indexer
+
+                customer.ContactNumbers[2] = "909"; //Invokes set accessor the property
+                customer[2] = "909"; //Invokes set accessor of the indexer
             }
             else if (choice == 2)
             {
