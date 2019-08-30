@@ -1,5 +1,16 @@
-﻿//Same class
-public class Customer
+﻿public abstract class Person
+{
+    private string _personName;
+    private System.DateTime _dateOfBirth;
+
+    public string PersonName { get => _personName; set => _personName = value; }
+    public System.DateTime DateOfBirth { get => _dateOfBirth; set => _dateOfBirth = value; }
+
+    public abstract string GetTitle();
+}
+
+//Same class
+public class Customer : Person
 {
     private int _customerID = 5;
     private string _customerName;
@@ -64,7 +75,7 @@ public class Customer
     }
 
     //method
-    public virtual string GetTitle()
+    public override string GetTitle()
     {
         if (this.Gender == 'M')
         {
