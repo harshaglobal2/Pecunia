@@ -1,4 +1,8 @@
-﻿//child class at other project
+﻿using Banking.PersonalBanking;
+//using System;
+using static System.Console;
+
+//child class at other project
 class OtherCustomer : Customer
 {
     public void Method3()
@@ -13,41 +17,41 @@ class EntryScreen
 {
     static void Main()
     {
-        System.Console.WriteLine("Welcome to Pecunia Finance Ltd");
+        WriteLine("Welcome to Pecunia Finance Ltd");
         int choice;
         do
         {
-            System.Console.WriteLine("1. Customers");
-            System.Console.WriteLine("2. Accounts");
-            System.Console.WriteLine("3. Transactions");
-            System.Console.WriteLine("4. Loans");
-            System.Console.WriteLine("5. Exit");
-            System.Console.WriteLine("Enter your choice (1-5): ");
+            WriteLine("1. Customers");
+            WriteLine("2. Accounts");
+            WriteLine("3. Transactions");
+            WriteLine("4. Loans");
+            WriteLine("5. Exit");
+            WriteLine("Enter your choice (1-5): ");
 
-            choice = int.Parse(System.Console.ReadLine());
+            choice = int.Parse(ReadLine());
             if (choice == 1)
             {
                 //object 1
                 Customer customer;
                 customer = new Customer();
-                System.Console.WriteLine("Enter Customer ID");
-                customer.CustomerID = int.Parse(System.Console.ReadLine());
-                System.Console.WriteLine("Enter Customer Name");
-                customer.CustomerName = System.Console.ReadLine();
-                System.Console.WriteLine("Enter Mobile");
-                customer.Mobile = System.Console.ReadLine();
-                System.Console.WriteLine("Enter Email");
-                customer.Email = System.Console.ReadLine();
-                System.Console.WriteLine("Enter Gender");
-                customer.Gender = System.Console.ReadLine()[0];
+                WriteLine("Enter Customer ID");
+                customer.CustomerID = int.Parse(ReadLine());
+                WriteLine("Enter Customer Name");
+                customer.CustomerName = ReadLine();
+                WriteLine("Enter Mobile");
+                customer.Mobile = ReadLine();
+                WriteLine("Enter Email");
+                customer.Email = ReadLine();
+                WriteLine("Enter Gender");
+                customer.Gender = ReadLine()[0];
 
-                System.Console.WriteLine("Customer details are:");
-                System.Console.WriteLine("Customer ID " + customer.CustomerID);
-                System.Console.WriteLine("Customer Name " + customer.GetTitle() + customer.GetCustomerName());
-                System.Console.WriteLine("Mobile " + customer.Mobile);
-                System.Console.WriteLine("Email " + customer.Email);
-                System.Console.WriteLine("Branch " + Customer.GetBranchName());
-                System.Console.WriteLine("Country " + customer.Country);
+                WriteLine("Customer details are:");
+                WriteLine("Customer ID " + customer.CustomerID);
+                WriteLine("Customer Name " + customer.GetTitle() + customer.GetCustomerName());
+                WriteLine("Mobile " + customer.Mobile);
+                WriteLine("Email " + customer.Email);
+                WriteLine("Branch " + Customer.GetBranchName());
+                WriteLine("Country " + customer.Country);
                 //customer.Country = "UK"; //we can't assign value into readonly
 
                 //object 2
@@ -60,39 +64,41 @@ class EntryScreen
                 account.CurrentBalance = 10000;
                 double dep = 2000;
                 double bal = account.Deposit(ref dep, 10);
-                System.Console.WriteLine(dep); //Output: 5000
+                WriteLine(dep); //Output: 5000
 
-                System.Console.WriteLine(account.CurrentBalance); //Output: 10100
+                WriteLine(account.CurrentBalance); //Output: 10100
 
                 //indexer
                 customer.ContactNumbers = new string[3] { "123", "456", "789" }; //Invokes set accessor of the property
-                System.Console.WriteLine(customer.ContactNumbers[0]); //Invokes get accessor of the property
-                System.Console.WriteLine(customer.ContactNumbers[1]); //Invokes get accessor of the property
-                System.Console.WriteLine(customer.ContactNumbers[2]); //Invokes get accessor of the property
+                WriteLine(customer.ContactNumbers[0]); //Invokes get accessor of the property
+                WriteLine(customer.ContactNumbers[1]); //Invokes get accessor of the property
+                WriteLine(customer.ContactNumbers[2]); //Invokes get accessor of the property
 
-                System.Console.WriteLine(customer[2]); //Invokes get accessor of the indexer
+                WriteLine(customer[2]); //Invokes get accessor of the indexer
 
                 customer.ContactNumbers[2] = "909"; //Invokes set accessor the property
                 customer[2] = "909"; //Invokes set accessor of the indexer
             }
             else if (choice == 2)
             {
-                System.Console.WriteLine("Accounts menu here");
+                WriteLine(Company.CompanyName);
+                Company.ChangeCompanyLocation("Mumbai");
+                WriteLine(Company.CompanyLocation);
             }
             else if (choice == 3)
             {
-                System.Console.WriteLine("Transactions menu here");
+                WriteLine("Transactions menu here");
             }
             else if (choice == 4)
             {
-                System.Console.WriteLine("Loans menu here");
+                WriteLine("Loans menu here");
             }
             else if (choice == 5)
             {
             }
             else
             {
-                System.Console.WriteLine("Invalid option");
+                WriteLine("Invalid option");
             }
         } while (choice != 5);
     }

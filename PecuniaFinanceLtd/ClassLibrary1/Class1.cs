@@ -1,206 +1,107 @@
-﻿public abstract class Person
+﻿namespace Banking.PersonalBanking
 {
-    private string _personName;
-    private System.DateTime _dateOfBirth;
-
-    public string PersonName { get => _personName; set => _personName = value; }
-    public System.DateTime DateOfBirth { get => _dateOfBirth; set => _dateOfBirth = value; }
-
-    public abstract string GetTitle();
-}
-
-//Same class
-public class Customer : Person
-{
-    private int _customerID = 5;
-    private string _customerName;
-    private string _mobile;
-    private string _email;
-    private char _gender;
-    private static string _branchName = "Mumbai";
-    private readonly string _country;
-    private string _state;
-
-    //auto-implemented property
-    public string LandMark { get; set; } //read & write
-    //public string LandMark { get; } //read-only
-
-    //field for indexer
-    private string[] _contactNumbers;
-
-    //property
-    public string[] ContactNumbers
+    public interface IPerson
     {
-        set
-        {
-            _contactNumbers = value;
-        }
-        get
-        {
-            return _contactNumbers;
-        }
+        string PersonName { get; set; }
+        System.DateTime DateOfBirth { get; set; }
+        string GetTitle();
     }
 
-    //indexer
-    public string this[int index]
+    //Same class
+    public partial class Customer : IPerson
     {
-        set
-        {
-            _contactNumbers[index] = value;
-        }
-        get
-        {
-            return _contactNumbers[index];
-        }
+        private int _customerID = 5;
+        private string _customerName;
+        private string _mobile;
+        private string _email;
+        private char _gender;
+        private static string _branchName = "Mumbai";
+        private readonly string _country;
+        private string _state;
+
+        public string PersonName { get; set; }
+        public System.DateTime DateOfBirth { get; set; }
     }
 
-    //Constructor
-    public Customer()
+    public enum MartialStatusEnum
     {
-        _country = "India";
+        Unmarried, Married
     }
 
-    public Customer(int customerID, string customerName, string mobile)
+    public sealed class PriviligedCustomer : Customer
     {
-        //field = parameter
-        _customerID = customerID;
-        _customerName = customerName;
-        _mobile = mobile;
-    }
+        public MartialStatusEnum MaritalStatus { get; set; }
 
-    //method
-    public string GetCustomerName()
-    {
-        return CustomerName;
-    }
+        //method hiding (overwriting)
+        //public new string GetTitle()
+        //{
+        //    if (this.Gender == 'M')
+        //    {
+        //        return "Mr.";
+        //    }
+        //    else
+        //    {
+        //        if (MaritalStatus == "Unmarried")
+        //        {
+        //            return "Miss.";
+        //        }
+        //        else
+        //        {
+        //            return "Mrs.";
+        //        }
+        //    }
+        //}
 
-    //method
-    public override string GetTitle()
-    {
-        if (this.Gender == 'M')
+        //method overriding (extending the parent class's method)
+        public override string GetTitle()
         {
-            return "Mr.";
-        }
-        else
-        {
-            return "Ms.";
+            string t = base.GetTitle();
+            if (t == "Ms.")
+            {
+                if (MaritalStatus == "Unmarried")
+                {
+                    return "Miss.";
+                }
+                else
+                {
+                    return "Mrs.";
+                }
+            }
+            return t;
         }
     }
 
-    //static method
-    public static string GetBranchName()
-    {
-        return BranchName;
-    }
-
-    //property
-    public string Mobile
-    {
-        set
-        {
-            if (value.Length == 10)
-                _mobile = value;
-        }
-        get
-        {
-            return _mobile;
-        }
-    }
-
-    //readonly property
-    public string Country
-    {
-        get
-        {
-            return _country;
-        }
-    }
-
-    public int CustomerID
-    {
-        get => _customerID;
-        set
-        {
-            _customerID = value;
-        }
-    }
-    
-    public string Email { get => _email; set => _email = value; }
-    public char Gender { get => _gender; set => _gender = value; }
-    public static string BranchName { get => _branchName; set => _branchName = value; }
-    public string CustomerName { get => _customerName; set => _customerName = value; }
-
-    //write only property
-    public string State
-    {
-        set
-        {
-            _state = value;
-        }
-    }
-}
-
-public class PriviligedCustomer : Customer
-{
-    public string MaritalStatus { get; set; }
-
-    //method hiding (overwriting)
-    //public new string GetTitle()
+    //public class OtherCustomer : PriviligedCustomer
     //{
-    //    if (this.Gender == 'M')
-    //    {
-    //        return "Mr.";
-    //    }
-    //    else
-    //    {
-    //        if (MaritalStatus == "Unmarried")
-    //        {
-    //            return "Miss.";
-    //        }
-    //        else
-    //        {
-    //            return "Mrs.";
-    //        }
-    //    }
+
     //}
 
-    //method overriding (extending the parent class's method)
-    public override string GetTitle()
+    public class CorporateCustomer : Customer
     {
-        string t = base.GetTitle();
-        if (t == "Ms.")
+
+    }
+
+    public class Account
+    {
+        public double CurrentBalance = 0;
+
+        public void Deposit(double DepositAmount = 100)
         {
-            if (MaritalStatus == "Unmarried")
-            {
-                return "Miss.";
-            }
-            else
-            {
-                return "Mrs.";
-            }
+            CurrentBalance = CurrentBalance + DepositAmount;
         }
-        return t;
+
+        public double Deposit(ref double DepositAmount, double InterestRate)
+        {
+            DepositAmount = 4000; //not allowed
+            CurrentBalance = CurrentBalance + DepositAmount + (DepositAmount * InterestRate / 100);
+            return CurrentBalance;
+        }
     }
 }
 
-public class CorporateCustomer : Customer
+
+
+namespace Accounts.LoanAccount
 {
 
-}
-
-public class Account
-{
-    public double CurrentBalance = 0;
-
-    public void Deposit(double DepositAmount = 100)
-    {
-        CurrentBalance = CurrentBalance + DepositAmount;
-    }
-
-    public double Deposit(ref double DepositAmount, double InterestRate)
-    {
-        DepositAmount = 4000; //not allowed
-        CurrentBalance = CurrentBalance + DepositAmount + (DepositAmount * InterestRate / 100);
-        return CurrentBalance;
-    }
 }
