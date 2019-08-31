@@ -25,12 +25,12 @@
 
     public enum MartialStatusEnum
     {
-        Unmarried, Married
+        Unmarried = 10, Married = 20
     }
 
     public sealed class PriviligedCustomer : Customer
     {
-        public MartialStatusEnum MaritalStatus { get; set; }
+        public MartialStatusEnum MaritalStatus { get; set; } = MartialStatusEnum.Married;
 
         //method hiding (overwriting)
         //public new string GetTitle()
