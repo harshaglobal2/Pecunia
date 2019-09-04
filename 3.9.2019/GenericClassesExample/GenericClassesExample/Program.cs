@@ -7,7 +7,8 @@
         if (a is int)
         {
             //a++;
-            a = (T)(System.Convert.ToInt32(a) + 1);
+            a = (T)System.Convert.ChangeType(System.Convert.ToInt32(System.Convert.ChangeType(a, typeof(int))) + 1, typeof(T));
+            System.Console.WriteLine(a);
         }
     }
 }
@@ -18,8 +19,9 @@ class Program
     {
         Sample<int> variable1 = new Sample<int>() { a = 100 };
         Sample<string> variable2 = new Sample<string>() { a = "Hello" };
-        System.Console.WriteLine(variable1.a);
-        System.Console.WriteLine(variable2.a);
+        //System.Console.WriteLine(variable1.a);
+        //System.Console.WriteLine(variable2.a);
+        variable1.Method1();
         System.Console.ReadKey();
     }
 }
