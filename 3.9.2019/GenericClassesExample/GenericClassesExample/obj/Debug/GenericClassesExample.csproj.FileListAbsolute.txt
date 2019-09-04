@@ -1,0 +1,7 @@
+C:\Pecunia\GenericClassesExample\GenericClassesExample\bin\Debug\GenericClassesExample.exe.config
+C:\Pecunia\GenericClassesExample\GenericClassesExample\bin\Debug\GenericClassesExample.exe
+C:\Pecunia\GenericClassesExample\GenericClassesExample\bin\Debug\GenericClassesExample.pdb
+C:\Pecunia\GenericClassesExample\GenericClassesExample\obj\Debug\GenericClassesExample.csprojAssemblyReference.cache
+C:\Pecunia\GenericClassesExample\GenericClassesExample\obj\Debug\GenericClassesExample.csproj.CoreCompileInputs.cache
+C:\Pecunia\GenericClassesExample\GenericClassesExample\obj\Debug\GenericClassesExample.exe
+C:\Pecunia\GenericClassesExample\GenericClassesExample\obj\Debug\GenericClassesExample.pdb

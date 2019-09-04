@@ -1,0 +1,10 @@
+interface ICustomerService
+{
+	List<Customer>  Customers { get; set; }
+	void AddCustomer(Customer customer);
+	void InsertCustomer(int index, Customer customer);
+	void RemoveCustomer(int index);
+	Customer GetCustomerByCustomerID(int customerID);
+	Customer GetCustomerByPhone(string phone);
+	List<Customer> GetAllCustomers();
+}

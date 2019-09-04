@@ -1,0 +1,8 @@
+/*class */
+Student s1, s2, s3; //creating reference variables
+s1 = new Student(); //creating object --> automatic default field init --> constructor
+s2 = new Student(); //creating object --> automatic default field init --> constructor
+s3 = new Student(); //creating object --> automatic default field init --> constructor
+
+/* struct */
+Student s1, s2, s3;
