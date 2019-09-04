@@ -1,0 +1,7 @@
+C:\Pecunia\PatternMatchingExample\PatternMatchingExample\bin\Debug\PatternMatchingExample.exe.config
+C:\Pecunia\PatternMatchingExample\PatternMatchingExample\bin\Debug\PatternMatchingExample.exe
+C:\Pecunia\PatternMatchingExample\PatternMatchingExample\bin\Debug\PatternMatchingExample.pdb
+C:\Pecunia\PatternMatchingExample\PatternMatchingExample\obj\Debug\PatternMatchingExample.csprojAssemblyReference.cache
+C:\Pecunia\PatternMatchingExample\PatternMatchingExample\obj\Debug\PatternMatchingExample.csproj.CoreCompileInputs.cache
+C:\Pecunia\PatternMatchingExample\PatternMatchingExample\obj\Debug\PatternMatchingExample.exe
+C:\Pecunia\PatternMatchingExample\PatternMatchingExample\obj\Debug\PatternMatchingExample.pdb

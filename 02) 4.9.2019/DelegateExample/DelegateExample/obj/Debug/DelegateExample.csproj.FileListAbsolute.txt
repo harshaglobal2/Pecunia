@@ -1,0 +1,7 @@
+C:\Pecunia\DelegateExample\DelegateExample\bin\Debug\DelegateExample.exe.config
+C:\Pecunia\DelegateExample\DelegateExample\bin\Debug\DelegateExample.exe
+C:\Pecunia\DelegateExample\DelegateExample\bin\Debug\DelegateExample.pdb
+C:\Pecunia\DelegateExample\DelegateExample\obj\Debug\DelegateExample.csprojAssemblyReference.cache
+C:\Pecunia\DelegateExample\DelegateExample\obj\Debug\DelegateExample.csproj.CoreCompileInputs.cache
+C:\Pecunia\DelegateExample\DelegateExample\obj\Debug\DelegateExample.exe
+C:\Pecunia\DelegateExample\DelegateExample\obj\Debug\DelegateExample.pdb

@@ -1,0 +1,7 @@
+C:\Pecunia\EventExample\EventExample\bin\Debug\EventExample.exe.config
+C:\Pecunia\EventExample\EventExample\bin\Debug\EventExample.exe
+C:\Pecunia\EventExample\EventExample\bin\Debug\EventExample.pdb
+C:\Pecunia\EventExample\EventExample\obj\Debug\EventExample.csprojAssemblyReference.cache
+C:\Pecunia\EventExample\EventExample\obj\Debug\EventExample.csproj.CoreCompileInputs.cache
+C:\Pecunia\EventExample\EventExample\obj\Debug\EventExample.exe
+C:\Pecunia\EventExample\EventExample\obj\Debug\EventExample.pdb
