@@ -1,0 +1,7 @@
+C:\Pecunia\TuplesExample\TuplesExample\bin\Debug\TuplesExample.exe.config
+C:\Pecunia\TuplesExample\TuplesExample\bin\Debug\TuplesExample.exe
+C:\Pecunia\TuplesExample\TuplesExample\bin\Debug\TuplesExample.pdb
+C:\Pecunia\TuplesExample\TuplesExample\obj\Debug\TuplesExample.csprojAssemblyReference.cache
+C:\Pecunia\TuplesExample\TuplesExample\obj\Debug\TuplesExample.csproj.CoreCompileInputs.cache
+C:\Pecunia\TuplesExample\TuplesExample\obj\Debug\TuplesExample.exe
+C:\Pecunia\TuplesExample\TuplesExample\obj\Debug\TuplesExample.pdb

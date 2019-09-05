@@ -1,0 +1,7 @@
+C:\Pecunia\StringExample\StringExample\bin\Debug\StringExample.exe.config
+C:\Pecunia\StringExample\StringExample\bin\Debug\StringExample.exe
+C:\Pecunia\StringExample\StringExample\bin\Debug\StringExample.pdb
+C:\Pecunia\StringExample\StringExample\obj\Debug\StringExample.csprojAssemblyReference.cache
+C:\Pecunia\StringExample\StringExample\obj\Debug\StringExample.csproj.CoreCompileInputs.cache
+C:\Pecunia\StringExample\StringExample\obj\Debug\StringExample.exe
+C:\Pecunia\StringExample\StringExample\obj\Debug\StringExample.pdb
