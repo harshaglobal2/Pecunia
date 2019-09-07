@@ -1,0 +1,7 @@
+C:\Pecunia\ExceptionHandlingExample\ExceptionHandlingExample\bin\Debug\ExceptionHandlingExample.exe.config
+C:\Pecunia\ExceptionHandlingExample\ExceptionHandlingExample\bin\Debug\ExceptionHandlingExample.exe
+C:\Pecunia\ExceptionHandlingExample\ExceptionHandlingExample\bin\Debug\ExceptionHandlingExample.pdb
+C:\Pecunia\ExceptionHandlingExample\ExceptionHandlingExample\obj\Debug\ExceptionHandlingExample.csprojAssemblyReference.cache
+C:\Pecunia\ExceptionHandlingExample\ExceptionHandlingExample\obj\Debug\ExceptionHandlingExample.csproj.CoreCompileInputs.cache
+C:\Pecunia\ExceptionHandlingExample\ExceptionHandlingExample\obj\Debug\ExceptionHandlingExample.exe
+C:\Pecunia\ExceptionHandlingExample\ExceptionHandlingExample\obj\Debug\ExceptionHandlingExample.pdb
