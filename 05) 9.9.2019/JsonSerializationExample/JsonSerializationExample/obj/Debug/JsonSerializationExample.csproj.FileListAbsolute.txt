@@ -1,0 +1,10 @@
+C:\Pecunia\JsonSerializationExample\JsonSerializationExample\bin\Debug\JsonSerializationExample.exe.config
+C:\Pecunia\JsonSerializationExample\JsonSerializationExample\bin\Debug\JsonSerializationExample.exe
+C:\Pecunia\JsonSerializationExample\JsonSerializationExample\bin\Debug\JsonSerializationExample.pdb
+C:\Pecunia\JsonSerializationExample\JsonSerializationExample\bin\Debug\Newtonsoft.Json.dll
+C:\Pecunia\JsonSerializationExample\JsonSerializationExample\bin\Debug\Newtonsoft.Json.xml
+C:\Pecunia\JsonSerializationExample\JsonSerializationExample\obj\Debug\JsonSerializationExample.csprojAssemblyReference.cache
+C:\Pecunia\JsonSerializationExample\JsonSerializationExample\obj\Debug\JsonSerializationExample.csproj.CoreCompileInputs.cache
+C:\Pecunia\JsonSerializationExample\JsonSerializationExample\obj\Debug\JsonSerializationExample.csproj.CopyComplete
+C:\Pecunia\JsonSerializationExample\JsonSerializationExample\obj\Debug\JsonSerializationExample.exe
+C:\Pecunia\JsonSerializationExample\JsonSerializationExample\obj\Debug\JsonSerializationExample.pdb

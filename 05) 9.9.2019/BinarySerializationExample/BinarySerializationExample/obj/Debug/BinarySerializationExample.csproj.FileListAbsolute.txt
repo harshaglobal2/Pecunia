@@ -1,0 +1,7 @@
+C:\Pecunia\BinarySerializationExample\BinarySerializationExample\bin\Debug\BinarySerializationExample.exe.config
+C:\Pecunia\BinarySerializationExample\BinarySerializationExample\bin\Debug\BinarySerializationExample.exe
+C:\Pecunia\BinarySerializationExample\BinarySerializationExample\bin\Debug\BinarySerializationExample.pdb
+C:\Pecunia\BinarySerializationExample\BinarySerializationExample\obj\Debug\BinarySerializationExample.csprojAssemblyReference.cache
+C:\Pecunia\BinarySerializationExample\BinarySerializationExample\obj\Debug\BinarySerializationExample.csproj.CoreCompileInputs.cache
+C:\Pecunia\BinarySerializationExample\BinarySerializationExample\obj\Debug\BinarySerializationExample.exe
+C:\Pecunia\BinarySerializationExample\BinarySerializationExample\obj\Debug\BinarySerializationExample.pdb
