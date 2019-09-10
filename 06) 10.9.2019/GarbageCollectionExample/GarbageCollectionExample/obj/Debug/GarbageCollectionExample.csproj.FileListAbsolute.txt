@@ -1,0 +1,7 @@
+C:\Pecunia\GarbageCollectionExample\GarbageCollectionExample\bin\Debug\GarbageCollectionExample.exe.config
+C:\Pecunia\GarbageCollectionExample\GarbageCollectionExample\bin\Debug\GarbageCollectionExample.exe
+C:\Pecunia\GarbageCollectionExample\GarbageCollectionExample\bin\Debug\GarbageCollectionExample.pdb
+C:\Pecunia\GarbageCollectionExample\GarbageCollectionExample\obj\Debug\GarbageCollectionExample.csprojAssemblyReference.cache
+C:\Pecunia\GarbageCollectionExample\GarbageCollectionExample\obj\Debug\GarbageCollectionExample.csproj.CoreCompileInputs.cache
+C:\Pecunia\GarbageCollectionExample\GarbageCollectionExample\obj\Debug\GarbageCollectionExample.exe
+C:\Pecunia\GarbageCollectionExample\GarbageCollectionExample\obj\Debug\GarbageCollectionExample.pdb

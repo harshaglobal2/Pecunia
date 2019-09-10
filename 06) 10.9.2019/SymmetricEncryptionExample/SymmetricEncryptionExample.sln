@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.539
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SymmetricEncryptionExample", "SymmetricEncryptionExample\SymmetricEncryptionExample.csproj", "{28480568-AEBB-4C59-A6EB-A15A519AEDDE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28480568-AEBB-4C59-A6EB-A15A519AEDDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28480568-AEBB-4C59-A6EB-A15A519AEDDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28480568-AEBB-4C59-A6EB-A15A519AEDDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28480568-AEBB-4C59-A6EB-A15A519AEDDE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0729B2E5-5518-422B-8227-F17980E52461}
+	EndGlobalSection
+EndGlobal

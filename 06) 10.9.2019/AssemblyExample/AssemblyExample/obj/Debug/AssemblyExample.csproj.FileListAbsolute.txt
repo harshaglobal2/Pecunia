@@ -1,0 +1,10 @@
+C:\Pecunia\AssemblyExample\AssemblyExample\bin\Debug\AssemblyExample.exe.config
+C:\Pecunia\AssemblyExample\AssemblyExample\bin\Debug\AssemblyExample.exe
+C:\Pecunia\AssemblyExample\AssemblyExample\bin\Debug\AssemblyExample.pdb
+C:\Pecunia\AssemblyExample\AssemblyExample\bin\Debug\ClassLibrary1.dll
+C:\Pecunia\AssemblyExample\AssemblyExample\bin\Debug\ClassLibrary1.pdb
+C:\Pecunia\AssemblyExample\AssemblyExample\obj\Debug\AssemblyExample.csprojAssemblyReference.cache
+C:\Pecunia\AssemblyExample\AssemblyExample\obj\Debug\AssemblyExample.csproj.CoreCompileInputs.cache
+C:\Pecunia\AssemblyExample\AssemblyExample\obj\Debug\AssemblyExample.csproj.CopyComplete
+C:\Pecunia\AssemblyExample\AssemblyExample\obj\Debug\AssemblyExample.exe
+C:\Pecunia\AssemblyExample\AssemblyExample\obj\Debug\AssemblyExample.pdb
