@@ -1,7 +1,6 @@
 1. Multi Threading
-2. Locks
-3. Async and Await
-4. Symmetric Encryption
-5. Asymmetric Encryption
+2. Tasks & Parallelization
+3. Locks
+4. Encryption & Decryption
 
 Please refer to "Ref Docs - Must go Through" folder.

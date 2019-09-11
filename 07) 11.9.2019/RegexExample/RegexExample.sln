@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.539
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegexExample", "RegexExample\RegexExample.csproj", "{0A493B3A-FE13-40CD-A84E-A7CE7CCC912C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A493B3A-FE13-40CD-A84E-A7CE7CCC912C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A493B3A-FE13-40CD-A84E-A7CE7CCC912C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A493B3A-FE13-40CD-A84E-A7CE7CCC912C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A493B3A-FE13-40CD-A84E-A7CE7CCC912C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4754ED8B-686C-48FB-9808-840AF5C08FC8}
+	EndGlobalSection
+EndGlobal
