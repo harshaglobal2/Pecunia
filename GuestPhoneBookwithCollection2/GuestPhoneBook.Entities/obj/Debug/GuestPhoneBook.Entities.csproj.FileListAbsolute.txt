@@ -1,0 +1,16 @@
+D:\Nachiket\Study Materials\Module 2\Demos\GuestPhoneBook\GuestPhoneBook.Entities\bin\Debug\GuestPhoneBook.Entities.dll
+D:\Nachiket\Study Materials\Module 2\Demos\GuestPhoneBook\GuestPhoneBook.Entities\bin\Debug\GuestPhoneBook.Entities.pdb
+D:\Nachiket\Study Materials\Module 2\Demos\GuestPhoneBook\GuestPhoneBook.Entities\obj\Debug\GuestPhoneBook.Entities.csprojResolveAssemblyReference.cache
+D:\Nachiket\Study Materials\Module 2\Demos\GuestPhoneBook\GuestPhoneBook.Entities\obj\Debug\GuestPhoneBook.Entities.dll
+D:\Nachiket\Study Materials\Module 2\Demos\GuestPhoneBook\GuestPhoneBook.Entities\obj\Debug\GuestPhoneBook.Entities.pdb
+D:\DATA\2018\May\Other\M2\GuestPhoneBook\GuestPhoneBook.Entities\bin\Debug\GuestPhoneBook.Entities.dll
+D:\DATA\2018\May\Other\M2\GuestPhoneBook\GuestPhoneBook.Entities\bin\Debug\GuestPhoneBook.Entities.pdb
+D:\DATA\2018\May\Other\M2\GuestPhoneBook\GuestPhoneBook.Entities\obj\Debug\GuestPhoneBook.Entities.csprojResolveAssemblyReference.cache
+D:\DATA\2018\May\Other\M2\GuestPhoneBook\GuestPhoneBook.Entities\obj\Debug\GuestPhoneBook.Entities.dll
+D:\DATA\2018\May\Other\M2\GuestPhoneBook\GuestPhoneBook.Entities\obj\Debug\GuestPhoneBook.Entities.pdb
+C:\Users\Harsha\Desktop\Capgemini\Cloud2019\Cloud 2019\M1\CSharp\Demos\GuestPhoneBookwithCollection\GuestPhoneBook.Entities\bin\Debug\GuestPhoneBook.Entities.dll
+C:\Users\Harsha\Desktop\Capgemini\Cloud2019\Cloud 2019\M1\CSharp\Demos\GuestPhoneBookwithCollection\GuestPhoneBook.Entities\bin\Debug\GuestPhoneBook.Entities.pdb
+C:\Users\Harsha\Desktop\Capgemini\Cloud2019\Cloud 2019\M1\CSharp\Demos\GuestPhoneBookwithCollection\GuestPhoneBook.Entities\obj\Debug\GuestPhoneBook.Entities.csprojAssemblyReference.cache
+C:\Users\Harsha\Desktop\Capgemini\Cloud2019\Cloud 2019\M1\CSharp\Demos\GuestPhoneBookwithCollection\GuestPhoneBook.Entities\obj\Debug\GuestPhoneBook.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Harsha\Desktop\Capgemini\Cloud2019\Cloud 2019\M1\CSharp\Demos\GuestPhoneBookwithCollection\GuestPhoneBook.Entities\obj\Debug\GuestPhoneBook.Entities.dll
+C:\Users\Harsha\Desktop\Capgemini\Cloud2019\Cloud 2019\M1\CSharp\Demos\GuestPhoneBookwithCollection\GuestPhoneBook.Entities\obj\Debug\GuestPhoneBook.Entities.pdb

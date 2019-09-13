@@ -1,0 +1,15 @@
+D:\Nachiket\Study Materials\Module 2\Demos\GuestPhoneBook\GuestPhoneBook.Exceptions\bin\Debug\GuestPhoneBook.Exceptions.dll
+D:\Nachiket\Study Materials\Module 2\Demos\GuestPhoneBook\GuestPhoneBook.Exceptions\bin\Debug\GuestPhoneBook.Exceptions.pdb
+D:\Nachiket\Study Materials\Module 2\Demos\GuestPhoneBook\GuestPhoneBook.Exceptions\obj\Debug\GuestPhoneBook.Exceptions.dll
+D:\Nachiket\Study Materials\Module 2\Demos\GuestPhoneBook\GuestPhoneBook.Exceptions\obj\Debug\GuestPhoneBook.Exceptions.pdb
+D:\DATA\2018\May\Other\M2\GuestPhoneBook\GuestPhoneBook.Exceptions\bin\Debug\GuestPhoneBook.Exceptions.dll
+D:\DATA\2018\May\Other\M2\GuestPhoneBook\GuestPhoneBook.Exceptions\bin\Debug\GuestPhoneBook.Exceptions.pdb
+D:\DATA\2018\May\Other\M2\GuestPhoneBook\GuestPhoneBook.Exceptions\obj\Debug\GuestPhoneBook.Exceptions.csprojResolveAssemblyReference.cache
+D:\DATA\2018\May\Other\M2\GuestPhoneBook\GuestPhoneBook.Exceptions\obj\Debug\GuestPhoneBook.Exceptions.dll
+D:\DATA\2018\May\Other\M2\GuestPhoneBook\GuestPhoneBook.Exceptions\obj\Debug\GuestPhoneBook.Exceptions.pdb
+C:\Users\Harsha\Desktop\Capgemini\Cloud2019\Cloud 2019\M1\CSharp\Demos\GuestPhoneBookwithCollection\GuestPhoneBook.Exceptions\bin\Debug\GuestPhoneBook.Exceptions.dll
+C:\Users\Harsha\Desktop\Capgemini\Cloud2019\Cloud 2019\M1\CSharp\Demos\GuestPhoneBookwithCollection\GuestPhoneBook.Exceptions\bin\Debug\GuestPhoneBook.Exceptions.pdb
+C:\Users\Harsha\Desktop\Capgemini\Cloud2019\Cloud 2019\M1\CSharp\Demos\GuestPhoneBookwithCollection\GuestPhoneBook.Exceptions\obj\Debug\GuestPhoneBook.Exceptions.csprojAssemblyReference.cache
+C:\Users\Harsha\Desktop\Capgemini\Cloud2019\Cloud 2019\M1\CSharp\Demos\GuestPhoneBookwithCollection\GuestPhoneBook.Exceptions\obj\Debug\GuestPhoneBook.Exceptions.csproj.CoreCompileInputs.cache
+C:\Users\Harsha\Desktop\Capgemini\Cloud2019\Cloud 2019\M1\CSharp\Demos\GuestPhoneBookwithCollection\GuestPhoneBook.Exceptions\obj\Debug\GuestPhoneBook.Exceptions.dll
+C:\Users\Harsha\Desktop\Capgemini\Cloud2019\Cloud 2019\M1\CSharp\Demos\GuestPhoneBookwithCollection\GuestPhoneBook.Exceptions\obj\Debug\GuestPhoneBook.Exceptions.pdb

@@ -1,0 +1,35 @@
+D:\Nachiket\Study Materials\Module 2\Demos\GuestPhoneBook\GuestPhoneBook.BusinessLayer\bin\Debug\GuestPhoneBook.BusinessLayer.dll
+D:\Nachiket\Study Materials\Module 2\Demos\GuestPhoneBook\GuestPhoneBook.BusinessLayer\bin\Debug\GuestPhoneBook.BusinessLayer.pdb
+D:\Nachiket\Study Materials\Module 2\Demos\GuestPhoneBook\GuestPhoneBook.BusinessLayer\bin\Debug\GuestPhoneBook.DataAccessLayer.dll
+D:\Nachiket\Study Materials\Module 2\Demos\GuestPhoneBook\GuestPhoneBook.BusinessLayer\bin\Debug\GuestPhoneBook.Entities.dll
+D:\Nachiket\Study Materials\Module 2\Demos\GuestPhoneBook\GuestPhoneBook.BusinessLayer\bin\Debug\GuestPhoneBook.Exceptions.dll
+D:\Nachiket\Study Materials\Module 2\Demos\GuestPhoneBook\GuestPhoneBook.BusinessLayer\bin\Debug\GuestPhoneBook.DataAccessLayer.pdb
+D:\Nachiket\Study Materials\Module 2\Demos\GuestPhoneBook\GuestPhoneBook.BusinessLayer\bin\Debug\GuestPhoneBook.Entities.pdb
+D:\Nachiket\Study Materials\Module 2\Demos\GuestPhoneBook\GuestPhoneBook.BusinessLayer\bin\Debug\GuestPhoneBook.Exceptions.pdb
+D:\Nachiket\Study Materials\Module 2\Demos\GuestPhoneBook\GuestPhoneBook.BusinessLayer\obj\Debug\GuestPhoneBook.BusinessLayer.csprojResolveAssemblyReference.cache
+D:\Nachiket\Study Materials\Module 2\Demos\GuestPhoneBook\GuestPhoneBook.BusinessLayer\obj\Debug\GuestPhoneBook.BusinessLayer.dll
+D:\Nachiket\Study Materials\Module 2\Demos\GuestPhoneBook\GuestPhoneBook.BusinessLayer\obj\Debug\GuestPhoneBook.BusinessLayer.pdb
+D:\DATA\2018\May\Other\M2\GuestPhoneBook\GuestPhoneBook.BusinessLayer\bin\Debug\GuestPhoneBook.BusinessLayer.dll
+D:\DATA\2018\May\Other\M2\GuestPhoneBook\GuestPhoneBook.BusinessLayer\bin\Debug\GuestPhoneBook.BusinessLayer.pdb
+D:\DATA\2018\May\Other\M2\GuestPhoneBook\GuestPhoneBook.BusinessLayer\bin\Debug\GuestPhoneBook.DataAccessLayer.dll
+D:\DATA\2018\May\Other\M2\GuestPhoneBook\GuestPhoneBook.BusinessLayer\bin\Debug\GuestPhoneBook.Entities.dll
+D:\DATA\2018\May\Other\M2\GuestPhoneBook\GuestPhoneBook.BusinessLayer\bin\Debug\GuestPhoneBook.Exceptions.dll
+D:\DATA\2018\May\Other\M2\GuestPhoneBook\GuestPhoneBook.BusinessLayer\bin\Debug\GuestPhoneBook.DataAccessLayer.pdb
+D:\DATA\2018\May\Other\M2\GuestPhoneBook\GuestPhoneBook.BusinessLayer\bin\Debug\GuestPhoneBook.Entities.pdb
+D:\DATA\2018\May\Other\M2\GuestPhoneBook\GuestPhoneBook.BusinessLayer\bin\Debug\GuestPhoneBook.Exceptions.pdb
+D:\DATA\2018\May\Other\M2\GuestPhoneBook\GuestPhoneBook.BusinessLayer\obj\Debug\GuestPhoneBook.BusinessLayer.csprojResolveAssemblyReference.cache
+D:\DATA\2018\May\Other\M2\GuestPhoneBook\GuestPhoneBook.BusinessLayer\obj\Debug\GuestPhoneBook.BusinessLayer.dll
+D:\DATA\2018\May\Other\M2\GuestPhoneBook\GuestPhoneBook.BusinessLayer\obj\Debug\GuestPhoneBook.BusinessLayer.pdb
+C:\Users\Harsha\Desktop\Capgemini\Cloud2019\Cloud 2019\M1\CSharp\Demos\GuestPhoneBookwithCollection\GuestPhoneBook.BusinessLayer\bin\Debug\GuestPhoneBook.BusinessLayer.dll
+C:\Users\Harsha\Desktop\Capgemini\Cloud2019\Cloud 2019\M1\CSharp\Demos\GuestPhoneBookwithCollection\GuestPhoneBook.BusinessLayer\bin\Debug\GuestPhoneBook.BusinessLayer.pdb
+C:\Users\Harsha\Desktop\Capgemini\Cloud2019\Cloud 2019\M1\CSharp\Demos\GuestPhoneBookwithCollection\GuestPhoneBook.BusinessLayer\bin\Debug\GuestPhoneBook.DataAccessLayer.dll
+C:\Users\Harsha\Desktop\Capgemini\Cloud2019\Cloud 2019\M1\CSharp\Demos\GuestPhoneBookwithCollection\GuestPhoneBook.BusinessLayer\bin\Debug\GuestPhoneBook.Entities.dll
+C:\Users\Harsha\Desktop\Capgemini\Cloud2019\Cloud 2019\M1\CSharp\Demos\GuestPhoneBookwithCollection\GuestPhoneBook.BusinessLayer\bin\Debug\GuestPhoneBook.Exceptions.dll
+C:\Users\Harsha\Desktop\Capgemini\Cloud2019\Cloud 2019\M1\CSharp\Demos\GuestPhoneBookwithCollection\GuestPhoneBook.BusinessLayer\bin\Debug\GuestPhoneBook.DataAccessLayer.pdb
+C:\Users\Harsha\Desktop\Capgemini\Cloud2019\Cloud 2019\M1\CSharp\Demos\GuestPhoneBookwithCollection\GuestPhoneBook.BusinessLayer\bin\Debug\GuestPhoneBook.Entities.pdb
+C:\Users\Harsha\Desktop\Capgemini\Cloud2019\Cloud 2019\M1\CSharp\Demos\GuestPhoneBookwithCollection\GuestPhoneBook.BusinessLayer\bin\Debug\GuestPhoneBook.Exceptions.pdb
+C:\Users\Harsha\Desktop\Capgemini\Cloud2019\Cloud 2019\M1\CSharp\Demos\GuestPhoneBookwithCollection\GuestPhoneBook.BusinessLayer\obj\Debug\GuestPhoneBook.BusinessLayer.csprojAssemblyReference.cache
+C:\Users\Harsha\Desktop\Capgemini\Cloud2019\Cloud 2019\M1\CSharp\Demos\GuestPhoneBookwithCollection\GuestPhoneBook.BusinessLayer\obj\Debug\GuestPhoneBook.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Harsha\Desktop\Capgemini\Cloud2019\Cloud 2019\M1\CSharp\Demos\GuestPhoneBookwithCollection\GuestPhoneBook.BusinessLayer\obj\Debug\GuestPhoneBook.BusinessLayer.csproj.CopyComplete
+C:\Users\Harsha\Desktop\Capgemini\Cloud2019\Cloud 2019\M1\CSharp\Demos\GuestPhoneBookwithCollection\GuestPhoneBook.BusinessLayer\obj\Debug\GuestPhoneBook.BusinessLayer.dll
+C:\Users\Harsha\Desktop\Capgemini\Cloud2019\Cloud 2019\M1\CSharp\Demos\GuestPhoneBookwithCollection\GuestPhoneBook.BusinessLayer\obj\Debug\GuestPhoneBook.BusinessLayer.pdb
