@@ -42,7 +42,8 @@ namespace Capgemini.Inventory.BusinessLayer
             bool valid = await base.Validate(entityObject);
 
             //Email is Unique
-            if ((await GetSupplierByEmailBL(entityObject.Email)) != null)
+            var existingObject = await GetSupplierByEmailBL(entityObject.Email);
+            if (existingObject != null && existingObject?.SupplierID != entityObject.SupplierID)
             {
                 valid = false;
                 sb.Append(Environment.NewLine + $"Email {entityObject.Email} already exists");

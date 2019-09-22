@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="Inventory, Capgemini" />
+    <meta name="description" content="Inventory Management System at Capgemini" />
+    <title>Inventory Management System</title>
+</head>
+<body style="margin:0px">
+
+    <!-- header -->
+    <header>
+        <div style="background-color:#0094ff; color:white; padding: 5px">
+            <h1>Inventory Management System</h1>
+            <h2>Drink &amp; Delight</h2>
+            <h3>Capgemini</h3>
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+    </nav>
+
+    <div>
+        <img src="logo.png" width="300px" height="100px" />
+    </div>
+
+    <h3>Login</h3>
+    <div>
+        <form action="logincheck.html" method="post">
+            <div>
+                <label for="txtEmail">Email</label><br />
+                <input type="email" maxlength="40" name="email" id="txtEmail" placeholder="Email" style="padding:6px" autofocus="autofocus" required="required" />
+            </div>
+
+            <div>
+                <label for="txtPassword">Password</label><br />
+                <input type="password" maxlength="40" name="password" id="txtPassword" placeholder="Password" style="padding:6px" required="required" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15})" />
+            </div>
+
+            <div>
+                <input type="radio" name="usertype" value="admin" id="rbAdmin" required="required" />
+                <label for="rbAdmin">Admin</label>
+
+                <input type="radio" name="usertype" value="systemuser" id="rbSystemUser" required="required" />
+                <label for="rbSystemUser">System User</label>
+
+                <input type="radio" name="usertype" value="supplier" id="rbSupplier" required="required" />
+                <label for="rbSupplier">Supplier</label>
+
+                <input type="radio" name="usertype" value="distributor" id="rbDistributor" required="required" />
+                <label for="rbDistributor">Distributor</label>
+            </div>
+
+            <div>
+                <input type="checkbox" name="rememberme" value="true" />
+                <label>Remember me</label>
+            </div>
+
+            <div>
+                <button style="background-color:#0a7c87; color:white; padding:6px 15px;">Login</button>
+            </div>
+
+            <input type="hidden" name="location" value="mumbai" />
+
+        </form>
+    </div>
+
+    <hr />
+    
+    <footer>
+        All Rights Reserved &copy; Capgemini 2019.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,42 @@
+System Catalog:
+The system tables that  SQL   server needs to configure and manage itself are collectively grouped together and called the “System Catalog”. The system catalog consists  primary of the system tables contained in the master table.
+ 
+Database Catalog
+The system tables that are needed to define the structure of a new user database are collectively known as the “Database Catalog”. The database catalog consists primarily system tables contained in the model database.
+The various system tables in all the SQL Server system databases are discussed  below as follows: 
+
+Some MASTER system Tables
+Syslockinfo - Contains information on all granted, converting, and waiting lock requests.
+Syscacheobjects - Contains information about how the cache is used.
+Syslogins - Contains one row for each login account.
+Sysdatabases - Contains one row for each database on SQL server 2008.
+Model System Tables
+Name			Utility
+Syscolumns	     Contains one row for every column in every table and  		     view, and a row for each parameter in a stored procedure.
+Syscomments	     Contains entries for each view, rule, default, trigger, 		     CHECK constraint , DEFAULT constraint , and stored 		     procedure.
+Sysfiles	     Contains one row for each file in a database
+Sysindexes	     Contains one row for each index and table in the database
+Sysobjects	     Contains one rows for each object (Constraint , default, 		     log, rule, stored procedure, and so on ) created within a 		     database. Syscomments and Sysobjects, combined 		     together, give detailed information on ny object in SQL 		     Server.
+Syspermissions    Contains information about permissions granted and denied to     
+                                users , groups and roles in the database.
+Systypes	      Contains one row for each system-supplied and each user-defined 
+                                data  type
+Sysusers	      Contains one row for each windows user, windows group, SQL 
+                                server  user, or SQL Server  role in the database
+MSDB System Tables
+Name			Utility
+Sysalerts	      Contains one row for each alert. An alert is a message sent in 
+                                 response to an event.
+Syscategories	      Contains the categories used by SQL Server Enterprise Manager  
+                                 to organize jobs, alerts, and operators.
+Sysobs	       Stores the information for each scheduled job to be executed by 
+                                 the SQL Server Agent
+Sysoperators	       Contains one row for each SQL Server operator.
+Sysnotification	       Contains one row for each notification to an operator
+  
+TEMPDB System  Tables
+Name			Utility
+Local Temporary tables	These tables are only visible to the user who have 		created these and are prefaced with a single hash 		(#) sign.
+Global Temporary tables	These tables are available to all the users that are 		connected and are prefaced with two-hash 			signs(##). 
+
+

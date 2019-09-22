@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="Inventory, Capgemini" />
+    <meta name="description" content="Inventory Management System at Capgemini" />
+    <title>Inventory Management System</title>
+</head>
+<body style="margin:0px">
+
+    <!-- header -->
+    <header>
+        <div style="background-color:#0094ff; color:white; padding: 5px">
+            <h1>Inventory Management System</h1>
+            <h2>Drink &amp; Delight</h2>
+            <h3>Capgemini</h3>
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+    </nav>
+
+    <div>
+        <img src="logo.png" width="300px" height="100px" />
+    </div>
+
+    <h3>Register</h3>
+    <div>
+        <form action="logincheck.html" method="post">
+            <div>
+                <label for="txtName">Name</label><br />
+                <input type="text" maxlength="40" name="name" id="txtName" placeholder="Name" style="padding:6px" autofocus="autofocus" />
+            </div>
+
+            <div>
+                <label for="txtEmail">Email</label><br />
+                <input type="text" maxlength="40" name="email" id="txtEmail" placeholder="Email" style="padding:6px" />
+            </div>
+
+            <div>
+                <label for="txtPassword">Password</label><br />
+                <input type="password" maxlength="40" name="password" id="txtPassword" placeholder="Password" style="padding:6px" />
+            </div>
+
+            <div>
+                <label for="drpUsertype">User Type</label><br />
+                <select name="usertype" id="drpUsertype">
+                    <option value="admin">Admin</option>
+                    <option value="systemuser">System User</option>
+                    <option value="supplier">Supplier</option>
+                    <option value="distributor">Distributor</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="filePhoto">Photo</label><br />
+                <input type="file" name="photo" id="filePhoto" style="padding:6px" />
+            </div>
+
+            <div>
+                <label for="txtAddress">Address</label><br />
+                <textarea name="address" id="txtAddress" style="padding:6px" rows="5" cols="40"></textarea>
+            </div>
+
+            <div>
+                <label for="txtCity">City</label><br />
+                <input type="text" name="city" id="txtCity" style="padding:6px" placeholder="City" list="citiesList" />
+                <datalist id="citiesList">
+                    <option>Mumbai</option>
+                    <option>Hyderabad</option>
+                    <option>New Delhi</option>
+                    <option>Bangalore</option>
+                    <option>Chennai</option>
+                    <option>Pune</option>
+                </datalist>
+            </div>
+
+            <div>
+                <label for="txtAnnualIncome">Annual Income</label><br />
+                <input type="number" min="0" max="10000000" name="annualincome" id="txtAnnualIncome" placeholder="Annual Income" style="padding:6px" />
+            </div>
+
+            <div>
+                <label for="txtDateOfBirth">Date of Birth</label><br />
+                <input type="date" min="1900-01-01" max="2001-01-01" name="dateofbirth" id="txtDateOfBirth" placeholder="Date of Birth" style="padding:6px" />
+            </div>
+
+            <div>
+                <input type="submit" value="Register" />
+                <input type="reset" value="Reset" />
+            </div>
+
+            <input type="hidden" name="location" value="mumbai" />
+
+        </form>
+    </div>
+
+    <hr />
+
+    <footer>
+        All Rights Reserved &copy; Capgemini 2019.
+    </footer>
+</body>
+</html>

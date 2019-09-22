@@ -1,0 +1,11 @@
+Model database
+The model database is the template database for user –defined databases  in SQL Server. This database  consists of the system tables, which should belong to every user databases. The structure of  the model database is copied  into each new database that is created by the database  administrator (DBA). Hence ,whenever a new database is created its size should be at least  the same as size of model database, so that  the structure of the model database can be accustomed in new  database.
+
+Msdb database
+The msdb database contains task scheduling, event handling, replication, alert  management and system operator information 
+
+Tempdb database
+The tempdb database provides storage area from temporary tables, as also the result of sort operations, join operations, and other activities that require temporary space to execute. There is only one tempdb database regardless of the number of the databases stored on the server. No special permission is required to use this database. They are deleted when the user logs out  of the SQL Server session.
+There are two types  of temporary tables that are supported by SQL Server  as mention below:
+Global temporary tables: These tables are available to all the users that are connected and are prefixed with double–hash signs(##), to the name of the table.
+Local temporary tables: These tables  are only visible to the user who have created these and are prefaced with a single  hash (#) sign.

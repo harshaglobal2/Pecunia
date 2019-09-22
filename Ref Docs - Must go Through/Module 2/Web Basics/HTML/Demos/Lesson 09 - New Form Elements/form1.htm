@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="height=device-height,width=device-width,user-scalable=no" />
+        <meta charset="UTF-8">
+        <title>New Form Elements</title>
+    </head>
+    <body>
+       <form name="Formelements" action="index2.jsp">
+
+           <!--     supported only on Google Chrome/Safari      -->
+           <table>
+            <tr>
+                <td><label for="demo">Placeholder : </label></td>
+                <td><input id ="demo" name="demo" placeholder="Enter Numbers Only" /></td>
+            </tr>
+
+            <tr>
+                <td><label for="nameauto">Autofocus : </label></td>
+                <td><input id ="nameauto" name="nameauto" type="text" autofocus/></td>
+            </tr>
+
+            <tr>
+                <td><label for="range">Range : </label></td>
+                <td><input id="range" name="range" type="range" min="0" max="50" value="10" /><td>
+            </tr>
+
+            <tr>
+                <td><label for="search">Search : </label></td>
+                <td><input id="search" name="search" type="search" placeholder="Search..." /><td>
+            </tr>
+            <!--     supported only on Safari      -->
+
+
+
+
+            <!--     supported only on Opera 10.5 onwards      -->
+            <tr>
+                <td><label for="date">Date : </label></td>
+                <td><input id="date" name="date" type="date" min="2010-08-14" max="2014-08-14" value=""/></td>
+            </tr>
+
+
+             <tr>
+                <td><label for="date">Week : </label></td>
+                <td><input id="date" name="date" type="week" value=""/></td>
+            </tr>
+
+             <tr>
+                <td><label for="date">Month : </label></td>
+                <td><input id="date" name="date" type="month" value=""/></td>
+            </tr>
+
+             <tr>
+                <td><label for="date">Time : </label></td>
+                <td><input id="date" name="date" type="time" value=""/></td>
+            </tr>
+
+
+            
+            <tr>
+                <td><label for="number">Number : </label></td>
+                <td><input id="number" name="number" type="number" step="1" min="-5" max="10" value="0" /><td>
+            </tr>
+
+             <tr>
+                <td><label for="required">Required : </label></td>
+                <td><input id="required" name="user" type="text" required /></td>
+
+            </tr>
+
+            <tr>
+                <td><label for="email">Email:</label></td>
+		<td><input id="email" name="email" type="email" required/></td>
+            </tr>
+            <!--     supported only on Opera 10.5 onwards      -->
+
+
+
+            <!--     supported only on Opera 11  displays color picker on browser    -->
+            <tr>
+                <td><label for="color">Color : </label></td>
+                <td><input id="color" name="color" type="color" placeholder="e.g. #bbbbbb" /><td>
+            </tr>
+            <!--     supported only on Opera 11      -->
+            
+
+            
+            <!--     supported only on Opera 11 and Firefox 4      -->
+            <tr>
+            <td><label for="country_name">Country : </label></td>
+            <td><input id="country_name" name="country_name" type="text" list="country" /></td>
+            <td><datalist id="country">
+               <option value="Afghanistan">
+               <option value="Albania">
+               <option value="Algeria">
+               <option value="Andorra">
+               <option value="Angola">
+               <option value="Car">
+               <option value="Cat">
+               <option value="City">
+               <option value="Cup">
+               <option value="Clip">
+            </datalist></td>
+            </tr>
+
+            		
+
+                <tr><td colspan="2"><audio controls >
+                    <source src= "god.mp3" type="audio/mpeg" />
+                    <source src= "1vs0_JuniorGroove.ogg" type="audio/ogg"/>
+                </audio></td></tr>
+                <!-- audio code works on Firefox and opera .ogg format  only          -->
+
+                <tr>
+                    <td colspan="2">
+					<!-- <video src="http://upload.wikimedia.org/wikipedia/commons/7/79/Big_Buck_Bunny_small.ogv" controls width="300" height="250"> -->
+					<video src="./source/Big_Buck_Bunny_small.ogv" controls width="300" height="250">
+                </video></td></tr>
+                <!-- Video code works only on Firefox. .ogg format. various ogg file extension are .ogx, .ogv, .oga, .spx.         -->
+            </table>
+            <table>
+            <tr>
+                <td align="right"><button type="submit" name="submit" value="Submit">Submit</button></td>
+                <td align="left"><button type="reset" name="reset" value="reset">Reset</button></td>
+            </tr>
+            </table>
+       </form>
+    </body>
+</html>

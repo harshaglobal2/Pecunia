@@ -1,0 +1,3 @@
+The following example shows using both the value() method and the exist() method of the xml data type. The value() method is used to retrieve ProductModelID attribute values from the XML. The exist() method in the WHERE clause is used to filter the rows from the table.
+
+The query retrieves product model IDs from XML instances that include warranty information (the <Warranty> element) as one of the features. The condition in the WHERE clause uses the exist() method to retrieve only the rows satisfying this condition.

@@ -1,0 +1,32 @@
+﻿::::::::Projects:::::::::
+1. Inventory.Exceptions
+2. Inventory.Helpers
+3. Inventory.Entities
+4. Inventory.Contracts
+5. Inventory.DataAccessLayer
+6. Inventory.BusinessLayer
+7. Inventory.PresentationLayer
+
+
+::::::::Common:::::::::
+1. Inventory.Exceptions > InventoryException
+2. Inventory.Exceptions > ExceptionLogger
+3. Inventory.Entities > IUser
+4. Inventory.Helpers > UserType
+5. Inventory.Helpers > ReflectionHelpers
+6. Inventory.Helpers > RequiredAttribute
+7. Inventory.Helpers > RegExpAttribute
+8. Inventory.PresentationLayer > CommonData
+9. Inventory.BusinessLayer > BLBase
+
+
+::::::::SystemUser::::::::
+1. Inventory.Entities > ISystemUser
+2. Inventory.Entities > SystemUser
+3. Inventory.Contracts > SystemUserDALBase
+4. Inventory.DataAccessLayer > SystemUserDAL
+5. Inventory.Contracts > ISystemUserBL
+6. Inventory.BusinessLayer > SystemUserBL
+7. Inventory.PresentationLayer > AdminPresentation
+
+

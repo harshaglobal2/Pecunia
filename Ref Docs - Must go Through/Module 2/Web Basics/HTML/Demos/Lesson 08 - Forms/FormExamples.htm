@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>form examples</title>
+</head>
+<body bgcolor="ivory">
+	<form name="form1" action="store.html" method="post">
+		<p>
+			<b>Enter first name</b> : <input name="username"><BR><br>
+			<b>Enter lastname</b> : &nbsp; <input maxlength="30"
+				name="surname">
+		</p>
+		<p>
+			<b>Enter&nbsp; address :</b>&nbsp;&nbsp;&nbsp;
+			<textarea name="addr" rows="3"></textarea>
+			<br>
+			<br> <b>Select the training programs attended :</b><input
+				type="checkbox" value="internet/html" name="internet-html">
+			Internet/HTML <input type="checkbox" checked value="c programming"
+				name="c-programming">C Programming <input type="checkbox"
+				value="dbms-sql" name="dbms-sql"> DBMS-SQL
+		</p>
+		<p>
+			<b>Select the stream you belong to :</b> <input
+				type="radio" value="science" name="s-grp"> Science <input
+				type="radio" value="arts" name="s-grp"> Arts <input
+				type="radio" value="commerce" name="s-grp"> Commerce <input
+				type="radio" value="oth2" name="s-grp">Engineering
+		</p>
+		<b>Which training program would you like to attend ?</b> <select
+			multiple size="3" name="pref">
+			<option value="ih" selected>Internet-HTML
+			<option value="js">Javascript
+			<option value="vbs">VBscript
+			<option value="as">ASP
+			<option value="xm">XML
+			<option value="jv">JAVA
+			<option value="jsp">jsp</option>
+		</select> <br>
+		<br> <b>Select the location of your resume</b> <input
+			type="file" size="15" name="fnm"> <br> <input
+			type="hidden" value="patni" name="coname"> <br> <input
+			type="button" value="exit" name="but"> <input type="submit"
+			value="save"> <input type="reset" value="reset">
+		
+	</form>
+</body>
+</html>
+

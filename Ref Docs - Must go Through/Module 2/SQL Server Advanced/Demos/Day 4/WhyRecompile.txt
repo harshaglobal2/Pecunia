@@ -1,0 +1,1 @@
+•When a procedure is compiled for the first time or recompiled, the procedure’s query plan is optimized for the current state of the database and its objects. If a database undergoes significant changes to its data or structure, recompiling a procedure updates and optimizes the procedure’s query plan for those changes. This can improve the procedure’s processing performance.

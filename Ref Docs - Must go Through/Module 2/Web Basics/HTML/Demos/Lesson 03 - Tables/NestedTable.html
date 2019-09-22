@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Nested Tables</title>
+<!-- contents of style tag will be discussed later -->
+<style>
+table,tr,td,th
+{
+border-width:thin;
+border-style:solid;
+}
+</style>
+</head>
+<body>
+	<table style="border-color:red">
+		<tr>
+			<th>Zone</th>
+			<th>State</th>
+		</tr>
+		<tr>
+			<td>South</td>
+			<td><table style="border-color:green">
+					<tr>
+						<th>Name</th>
+						<th>Capital City</th>
+					</tr>
+					<tr>
+						<td>Karnataka</td>
+						<td>Bangalore</td>
+					</tr>
+					<tr>
+						<td>Tamilnadu</td>
+						<td>Chennai</td>
+					</tr>
+					<tr>
+						<td>Andhra Pradesh</td>
+						<td>Hyderabad</td>
+					</tr>
+				</table></td>
+		</tr>
+	</table>
+
+</body>
+</html>

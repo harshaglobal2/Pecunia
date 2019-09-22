@@ -45,9 +45,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLContracts\IAdminBL.cs" />
+    <Compile Include="BLContracts\IDistributorBL.cs" />
     <Compile Include="BLContracts\ISupplierBL.cs" />
     <Compile Include="BLContracts\ISystemUserBL.cs" />
     <Compile Include="DALContracts\AdminDALBase.cs" />
+    <Compile Include="DALContracts\DistributorDALBase.cs" />
     <Compile Include="DALContracts\SupplierDALBase.cs" />
     <Compile Include="DALContracts\SystemUserDALBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
