@@ -31,6 +31,29 @@ namespace Capgemini.Inventory.BusinessLayer
         }
 
         /// <summary>
+        /// Validations on data before adding or updating.
+        /// </summary>
+        /// <param name="entityObject">Represents object to be validated.</param>
+        /// <returns>Returns a boolean value, that indicates whether the data is valid or not.</returns>
+        protected async override Task<bool> Validate(SystemUser entityObject)
+        {
+            //Create string builder
+            StringBuilder sb = new StringBuilder();
+            bool valid = await base.Validate(entityObject);
+
+            //Email is Unique
+            if ((await GetSystemUserByEmailBL(entityObject.Email)) != null)
+            {
+                valid = false;
+                sb.Append(Environment.NewLine + $"Email {entityObject.Email} already exists");
+            }
+
+            if (valid == false)
+                throw new InventoryException(sb.ToString());
+            return valid;
+        }
+
+        /// <summary>
         /// Adds new systemUser to SystemUsers collection.
         /// </summary>
         /// <param name="newSystemUser">Contains the systemUser details to be added.</param>
@@ -40,7 +63,7 @@ namespace Capgemini.Inventory.BusinessLayer
             bool systemUserAdded = false;
             try
             {
-                if (Validate(newSystemUser))
+                if (await Validate(newSystemUser))
                 {
                     await Task.Run(() =>
                     {
@@ -61,12 +84,15 @@ namespace Capgemini.Inventory.BusinessLayer
         /// Gets all systemUsers from the collection.
         /// </summary>
         /// <returns>Returns list of all systemUsers.</returns>
-        public List<SystemUser> GetAllSystemUsersBL()
+        public async Task<List<SystemUser>> GetAllSystemUsersBL()
         {
             List<SystemUser> systemUsersList = null;
             try
             {
-                systemUsersList = systemUserDAL.GetAllSystemUsersDAL();
+                await Task.Run(() =>
+                {
+                    systemUsersList = systemUserDAL.GetAllSystemUsersDAL();
+                });
             }
             catch (Exception)
             {
@@ -80,12 +106,15 @@ namespace Capgemini.Inventory.BusinessLayer
         /// </summary>
         /// <param name="searchSystemUserID">Represents SystemUserID to search.</param>
         /// <returns>Returns SystemUser object.</returns>
-        public SystemUser GetSystemUserBySystemUserIDBL(Guid searchSystemUserID)
+        public async Task<SystemUser> GetSystemUserBySystemUserIDBL(Guid searchSystemUserID)
         {
             SystemUser matchingSystemUser = null;
             try
             {
-                matchingSystemUser = systemUserDAL.GetSystemUserBySystemUserIDDAL(searchSystemUserID);
+                await Task.Run(() =>
+                {
+                    matchingSystemUser = systemUserDAL.GetSystemUserBySystemUserIDDAL(searchSystemUserID);
+                });
             }
             catch (Exception)
             {
@@ -99,12 +128,15 @@ namespace Capgemini.Inventory.BusinessLayer
         /// </summary>
         /// <param name="systemUserName">Represents SystemUserName to search.</param>
         /// <returns>Returns SystemUser object.</returns>
-        public List<SystemUser> GetSystemUsersByNameBL(string systemUserName)
+        public async Task<List<SystemUser>> GetSystemUsersByNameBL(string systemUserName)
         {
             List<SystemUser> matchingSystemUsers = new List<SystemUser>();
             try
             {
-                matchingSystemUsers = systemUserDAL.GetSystemUsersByNameDAL(systemUserName);
+                await Task.Run(() =>
+                {
+                    matchingSystemUsers = systemUserDAL.GetSystemUsersByNameDAL(systemUserName);
+                });
             }
             catch (Exception)
             {
@@ -114,17 +146,42 @@ namespace Capgemini.Inventory.BusinessLayer
         }
 
         /// <summary>
+        /// Gets systemUser based on Email and Password.
+        /// </summary>
+        /// <param name="email">Represents SystemUser's Email Address.</param>
+        /// <returns>Returns SystemUser object.</returns>
+        public async Task<SystemUser> GetSystemUserByEmailBL(string email)
+        {
+            SystemUser matchingSystemUser = null;
+            try
+            {
+                await Task.Run(() =>
+                {
+                    matchingSystemUser = systemUserDAL.GetSystemUserByEmailDAL(email);
+                });
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return matchingSystemUser;
+        }
+
+        /// <summary>
         /// Gets systemUser based on Password.
         /// </summary>
         /// <param name="email">Represents SystemUser's Email Address.</param>
         /// <param name="password">Represents SystemUser's Password.</param>
         /// <returns>Returns SystemUser object.</returns>
-        public SystemUser GetSystemUserByEmailAndPasswordBL(string email, string password)
+        public async Task<SystemUser> GetSystemUserByEmailAndPasswordBL(string email, string password)
         {
             SystemUser matchingSystemUser = null;
             try
             {
-                matchingSystemUser = systemUserDAL.GetSystemUserByEmailAndPasswordDAL(email, password);
+                await Task.Run(() =>
+                {
+                    matchingSystemUser = systemUserDAL.GetSystemUserByEmailAndPasswordDAL(email, password);
+                });
             }
             catch (Exception)
             {
@@ -138,14 +195,14 @@ namespace Capgemini.Inventory.BusinessLayer
         /// </summary>
         /// <param name="updateSystemUser">Represents SystemUser details including SystemUserID, SystemUserName etc.</param>
         /// <returns>Determinates whether the existing systemUser is updated.</returns>
-        public bool UpdateSystemUserBL(SystemUser updateSystemUser)
+        public async Task<bool> UpdateSystemUserBL(SystemUser updateSystemUser)
         {
             bool systemUserUpdated = false;
             try
             {
-                if (Validate(updateSystemUser) && GetSystemUserBySystemUserIDBL(updateSystemUser.SystemUserID) != null)
+                if ((await Validate(updateSystemUser)) && (await GetSystemUserBySystemUserIDBL(updateSystemUser.SystemUserID)) != null)
                 {
-                    this.systemUserDAL.AddSystemUserDAL(updateSystemUser);
+                    this.systemUserDAL.UpdateSystemUserDAL(updateSystemUser);
                     systemUserUpdated = true;
                     Serialize();
                 }
@@ -162,19 +219,46 @@ namespace Capgemini.Inventory.BusinessLayer
         /// </summary>
         /// <param name="deleteSystemUserID">Represents SystemUserID to delete.</param>
         /// <returns>Determinates whether the existing systemUser is updated.</returns>
-        public bool DeleteSystemUserBL(Guid deleteSystemUserID)
+        public async Task<bool> DeleteSystemUserBL(Guid deleteSystemUserID)
         {
             bool systemUserDeleted = false;
             try
             {
-                systemUserDeleted = systemUserDAL.DeleteSystemUserDAL(deleteSystemUserID);
-                Serialize();
+                await Task.Run(() =>
+                {
+                    systemUserDeleted = systemUserDAL.DeleteSystemUserDAL(deleteSystemUserID);
+                    Serialize();
+                });
             }
             catch (Exception)
             {
                 throw;
             }
             return systemUserDeleted;
+        }
+
+        /// <summary>
+        /// Updates systemUser's password based on SystemUserID.
+        /// </summary>
+        /// <param name="updateSystemUser">Represents SystemUser details including SystemUserID, Password.</param>
+        /// <returns>Determinates whether the existing systemUser's password is updated.</returns>
+        public async Task<bool> UpdateSystemUserPasswordBL(SystemUser updateSystemUser)
+        {
+            bool passwordUpdated = false;
+            try
+            {
+                if ((await Validate(updateSystemUser)) && (await GetSystemUserBySystemUserIDBL(updateSystemUser.SystemUserID)) != null)
+                {
+                    this.systemUserDAL.UpdateSystemUserPasswordDAL(updateSystemUser);
+                    passwordUpdated = true;
+                    Serialize();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return passwordUpdated;
         }
 
         /// <summary>

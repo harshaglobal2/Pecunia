@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminBL.cs" />
     <Compile Include="BLBase.cs" />
     <Compile Include="SupplierBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

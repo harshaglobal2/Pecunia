@@ -20,8 +20,10 @@ namespace Capgemini.Inventory.Contracts.DALContracts
         public abstract List<SystemUser> GetAllSystemUsersDAL();
         public abstract SystemUser GetSystemUserBySystemUserIDDAL(Guid searchSystemUserID);
         public abstract List<SystemUser> GetSystemUsersByNameDAL(string systemUserName);
+        public abstract SystemUser GetSystemUserByEmailDAL(string email);
         public abstract SystemUser GetSystemUserByEmailAndPasswordDAL(string email, string password);
         public abstract bool UpdateSystemUserDAL(SystemUser updateSystemUser);
+        public abstract bool UpdateSystemUserPasswordDAL(SystemUser updateSystemUser);
         public abstract bool DeleteSystemUserDAL(Guid deleteSystemUserID);
 
         /// <summary>

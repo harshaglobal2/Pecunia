@@ -5,15 +5,17 @@ using Capgemini.Inventory.Entities;
 
 namespace Capgemini.Inventory.Contracts.BLContracts
 {
-    public interface ISystemUserBL
+    public interface ISystemUserBL : IDisposable
     {
         Task<bool> AddSystemUserBL(SystemUser newSystemUser);
-        List<SystemUser> GetAllSystemUsersBL();
-        SystemUser GetSystemUserBySystemUserIDBL(Guid searchSystemUserID);
-        List<SystemUser> GetSystemUsersByNameBL(string supplierName);
-        SystemUser GetSystemUserByEmailAndPasswordBL(string email, string password);
-        bool UpdateSystemUserBL(SystemUser updateSystemUser);
-        bool DeleteSystemUserBL(Guid deleteSystemUserID);
+        Task<List<SystemUser>> GetAllSystemUsersBL();
+        Task<SystemUser> GetSystemUserBySystemUserIDBL(Guid searchSystemUserID);
+        Task<List<SystemUser>> GetSystemUsersByNameBL(string supplierName);
+        Task<SystemUser> GetSystemUserByEmailBL(string email);
+        Task<SystemUser> GetSystemUserByEmailAndPasswordBL(string email, string password);
+        Task<bool> UpdateSystemUserBL(SystemUser updateSystemUser);
+        Task<bool> UpdateSystemUserPasswordBL(SystemUser updateSystemUser);
+        Task<bool> DeleteSystemUserBL(Guid deleteSystemUserID);
     }
 }
 

@@ -91,7 +91,29 @@ namespace Capgemini.Inventory.DataAccessLayer
         }
 
         /// <summary>
-        /// Gets supplier based on Password.
+        /// Gets supplier based on email.
+        /// </summary>
+        /// <param name="email">Represents Supplier's Email Address.</param>
+        /// <returns>Returns Supplier object.</returns>
+        public override Supplier GetSupplierByEmailDAL(string email)
+        {
+            Supplier matchingSupplier = null;
+            try
+            {
+                //Find Supplier based on Email and Password
+                matchingSupplier = supplierList.Find(
+                    (item) => { return item.Email.Equals(email); }
+                );
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return matchingSupplier;
+        }
+
+        /// <summary>
+        /// Gets supplier based on Email and Password.
         /// </summary>
         /// <param name="email">Represents Supplier's Email Address.</param>
         /// <param name="password">Represents Supplier's Password.</param>
@@ -103,7 +125,7 @@ namespace Capgemini.Inventory.DataAccessLayer
             {
                 //Find Supplier based on Email and Password
                 matchingSupplier = supplierList.Find(
-                    (item) => { return item.SupplierEmail.Equals(email) && item.SupplierPassword.Equals(password); }
+                    (item) => { return item.Email.Equals(email) && item.Password.Equals(password); }
                 );
             }
             catch (Exception)
@@ -129,7 +151,7 @@ namespace Capgemini.Inventory.DataAccessLayer
                 if (matchingSupplier != null)
                 {
                     //Update supplier details
-                    ReflectionHelpers.CopyProperties(updateSupplier, matchingSupplier, new List<string>() { "SupplierName", "SupplierMobile", "SupplierEmail" });
+                    ReflectionHelpers.CopyProperties(updateSupplier, matchingSupplier, new List<string>() { "SupplierName", "SupplierMobile", "Email" });
                     matchingSupplier.LastModifiedDateTime = DateTime.Now;
 
                     supplierUpdated = true;
@@ -169,6 +191,35 @@ namespace Capgemini.Inventory.DataAccessLayer
                 throw;
             }
             return supplierDeleted;
+        }
+
+        /// <summary>
+        /// Updates supplier's password based on SupplierID.
+        /// </summary>
+        /// <param name="updateSupplier">Represents Supplier details including SupplierID, Password.</param>
+        /// <returns>Determinates whether the existing supplier's password is updated.</returns>
+        public override bool UpdateSupplierPasswordDAL(Supplier updateSupplier)
+        {
+            bool passwordUpdated = false;
+            try
+            {
+                //Find Supplier based on SupplierID
+                Supplier matchingSupplier = GetSupplierBySupplierIDDAL(updateSupplier.SupplierID);
+
+                if (matchingSupplier != null)
+                {
+                    //Update supplier details
+                    ReflectionHelpers.CopyProperties(updateSupplier, matchingSupplier, new List<string>() { "Password" });
+                    matchingSupplier.LastModifiedDateTime = DateTime.Now;
+
+                    passwordUpdated = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return passwordUpdated;
         }
 
         /// <summary>

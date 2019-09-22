@@ -13,48 +13,51 @@ namespace Capgemini.Inventory.BusinessLayer
     public abstract class BLBase<T>
     {
         /// <summary>
-        /// Validations on Supplier before adding or updating.
+        /// Validations on data before adding or updating.
         /// </summary>
-        /// <param name="entityObject">Represents supplier to be validated.</param>
-        /// <returns>Returns a boolean value, that indicates whether the supplier is valid or not.</returns>
-        protected bool Validate(T entityObject)
+        /// <param name="entityObject">Represents object to be validated.</param>
+        /// <returns>Returns a boolean value, that indicates whether the data is valid or not.</returns>
+        protected async virtual Task<bool> Validate(T entityObject)
         {
             //Create string builder
             StringBuilder sb = new StringBuilder();
             bool valid = true;
 
-            //Check the mandatory properties using reflection and attributes
-            Type type = typeof(T);
-            PropertyInfo[] properties = type.GetProperties();
-            foreach (var prop in properties)
+            await Task.Run(() =>
             {
-                var attr = prop.GetCustomAttribute<RequiredAttribute>();
-                if (attr != null)
+                //Check the mandatory properties using reflection and attributes
+                Type type = typeof(T);
+                PropertyInfo[] properties = type.GetProperties();
+                foreach (var prop in properties)
                 {
-                    object currentValue = prop.GetValue(entityObject);
-                    if (string.IsNullOrEmpty(Convert.ToString(currentValue)))
+                    var attr = prop.GetCustomAttribute<RequiredAttribute>();
+                    if (attr != null)
                     {
-                        valid = false;
-                        sb.Append(Environment.NewLine + attr.ErrorMessage);
+                        object currentValue = prop.GetValue(entityObject);
+                        if (string.IsNullOrEmpty(Convert.ToString(currentValue)))
+                        {
+                            valid = false;
+                            sb.Append(Environment.NewLine + attr.ErrorMessage);
+                        }
                     }
                 }
-            }
 
-            //Check the regular expression of properties using reflection and attributes
-            foreach (var prop in properties)
-            {
-                var attr = prop.GetCustomAttribute<RegExpAttribute>();
-                if (attr != null)
+                //Check the regular expression of properties using reflection and attributes
+                foreach (var prop in properties)
                 {
-                    string currentValue = Convert.ToString(prop.GetValue(entityObject));
-                    Regex regex = new Regex(attr.RegularExpressionToCheck);
-                    if (!regex.IsMatch(currentValue))
+                    var attr = prop.GetCustomAttribute<RegExpAttribute>();
+                    if (attr != null)
                     {
-                        valid = false;
-                        sb.Append(Environment.NewLine + attr.ErrorMessage);
+                        string currentValue = Convert.ToString(prop.GetValue(entityObject));
+                        Regex regex = new Regex(attr.RegularExpressionToCheck);
+                        if (!regex.IsMatch(currentValue))
+                        {
+                            valid = false;
+                            sb.Append(Environment.NewLine + attr.ErrorMessage);
+                        }
                     }
                 }
-            }
+            });
 
             if (valid == false)
                 throw new InventoryException(sb.ToString());

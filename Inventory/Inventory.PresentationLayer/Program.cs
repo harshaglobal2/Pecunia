@@ -8,29 +8,49 @@ using Capgemini.Inventory.BusinessLayer;
 using Capgemini.Inventory.Exceptions;
 using Capgemini.Inventory.Helpers;
 using Capgemini.Inventory.Entities;
+using Capgemini.Inventory.Contracts.BLContracts;
 
 namespace Capgemini.Inventory.PresentationLayer
 {
     class Program
     {
+        /// <summary>
+        /// Entry Point
+        /// </summary>
+        /// <param name="args">Command line arguments</param>
+        /// <returns></returns>
         static async Task Main(string[] args)
         {
             try
             {
-                UserType userType = ShowLoginScreen();
-                if (userType == UserType.Admin)
+                int internalChoice = -2;
+                WriteLine("===============INVENTORY MANAGEMENT SYSTEM=========================");
+
+                do
                 {
-                    await AdminUserMenu();
-                }
-                else if (userType == UserType.SystemUser)
-                {
-                }
-                else if (userType == UserType.Supplier)
-                {
-                }
-                else if (userType == UserType.Distributor)
-                {
-                }
+                    //Invoke Login Screen
+                    (UserType userType, IUser currentUser) = await ShowLoginScreen();
+
+                    //Set current user details into CommonData (global data)
+                    CommonData.CurrentUser = currentUser;
+                    CommonData.CurrentUserType = userType;
+
+                    //Invoke User's Menu
+                    if (userType == UserType.Admin)
+                    {
+                        internalChoice = await AdminPresentation.AdminUserMenu();
+                    }
+                    else if (userType == UserType.SystemUser)
+                    {
+                        internalChoice = await SystemUserPresentation.SystemUserMenu();
+                    }
+                    else if (userType == UserType.Supplier)
+                    {
+                    }
+                    else if (userType == UserType.Distributor)
+                    {
+                    }
+                } while (internalChoice != -1);
             }
             catch (Exception ex)
             {
@@ -42,93 +62,45 @@ namespace Capgemini.Inventory.PresentationLayer
             ReadKey();
         }
 
-        static UserType ShowLoginScreen()
+        /// <summary>
+        /// Login (based on Email and Password)
+        /// </summary>
+        /// <returns></returns>
+        static async Task<(UserType, IUser)> ShowLoginScreen()
         {
+            //Read inputs
             string email, password;
-            WriteLine("===============INVENTORY MANAGEMENT SYSTEM=========================");
+            WriteLine("=====LOGIN=========");
             Write("Email: ");
             email = ReadLine();
             Write("Password: ");
             password = ReadLine();
 
-            if (email.Equals("admin@capgemini.com") && password.Equals("manager"))
+            using (IAdminBL adminBL = new AdminBL())
             {
-                return UserType.Admin;
-            }
-            return UserType.Anonymous;
-        }
-
-        static async Task AdminUserMenu()
-        {
-            using (SystemUserBL systemUserBL = new SystemUserBL())
-            {
-                int choice = -1;
-
-                do
+                //Invoke GetAdminByEmailAndPasswordBL for checking email and password of Admin
+                Admin admin = await adminBL.GetAdminByEmailAndPasswordBL(email, password);
+                if (admin != null)
                 {
-                    List<SystemUser> systemUsers = systemUserBL.GetAllSystemUsersBL();
-                    WriteLine("\n***************ADMIN***********\n");
-                    WriteLine("SYSTEM USERS:");
-                    if (systemUsers != null && systemUsers?.Count > 0)
-                    {
-                        WriteLine("Name\tEmail\tCreated\tModified");
-                        foreach (var systemUser in systemUsers)
-                        {
-                            WriteLine($"{systemUser.SystemUserName}\t{systemUser.SystemUserEmail}\t{systemUser.CreationDateTime}\t{systemUser.LastModifiedDateTime}");
-                        }
-                    }
-                    WriteLine("\n1. Add System User");
-                    WriteLine("2. Update System User");
-                    WriteLine("3. Delete System User");
-                    WriteLine("0. Exit");
-                    Write("Choice: ");
-                    bool isValidChoice = int.TryParse(Console.ReadLine(), out choice);
-                    if (isValidChoice)
-                    {
-                        switch (choice)
-                        {
-                            case 1: await AddSystemUser(); break;
-                            //case 2: UpdateSystemUser(); break;
-                            //case 3: DeleteSystemUser(); break;
-                            case 0: break;
-                            default: WriteLine("Invalid Choice"); break;
-                        }
-                    }
-                    else
-                    {
-                        choice = -1;
-                    }
-                } while (choice != 0);
-            }
-        }
-
-        static async Task AddSystemUser()
-        {
-            try
-            {
-                SystemUser systemUser = new SystemUser();
-                Write("Name: ");
-                systemUser.SystemUserName = ReadLine();
-                Write("Email: ");
-                systemUser.SystemUserEmail = ReadLine();
-                Write("Password: ");
-                systemUser.SystemUserPassword = ReadLine();
-                using (SystemUserBL systemUserBL = new SystemUserBL())
-                {
-                    bool isAdded = await systemUserBL.AddSystemUserBL(systemUser);
-                    if (isAdded)
-                    {
-                        WriteLine("System User Added");
-                    }
+                    return (UserType.Admin, admin);
                 }
             }
-            catch (Exception ex)
+
+            using (ISystemUserBL systemUserBL = new SystemUserBL())
             {
-                ExceptionLogger.LogException(ex);
-                WriteLine(ex.Message);
+                //Invoke GetAdminByEmailAndPasswordBL for checking email and password of Admin
+                SystemUser systemUser = await systemUserBL.GetSystemUserByEmailAndPasswordBL(email, password);
+                if (systemUser != null)
+                {
+                    return (UserType.SystemUser, systemUser);
+                }
             }
+
+            WriteLine("Invalid Email or Password. Please try again...");
+            return (UserType.Anonymous, null);
         }
     }
 }
+
 
 

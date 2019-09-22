@@ -91,7 +91,29 @@ namespace Capgemini.Inventory.DataAccessLayer
         }
 
         /// <summary>
-        /// Gets systemUser based on Password.
+        /// Gets systemUser based on email.
+        /// </summary>
+        /// <param name="email">Represents SystemUser's Email Address.</param>
+        /// <returns>Returns SystemUser object.</returns>
+        public override SystemUser GetSystemUserByEmailDAL(string email)
+        {
+            SystemUser matchingSystemUser = null;
+            try
+            {
+                //Find SystemUser based on Email and Password
+                matchingSystemUser = systemUserList.Find(
+                    (item) => { return item.Email.Equals(email); }
+                );
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return matchingSystemUser;
+        }
+
+        /// <summary>
+        /// Gets systemUser based on Email and Password.
         /// </summary>
         /// <param name="email">Represents SystemUser's Email Address.</param>
         /// <param name="password">Represents SystemUser's Password.</param>
@@ -103,7 +125,7 @@ namespace Capgemini.Inventory.DataAccessLayer
             {
                 //Find SystemUser based on Email and Password
                 matchingSystemUser = systemUserList.Find(
-                    (item) => { return item.SystemUserEmail.Equals(email) && item.SystemUserPassword.Equals(password); }
+                    (item) => { return item.Email.Equals(email) && item.Password.Equals(password); }
                 );
             }
             catch (Exception)
@@ -129,7 +151,7 @@ namespace Capgemini.Inventory.DataAccessLayer
                 if (matchingSystemUser != null)
                 {
                     //Update systemUser details
-                    ReflectionHelpers.CopyProperties(updateSystemUser, matchingSystemUser, new List<string>() { "SystemUserName", "SystemUserMobile", "SystemUserEmail" });
+                    ReflectionHelpers.CopyProperties(updateSystemUser, matchingSystemUser, new List<string>() { "SystemUserName", "Email" });
                     matchingSystemUser.LastModifiedDateTime = DateTime.Now;
 
                     systemUserUpdated = true;
@@ -169,6 +191,35 @@ namespace Capgemini.Inventory.DataAccessLayer
                 throw;
             }
             return systemUserDeleted;
+        }
+
+        /// <summary>
+        /// Updates systemUser's password based on SystemUserID.
+        /// </summary>
+        /// <param name="updateSystemUser">Represents SystemUser details including SystemUserID, Password.</param>
+        /// <returns>Determinates whether the existing systemUser's password is updated.</returns>
+        public override bool UpdateSystemUserPasswordDAL(SystemUser updateSystemUser)
+        {
+            bool passwordUpdated = false;
+            try
+            {
+                //Find SystemUser based on SystemUserID
+                SystemUser matchingSystemUser = GetSystemUserBySystemUserIDDAL(updateSystemUser.SystemUserID);
+
+                if (matchingSystemUser != null)
+                {
+                    //Update systemUser details
+                    ReflectionHelpers.CopyProperties(updateSystemUser, matchingSystemUser, new List<string>() { "Password" });
+                    matchingSystemUser.LastModifiedDateTime = DateTime.Now;
+
+                    passwordUpdated = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return passwordUpdated;
         }
 
         /// <summary>

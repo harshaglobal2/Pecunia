@@ -5,15 +5,17 @@ using Capgemini.Inventory.Entities;
 
 namespace Capgemini.Inventory.Contracts.BLContracts
 {
-    public interface ISupplierBL
+    public interface ISupplierBL : IDisposable
     {
-        bool AddSupplierBL(Supplier newSupplier);
-        List<Supplier> GetAllSuppliersBL();
-        Supplier GetSupplierBySupplierIDBL(Guid searchSupplierID);
-        List<Supplier> GetSuppliersByNameBL(string supplierName);
-        Supplier GetSupplierByEmailAndPasswordBL(string email, string password);
-        bool UpdateSupplierBL(Supplier updateSupplier);
-        bool DeleteSupplierBL(Guid deleteSupplierID);
+        Task<bool> AddSupplierBL(Supplier newSupplier);
+        Task<List<Supplier>> GetAllSuppliersBL();
+        Task<Supplier> GetSupplierBySupplierIDBL(Guid searchSupplierID);
+        Task<List<Supplier>> GetSuppliersByNameBL(string supplierName);
+        Task<Supplier> GetSupplierByEmailBL(string email);
+        Task<Supplier> GetSupplierByEmailAndPasswordBL(string email, string password);
+        Task<bool> UpdateSupplierBL(Supplier updateSupplier);
+        Task<bool> UpdateSupplierPasswordBL(Supplier updateSupplier);
+        Task<bool> DeleteSupplierBL(Guid deleteSupplierID);
     }
 }
 

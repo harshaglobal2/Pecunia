@@ -20,8 +20,10 @@ namespace Capgemini.Inventory.Contracts.DALContracts
         public abstract List<Supplier> GetAllSuppliersDAL();
         public abstract Supplier GetSupplierBySupplierIDDAL(Guid searchSupplierID);
         public abstract List<Supplier> GetSuppliersByNameDAL(string supplierName);
+        public abstract Supplier GetSupplierByEmailDAL(string email);
         public abstract Supplier GetSupplierByEmailAndPasswordDAL(string email, string password);
         public abstract bool UpdateSupplierDAL(Supplier updateSupplier);
+        public abstract bool UpdateSupplierPasswordDAL(Supplier updateSupplier);
         public abstract bool DeleteSupplierDAL(Guid deleteSupplierID);
 
         /// <summary>
