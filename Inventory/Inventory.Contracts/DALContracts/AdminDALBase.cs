@@ -63,7 +63,7 @@ namespace Capgemini.Inventory.Contracts.DALContracts
         /// </summary>
         static AdminDALBase()
         {
-            Deserialize();
+            //Deserialize();
         }
     }
 }

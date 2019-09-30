@@ -89,7 +89,7 @@ namespace Capgemini.Inventory.BusinessLayer
                 {
                     this.adminDAL.UpdateAdminDAL(updateAdmin);
                     adminUpdated = true;
-                    Serialize();
+                    //Serialize();
                 }
             }
             catch (Exception)
@@ -113,7 +113,7 @@ namespace Capgemini.Inventory.BusinessLayer
                 {
                     this.adminDAL.UpdateAdminPasswordDAL(updateAdmin);
                     passwordUpdated = true;
-                    Serialize();
+                    //Serialize();
                 }
             }
             catch (Exception)

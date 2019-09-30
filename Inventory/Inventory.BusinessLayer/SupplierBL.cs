@@ -70,11 +70,11 @@ namespace Capgemini.Inventory.BusinessLayer
                     {
                         this.supplierDAL.AddSupplierDAL(newSupplier);
                         supplierAdded = true;
-                        Serialize();
+                        //Serialize();
                     });
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw;
             }
@@ -205,7 +205,7 @@ namespace Capgemini.Inventory.BusinessLayer
                 {
                     this.supplierDAL.UpdateSupplierDAL(updateSupplier);
                     supplierUpdated = true;
-                    Serialize();
+                    //Serialize();
                 }
             }
             catch (Exception)
@@ -228,7 +228,7 @@ namespace Capgemini.Inventory.BusinessLayer
                 await Task.Run(() =>
                 {
                     supplierDeleted = supplierDAL.DeleteSupplierDAL(deleteSupplierID);
-                    Serialize();
+                    //Serialize();
                 });
             }
             catch (Exception)
@@ -252,7 +252,7 @@ namespace Capgemini.Inventory.BusinessLayer
                 {
                     this.supplierDAL.UpdateSupplierPasswordDAL(updateSupplier);
                     passwordUpdated = true;
-                    Serialize();
+                    //Serialize();
                 }
             }
             catch (Exception)

@@ -65,7 +65,7 @@ namespace Capgemini.Inventory.Contracts.DALContracts
         /// </summary>
         static SupplierDALBase()
         {
-            Deserialize();
+            //Deserialize();
         }
     }
 }
