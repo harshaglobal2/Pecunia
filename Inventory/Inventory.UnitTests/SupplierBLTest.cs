@@ -50,7 +50,7 @@ namespace Inventory.UnitTests
             Supplier supplier = new Supplier() { SupplierName = null, SupplierMobile = "9988776655", Password = "Smith123#", Email = "smith@gmail.com" };
             bool isAdded = false;
             string errorMessage = null;
-
+            
             //Act
             try
             {
