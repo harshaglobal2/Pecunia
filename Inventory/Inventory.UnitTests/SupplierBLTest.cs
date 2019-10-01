@@ -5,7 +5,7 @@ using Capgemini.Inventory.BusinessLayer;
 using Capgemini.Inventory.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Inventory.UnitTests
+namespace Capgemini.Inventory.UnitTests
 {
     [TestClass]
     public class AddSupplierBLTest
@@ -21,7 +21,7 @@ namespace Inventory.UnitTests
             Supplier supplier = new Supplier() { SupplierName = "Scott", SupplierMobile = "9876543210", Password = "Scott123#", Email = "scott@gmail.com" };
             bool isAdded = false;
             string errorMessage = null;
-
+            
             //Act
             try
             {

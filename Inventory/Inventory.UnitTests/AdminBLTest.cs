@@ -4,7 +4,7 @@ using Capgemini.Inventory.BusinessLayer;
 using Capgemini.Inventory.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Inventory.UnitTests
+namespace Capgemini.Inventory.UnitTests
 {
     [TestClass]
     public class AdminBLTest
