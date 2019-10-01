@@ -4,3 +4,8 @@ https://www.softwaretestinghelp.com/dot-net-interview-questions/
 MS Unit Tests Reference:
 https://www.automatetheplanet.com/mstest-cheat-sheet/
 
+Activity Diagrams:
+https://www.tutorialspoint.com/uml/uml_activity_diagram.htm
+
+Sequence Diagrams:
+https://www.geeksforgeeks.org/unified-modeling-language-uml-sequence-diagrams/
