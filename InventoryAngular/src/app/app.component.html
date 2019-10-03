@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Inventory Management</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]=" [ '/login' ] " [routerLinkActive]="['active']" *ngIf="!userAccountService.isLoggedIn">Login</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]=" [ '/about' ] " [routerLinkActive]="['active']" *ngIf="!userAccountService.isLoggedIn">About</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]=" [ '/admin', 'home' ] " [routerLinkActive]="['active']" *ngIf="userAccountService.isLoggedIn &&  userAccountService.currentUserType == 'Admin' ">Admin Home</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]=" [ '/admin', 'suppliers' ] " [routerLinkActive]="['active']" *ngIf="userAccountService.isLoggedIn &&  userAccountService.currentUserType == 'Admin' ">Suppliers</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" *ngIf="userAccountService.isLoggedIn &&  userAccountService.currentUserType == 'Admin' ">
+          Admin Menu
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Admin Action 1</a>
+          <a class="dropdown-item" href="#">Admin Action 2</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Admin Action 3</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#" onclick="return false" *ngIf="userAccountService.isLoggedIn" (click)="onLogOutClick()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
+

@@ -1,0 +1,82 @@
+<h4>Suppliers</h4>
+<button class="btn btn-primary" data-toggle="modal" data-target="#newSupplierModal">Create Supplier</button>
+
+<table class="table mt-2">
+  <thead>
+    <tr class="table-secondary">
+      <th>Supplier Name</th>
+      <th>Mobile</th>
+      <th>Email</th>
+      <th>Created on</th>
+      <th>Last Modified on</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let supplier of suppliers">
+      <td style="font-size:120%">{{supplier.supplierName}}</td>
+      <td>{{supplier.supplierMobile}}</td>
+      <td>{{supplier.email}}</td>
+      <td>{{supplier.creationDateTime}}</td>
+      <td>{{supplier.lastModifiedDateTime}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- New Supplier Modal -->
+<form [formGroup]="newSupplierForm">
+  <div class="modal fade" id="newSupplierModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-info text-white">
+          <h5 class="modal-title">Create Supplier</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+
+          <div class="form-group form-row">
+            <label for="supplierName" class="col-form-label col-md-4">Supplier Name:</label>
+            <div class="col-md-8">
+              <input type="text" placeholder="Supplier Name" class="form-control" id="supplierName" formControlName="supplierName" />
+            </div>
+          </div>
+
+          <div class="form-group form-row">
+            <label for="supplierMobile" class="col-form-label col-md-4">Mobile:</label>
+            <div class="col-md-8">
+              <input type="text" placeholder="Mobile" class="form-control" id="supplierMobile" formControlName="supplierMobile" />
+            </div>
+          </div>
+
+          <div class="form-group form-row">
+            <label for="email" class="col-form-label col-md-4">Email:</label>
+            <div class="col-md-8">
+              <input type="text" placeholder="Email" class="form-control" id="email" formControlName="email" />
+            </div>
+          </div>
+
+          <div class="form-group form-row">
+            <label for="password" class="col-form-label col-md-4">Password:</label>
+            <div class="col-md-8">
+              <input type="text" placeholder="Password" class="form-control" id="password" formControlName="password" />
+            </div>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            <span class="fa fa-times-circle"></span> Cancel
+          </button>
+          <button type="button" class="btn btn-success" (click)="onAddSupplier($event)">
+            <span class="fa fa-save"></span> Save
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+

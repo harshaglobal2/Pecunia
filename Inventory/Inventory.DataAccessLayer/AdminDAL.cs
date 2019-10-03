@@ -19,8 +19,6 @@ namespace Capgemini.Inventory.DataAccessLayer
         /// </summary>
         public AdminDAL()
         {
-            Serialize();
-            Deserialize();
         }
 
         /// <summary>

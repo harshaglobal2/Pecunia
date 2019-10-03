@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Inventory.Web")]
+[assembly: AssemblyTitle("Inventory.WebAPI")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Inventory.Web")]
+[assembly: AssemblyProduct("Inventory.WebAPI")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("52c04a9c-7583-4661-b658-b93c0a56d6ea")]
+[assembly: Guid("3d6d5f92-7909-47ae-8632-2dcce9c98798")]
 
 // Version information for an assembly consists of the following four values:
 //

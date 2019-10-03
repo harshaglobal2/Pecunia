@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-lg-6 col-md-9 mx-auto">
+    <form [formGroup]="loginForm">
+      <div class="card mt-2">
+
+        <div class="card-header bg-secondary text-white">
+          <h4>Login</h4>
+        </div>
+
+        <div class="card-body">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" placeholder="Email" autofocus="autofocus" id="email" formControlName="email" />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" placeholder="Password" id="password" formControlName="password" />
+          </div>
+        </div>
+
+        <div class="card-footer text-right">
+          <button class="btn btn-success" (click)="onLoginClick()"><span class="fa fa-sign-in"></span> Login</button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>
+
+
