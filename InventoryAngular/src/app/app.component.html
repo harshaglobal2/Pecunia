@@ -11,15 +11,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" [routerLink]=" [ '/about' ] " [routerLinkActive]="['active']" *ngIf="!userAccountService.isLoggedIn">About</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]=" [ '/admin', 'home' ] " [routerLinkActive]="['active']" *ngIf="userAccountService.isLoggedIn &&  userAccountService.currentUserType == 'Admin' ">Admin Home</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]=" [ '/admin', 'suppliers' ] " [routerLinkActive]="['active']" *ngIf="userAccountService.isLoggedIn &&  userAccountService.currentUserType == 'Admin' ">Suppliers</a>
+        <a class="nav-link" [routerLink]=" [ '/admin', 'home' ] " [routerLinkActive]="['active']" *ngIf="userAccountService.isLoggedIn &&  userAccountService.currentUserType == 'Admin' ">Home</a>
       </li>
 
       <li class="nav-item dropdown">
@@ -27,11 +19,15 @@
           Admin Menu
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Admin Action 1</a>
+          <a class="dropdown-item" [routerLink]=" [ '/admin', 'suppliers' ] " [routerLinkActive]="['active']">Suppliers</a>
           <a class="dropdown-item" href="#">Admin Action 2</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Admin Action 3</a>
         </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]=" [ '/about' ] " [routerLinkActive]="['active']">About</a>
       </li>
 
       <li class="nav-item">

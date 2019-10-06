@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <title>ES 6</title>
+</head>
+
+<body>
+    <h1>ES 6</h1>
+    <div>
+        <form>
+            <label>Name:</label>
+            <input type="text" id="txtCustomerName"><br>
+            <label>Age:</label>
+            <input type="text" id="txtAge"><br>
+            <label>Mobile:</label>
+            <input type="text" id="txtMobile"><br>
+            <button type="button" id="btnNext">Next</button>
+        </form>
+    </div>
+    <script>
+        class Customer {
+            customerName;
+            age;
+            mobile;
+
+            constructor(CustomerName, Age, Mobile) {
+                this.customerName = CustomerName;
+                this.age = Age;
+                this.mobile = Mobile;
+            }
+
+            birthDay() {
+                this.age++;
+            }
+        }
+
+        class PriviligedCustomer extends Customer {
+
+        }
+
+        var c = new PriviligedCustomer("Scott", 20, "9988776655");
+        //console.log(c.customerName);
+        c.birthDay();
+        //console.log(c.age);
+        //console.log(c.mobile);
+        document.getElementById("txtCustomerName").value = c.customerName;
+        document.getElementById("txtAge").value = c.age;
+        document.getElementById("txtMobile").value = c.mobile;
+
+        document.getElementById("btnNext").addEventListener("click", function() {
+            c.birthDay();
+            document.getElementById("txtAge").value = c.age;
+        });
+    </script>
+</body>
+
+</html>

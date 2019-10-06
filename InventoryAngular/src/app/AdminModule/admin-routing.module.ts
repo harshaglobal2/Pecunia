@@ -4,7 +4,6 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { SuppliersComponent } from './suppliers/suppliers.component';
 
 const routes: Routes = [
-  { path: "", redirectTo: "home", pathMatch: "full" },
   { path: "home", component: AdminHomeComponent },
   { path: "suppliers", component: SuppliersComponent },
   { path: "**", redirectTo: '/home', pathMatch: 'full' },

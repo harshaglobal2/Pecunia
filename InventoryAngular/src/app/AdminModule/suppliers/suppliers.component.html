@@ -1,27 +1,143 @@
-<h4>Suppliers</h4>
-<button class="btn btn-primary" data-toggle="modal" data-target="#newSupplierModal">Create Supplier</button>
+<div class="row">
+  <div class="col-md-3 col-lg-2 ml-0 pl-0 pt-0 pr-0 border-right left-menu">
+    <div class="p-2">
+      <h5>
+        Suppliers <span class="badge badge-secondary float-right" *ngIf="suppliers.length > 0">{{suppliers.length}}</span>
+      </h5>
+    </div>
 
-<table class="table mt-2">
-  <thead>
-    <tr class="table-secondary">
-      <th>Supplier Name</th>
-      <th>Mobile</th>
-      <th>Email</th>
-      <th>Created on</th>
-      <th>Last Modified on</th>
-    </tr>
-  </thead>
+    <div class="list-group mb-5">
+      <a class="list-group-item list-group-item-action list-group-item-primary" data-toggle="modal" href="#newSupplierModal" (click)="onCreateSupplierClick()">Create Supplier</a>
+    </div>
 
-  <tbody>
-    <tr *ngFor="let supplier of suppliers">
-      <td style="font-size:120%">{{supplier.supplierName}}</td>
-      <td>{{supplier.supplierMobile}}</td>
-      <td>{{supplier.email}}</td>
-      <td>{{supplier.creationDateTime}}</td>
-      <td>{{supplier.lastModifiedDateTime}}</td>
-    </tr>
-  </tbody>
-</table>
+    <div class="p-2 border-top"><h5>View</h5></div>
+    <div class="px-2">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="viewSupplierName" [(ngModel)]="viewSupplierCheckBoxes.supplierName">
+        <label class="form-check-label" for="viewSupplierName">
+          Supplier Name
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="viewMobile" [(ngModel)]="viewSupplierCheckBoxes.mobile">
+        <label class="form-check-label" for="viewMobile">
+          Mobile
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="viewEmail" [(ngModel)]="viewSupplierCheckBoxes.email">
+        <label class="form-check-label" for="viewEmail">
+          Email
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="viewCreatedOn" [(ngModel)]="viewSupplierCheckBoxes.createdOn">
+        <label class="form-check-label" for="viewCreatedOn">
+          Created On
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="viewLastModifiedOn" [(ngModel)]="viewSupplierCheckBoxes.lastModifiedOn">
+        <label class="form-check-label" for="viewLastModifiedOn">
+          Last Modified On
+        </label>
+      </div>
+
+      <div class="form-group my-2">
+        <button class="btn btn-secondary btn-sm mr-1" (click)="onViewSelectAllClick()">Select All</button>
+        <button class="btn btn-secondary btn-sm" (click)="onViewDeselectAllClick()">Deselect All</button>
+      </div>
+    </div>
+
+
+
+    <div class="p-2 border-top mt-4"><h5>Sort by</h5></div>
+    <div class="px-2">
+      <div class="form-group">
+        <select class="form-control" [(ngModel)]="sortBy">
+          <option value="supplierName">Supplier Name</option>
+          <option value="supplierMobile">Mobile</option>
+          <option value="email">Email</option>
+          <option value="creationDateTime">Created On</option>
+          <option value="lastModifiedDateTime">Last Modified On</option>
+        </select>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="sortAscending" value="ASC" [(ngModel)]="sortDirection">
+        <label class="form-check-label" for="sortAscending">
+          Ascending
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="sortDescending" value="DESC" [(ngModel)]="sortDirection">
+        <label class="form-check-label" for="sortDescending">
+          Descending
+        </label>
+      </div>
+
+      <div class="form-group my-2">
+        <button class="btn btn-secondary btn-sm mr-1 px-3" (click)="onBtnSortClick()">Sort</button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="col-md-9 col-lg-10">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Admin</a></li>
+        <li class="breadcrumb-item active" aria-current="page">
+          Suppliers
+          <i class="fa fa-circle-o-notch  fa-spin" *ngIf="showSuppliersSpinner"></i>
+        </li>
+      </ol>
+    </nav>
+
+    <!--<h4>Suppliers </h4>-->
+    <!--<button class="btn btn-primary" data-toggle="modal" data-target="#newSupplierModal" (click)="onCreateSupplierClick()">Create Supplier</button>-->
+
+    <table class="table mt-2">
+      <thead>
+        <tr class="table-secondary">
+          <th *ngIf="viewSupplierCheckBoxes.supplierName">Supplier Name</th>
+          <th *ngIf="viewSupplierCheckBoxes.mobile">Mobile</th>
+          <th *ngIf="viewSupplierCheckBoxes.email">Email</th>
+          <th *ngIf="viewSupplierCheckBoxes.createdOn">Created on</th>
+          <th *ngIf="viewSupplierCheckBoxes.lastModifiedOn">Last Modified on</th>
+          <th class="text-secondary">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let supplier of suppliers; let index = index">
+          <td style="font-size:120%" *ngIf="viewSupplierCheckBoxes.supplierName">{{supplier.supplierName}}</td>
+          <td *ngIf="viewSupplierCheckBoxes.mobile">{{supplier.supplierMobile}}</td>
+          <td *ngIf="viewSupplierCheckBoxes.email">{{supplier.email}}</td>
+          <td *ngIf="viewSupplierCheckBoxes.createdOn">{{supplier.creationDateTime}}</td>
+          <td *ngIf="viewSupplierCheckBoxes.lastModifiedOn">{{supplier.lastModifiedDateTime}}</td>
+          <td>
+            <div class="btn-group">
+              <button class="btn btn-secondary" data-toggle="modal" data-target="#editSupplierModal" (click)="onEditSupplierClick(index)">Edit</button>
+              <button class="btn btn-danger" data-toggle="modal" data-target="#deleteSupplierModal" (click)="onDeleteSupplierClick(index)">Delete</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+
+
 
 <!-- New Supplier Modal -->
 <form [formGroup]="newSupplierForm">
@@ -30,7 +146,89 @@
       <div class="modal-content">
         <div class="modal-header bg-info text-white">
           <h5 class="modal-title">Create Supplier</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+
+          <div class="form-group form-row">
+            <label for="supplierName" class="col-form-label col-md-4">Supplier Name: *</label>
+            <div class="col-md-8">
+              <input type="text" placeholder="Supplier Name" class="form-control" id="supplierName" formControlName="supplierName" [ngClass]="getFormControlCssClass(newSupplierForm.get('supplierName'), newSupplierForm)" />
+              <small class="form-text text-muted">Name of the supplier | Can't be duplicate.</small>
+
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('supplierName', 'required', newSupplierForm)">{{getFormControlErrorMessage('supplierName', 'required')}}</span>
+
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('supplierName', 'minlength', newSupplierForm)">{{getFormControlErrorMessage('supplierName', 'minlength')}}</span>
+
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('supplierName', 'maxlength', newSupplierForm)">{{getFormControlErrorMessage('supplierName', 'maxlength')}}</span>
+            </div>
+          </div>
+
+          <div class="form-group form-row">
+            <label for="supplierMobile" class="col-form-label col-md-4">Mobile:</label>
+            <div class="col-md-8">
+              <input type="text" placeholder="Mobile" class="form-control" id="supplierMobile" formControlName="supplierMobile" [ngClass]="getFormControlCssClass(newSupplierForm.get('supplierMobile'), newSupplierForm)" />
+              <small class="form-text text-muted">10 digit mobile number of the supplier | Can't be duplicate.</small>
+
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('supplierMobile', 'required', newSupplierForm)">{{getFormControlErrorMessage('supplierMobile', 'required')}}</span>
+
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('supplierMobile', 'pattern', newSupplierForm)">{{getFormControlErrorMessage('supplierMobile', 'pattern')}}</span>
+            </div>
+          </div>
+
+          <div class="form-group form-row">
+            <label for="email" class="col-form-label col-md-4">Email:</label>
+            <div class="col-md-8">
+              <input type="text" placeholder="Email" class="form-control" id="email" formControlName="email" [ngClass]="getFormControlCssClass(newSupplierForm.get('email'), newSupplierForm)" />
+              <small class="form-text text-muted">Email address of the supplier | Can't be duplicate.</small>
+
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('email', 'required', newSupplierForm)">{{getFormControlErrorMessage('email', 'required')}}</span>
+
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('email', 'email', newSupplierForm)">{{getFormControlErrorMessage('email', 'email')}}</span>
+            </div>
+          </div>
+
+          <div class="form-group form-row">
+            <label for="password" class="col-form-label col-md-4">Password:</label>
+            <div class="col-md-8">
+              <input type="password" placeholder="Password" class="form-control" id="password" formControlName="password" [ngClass]="getFormControlCssClass(newSupplierForm.get('password'), newSupplierForm)" />
+              <small class="form-text text-muted">At least one uppercase letter, one lowercase letter and one digit.</small>
+
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('password', 'required', newSupplierForm)">{{getFormControlErrorMessage('password', 'required')}}</span>
+
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('password', 'pattern', newSupplierForm)">{{getFormControlErrorMessage('password', 'pattern')}}</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnAddSupplierCancel">
+            <i class="fa fa-times-circle"></i> Cancel
+          </button>
+          <button type="submit" class="btn btn-success" (click)="onAddSupplierClick($event)" [disabled]="newSupplierDisabled">
+            <span *ngIf="!newSupplierDisabled"><i class="fa fa-save"></i> Save</span>
+            <span *ngIf="newSupplierDisabled"><i class="fa fa-circle-o-notch  fa-spin"></i> Saving</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+
+
+<!-- Edit Supplier Modal -->
+<form [formGroup]="editSupplierForm">
+  <div class="modal fade" id="editSupplierModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-info text-white">
+          <h5 class="modal-title">Update Supplier</h5>
+          <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -40,43 +238,93 @@
           <div class="form-group form-row">
             <label for="supplierName" class="col-form-label col-md-4">Supplier Name:</label>
             <div class="col-md-8">
-              <input type="text" placeholder="Supplier Name" class="form-control" id="supplierName" formControlName="supplierName" />
+              <input type="text" placeholder="Supplier Name" class="form-control" id="supplierName" formControlName="supplierName" [ngClass]="getFormControlCssClass(editSupplierForm.get('supplierName'), editSupplierForm)" />
+
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('supplierName', 'required', editSupplierForm)">{{getFormControlErrorMessage('supplierName', 'required')}}</span>
+
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('supplierName', 'minlength', editSupplierForm)">{{getFormControlErrorMessage('supplierName', 'minlength')}}</span>
+
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('supplierName', 'maxlength', editSupplierForm)">{{getFormControlErrorMessage('supplierName', 'maxlength')}}</span>
             </div>
           </div>
 
           <div class="form-group form-row">
             <label for="supplierMobile" class="col-form-label col-md-4">Mobile:</label>
             <div class="col-md-8">
-              <input type="text" placeholder="Mobile" class="form-control" id="supplierMobile" formControlName="supplierMobile" />
+              <input type="text" placeholder="Mobile" class="form-control" id="supplierMobile" formControlName="supplierMobile" [ngClass]="getFormControlCssClass(editSupplierForm.get('supplierMobile'), editSupplierForm)" />
+
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('supplierMobile', 'required', editSupplierForm)">{{getFormControlErrorMessage('supplierMobile', 'required')}}</span>
+
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('supplierMobile', 'pattern', editSupplierForm)">{{getFormControlErrorMessage('supplierMobile', 'pattern')}}</span>
             </div>
           </div>
 
           <div class="form-group form-row">
             <label for="email" class="col-form-label col-md-4">Email:</label>
             <div class="col-md-8">
-              <input type="text" placeholder="Email" class="form-control" id="email" formControlName="email" />
-            </div>
-          </div>
+              <input type="text" placeholder="Email" class="form-control" id="email" formControlName="email" [ngClass]="getFormControlCssClass(editSupplierForm.get('email'), editSupplierForm)" />
 
-          <div class="form-group form-row">
-            <label for="password" class="col-form-label col-md-4">Password:</label>
-            <div class="col-md-8">
-              <input type="text" placeholder="Password" class="form-control" id="password" formControlName="password" />
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('email', 'required', editSupplierForm)">{{getFormControlErrorMessage('email', 'required')}}</span>
+
+              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('email', 'email', editSupplierForm)">{{getFormControlErrorMessage('email', 'email')}}</span>
             </div>
           </div>
 
         </div>
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">
-            <span class="fa fa-times-circle"></span> Cancel
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnUpdateSupplierCancel">
+            <i class="fa fa-times-circle"></i> Cancel
           </button>
-          <button type="button" class="btn btn-success" (click)="onAddSupplier($event)">
-            <span class="fa fa-save"></span> Save
+          <button type="submit" class="btn btn-success" (click)="onUpdateSupplierClick($event)" [disabled]="editSupplierDisabled">
+            <span *ngIf="!editSupplierDisabled"><i class="fa fa-save"></i> Save</span>
+            <span *ngIf="editSupplierDisabled"><i class="fa fa-circle-o-notch  fa-spin"></i> Saving</span>
           </button>
         </div>
       </div>
     </div>
   </div>
 </form>
+
+
+
+
+<!-- Delete Supplier Modal -->
+<form [formGroup]="deleteSupplierForm">
+  <div class="modal fade" id="deleteSupplierModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-info text-white">
+          <h5 class="modal-title">Delete Supplier</h5>
+          <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <h5 class="mb-4">Are you sure to delete this Supplier?</h5>
+
+          <div class="form-group form-row">
+            <label for="supplierName" class="col-form-label col-md-4">Supplier Name:</label>
+            <div class="col-md-8">
+              <input type="text" placeholder="Supplier Name" readonly="readonly" class="form-control-plaintext" id="supplierName" formControlName="supplierName" />
+            </div>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnDeleteSupplierCancel">
+            <i class="fa fa-times-circle"></i> Cancel
+          </button>
+          <button type="submit" class="btn btn-danger" (click)="onDeleteSupplierConfirmClick($event)" [disabled]="deleteSupplierDisabled">
+            <span *ngIf="!deleteSupplierDisabled"><i class="fa fa-save"></i> Delete</span>
+            <span *ngIf="deleteSupplierDisabled"><i class="fa fa-circle-o-notch  fa-spin"></i> Deleting</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
 

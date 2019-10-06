@@ -1,5 +1,6 @@
 export class Supplier
 {
+  id: number;
   supplierID: string;
   supplierName: string;
   supplierMobile: string;
@@ -8,8 +9,9 @@ export class Supplier
   creationDateTime: string;
   lastModifiedDateTime: string;
 
-  constructor(SupplierID: string, SupplierName: string, SupplierMobile: string, Email: string, Password: string, CreationDateTime: string, LastModifiedDateTime: string)
+  constructor(ID: number, SupplierID: string, SupplierName: string, SupplierMobile: string, Email: string, Password: string, CreationDateTime: string, LastModifiedDateTime: string)
   {
+    this.id = ID;
     this.supplierID = SupplierID;
     this.supplierName = SupplierName;
     this.supplierMobile = SupplierMobile;

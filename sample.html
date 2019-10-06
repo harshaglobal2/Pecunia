@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<title>JS</title>
+		<meta charset="utf-8">
+		<style>
+			h1
+			{
+				color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Heading 1</h1>
+
+
+		<script>
+			//Prototype based objects / Prototype based OOP
+			var student1 = {
+				studentName: "John",
+				mobile: "9988776655",
+				marks: 70,
+				getResult: function()
+				{
+					if (this.marks >= 35)
+					{
+						return "Pass";
+					}
+					else
+					{
+						return "Fail";
+					}
+				}
+			};
+
+			var student2 = {
+				name: "John",
+				marks: 70
+			};
+			student1.marks = 90;
+			//console.log(student1.getResult());
+
+			//console.log(student2.email);
+			student2.email = "sdklfj@gmail.com";
+
+			//localStorage.student2 = JSON.stringify(student2);
+			//console.log(Object.keys(student2));
+			
+			var a = [ 10, 20, 30 ];
+			console.log( a [1] );
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
