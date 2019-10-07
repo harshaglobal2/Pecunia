@@ -1,0 +1,19 @@
+Angular 8
+	- NodeJS install
+	- Cmd
+		- npm install @angular/cli -g
+		- cd c:\angular8
+		- ng new appname --style=scss --routing
+		- cd c:\angular8\appname
+		- ng serve --open
+
+
+Bootstrap 4:
+	- Cmd
+			- cd c:\angular8\appname
+			- npm install jquery --save
+			- npm install popper.js --save
+			- npm install bootstrap --save
+			- npm install font-awesome --save
+
+

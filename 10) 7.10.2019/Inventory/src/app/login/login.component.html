@@ -1,0 +1,37 @@
+<form [formGroup]="loginForm">
+  <div class="row">
+    <div class="col-lg-6 col-sm-12 col-md-9 mx-auto">
+
+      <div class="card">
+
+        <div class="card-header bg-secondary text-white">
+          <h5>Login</h5>
+        </div>
+
+        <div class="card-body">
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" id="email" placeholder="Email" formControlName="email" />
+            <small class="text-muted">Use registered email address.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" placeholder="Password" id="password" formControlName="password" />
+            <small class="text-muted">Password used for user account.</small>
+          </div>
+
+        </div>
+
+        <div class="card-footer text-right">
+          <button type="button" class="btn btn-primary btn-lg" (click)="onLoginClick()">Login</button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</form>
+
