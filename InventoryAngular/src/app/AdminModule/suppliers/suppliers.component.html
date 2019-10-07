@@ -239,6 +239,7 @@
             <label for="supplierName" class="col-form-label col-md-4">Supplier Name:</label>
             <div class="col-md-8">
               <input type="text" placeholder="Supplier Name" class="form-control" id="supplierName" formControlName="supplierName" [ngClass]="getFormControlCssClass(editSupplierForm.get('supplierName'), editSupplierForm)" />
+              <small class="form-text text-muted">Name of the supplier | Can't be duplicate.</small>
 
               <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('supplierName', 'required', editSupplierForm)">{{getFormControlErrorMessage('supplierName', 'required')}}</span>
 
@@ -252,6 +253,7 @@
             <label for="supplierMobile" class="col-form-label col-md-4">Mobile:</label>
             <div class="col-md-8">
               <input type="text" placeholder="Mobile" class="form-control" id="supplierMobile" formControlName="supplierMobile" [ngClass]="getFormControlCssClass(editSupplierForm.get('supplierMobile'), editSupplierForm)" />
+              <small class="form-text text-muted">10 digit mobile number of the supplier | Can't be duplicate.</small>
 
               <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('supplierMobile', 'required', editSupplierForm)">{{getFormControlErrorMessage('supplierMobile', 'required')}}</span>
 
@@ -263,6 +265,7 @@
             <label for="email" class="col-form-label col-md-4">Email:</label>
             <div class="col-md-8">
               <input type="text" placeholder="Email" class="form-control" id="email" formControlName="email" [ngClass]="getFormControlCssClass(editSupplierForm.get('email'), editSupplierForm)" />
+              <small class="form-text text-muted">Email address of the supplier | Can't be duplicate.</small>
 
               <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('email', 'required', editSupplierForm)">{{getFormControlErrorMessage('email', 'required')}}</span>
 

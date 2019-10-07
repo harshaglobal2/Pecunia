@@ -17,3 +17,14 @@ Bootstrap 4:
 			- npm install font-awesome --save
 
 
+
+-------------------------
+
+.NET 4.6
+C# 7
+Angular 8
+Bootstrap 4
+HTML 5
+CSS 3
+jQuery 3
+JavaScript 5 / EcmaScript 6 (ES 6)

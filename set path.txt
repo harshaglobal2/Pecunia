@@ -1,0 +1,2 @@
+set PATH=%PATH%;c:\Users\YourUsername\AppData\Roaming\npm
+set PATH=%PATH%;c:\Users\YourUsername\AppData\Roaming\npm\node_modules\@angular\cli\bin
