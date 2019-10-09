@@ -1,7 +1,7 @@
-export class OrderDetal
+export class OrderDetail
 {
   id: number;
-  orderDetaiID: string;
+  orderDetailID: string;
   orderID: string;
   rawMaterialID: string;
   quantity: number;
@@ -13,7 +13,7 @@ export class OrderDetal
   constructor(ID: number, OrderDetailID: string, OrderID: string, RawMaterialID: string, Quantity: number, UnitPrice: number, TotalAmount: number, CreationDateTime: string, LastModifiedDateTime: string)
   {
     this.id = ID;
-    this.orderDetaiID = OrderDetailID;
+    this.orderDetailID = OrderDetailID;
     this.orderID = OrderID;
     this.rawMaterialID = RawMaterialID;
     this.quantity = Quantity;

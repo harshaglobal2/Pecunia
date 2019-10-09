@@ -10,7 +10,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AboutComponent } from './Components/about/about.component';
 import { LoginComponent } from './Components/login/login.component';
 import { AdminModule } from './AdminModule/admin.module';
-import { InventoryDataService } from './InMemoryWebAPIServices/suppliers-data.service';
+import { InventoryDataService } from './InMemoryWebAPIServices/inventory-data.service';
 
 @NgModule({
   declarations: [

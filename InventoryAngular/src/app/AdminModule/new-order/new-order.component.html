@@ -1,0 +1,56 @@
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Admin</a></li>
+    <li class="breadcrumb-item active" aria-current="page">
+      New Order
+      <i class="fa fa-circle-o-notch  fa-spin" *ngIf="showOrderSpinner"></i>
+    </li>
+  </ol>
+</nav>
+
+<form [formGroup]="newOrderForm">
+  <button type="submit" class="btn btn-success" (click)="onAddOrderClick($event)" [disabled]="newOrderDisabled">
+    <span *ngIf="!newOrderDisabled"><i class="fa fa-save"></i> Save</span>
+    <span *ngIf="newOrderDisabled"><i class="fa fa-circle-o-notch  fa-spin"></i> Saving</span>
+  </button>
+
+  <table class="table mt-2">
+    <thead>
+      <tr class="table-secondary">
+        <th>Raw Material Code</th>
+        <th>Raw Material Name</th>
+        <th>Unit Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        <th class="text-secondary">Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let orderDetail of newOrderForm.get('orderDetails').controls; let index = index" formArrayName="orderDetails">
+        <td [formGroupName]="index">
+          <select class="form-control" [ngClass]="{ 'is-invalid': orderDetail.get('rawMaterialID').invalid && (orderDetail.get('rawMaterialID').dirty || orderDetail.get('rawMaterialID').touched || newOrderForm['submitted']) }" formControlName="rawMaterialID">
+            <option value="">Please Select</option>
+            <option *ngFor="let rawMaterial of rawMaterials" [value]="rawMaterial.rawMaterialID">
+              {{rawMaterial.rawMaterialCode}}
+            </option>
+          </select>
+        </td>
+        <td [formGroupName]="index">{{orderDetail.get('rawMaterialName').value}}</td>
+        <td [formGroupName]="index">{{orderDetail.get('unitPrice').value}}</td>
+        <td [formGroupName]="index"><input type="number" placeholder="Quantity" class="form-control" id="quantity" formControlName="quantity" min="0" max="1000000" /></td>
+        <td [formGroupName]="index">{{orderDetail.get('totalAmount').value}}</td>
+        <td>
+          <div class="btn-group">
+            <button class="btn btn-sm btn-danger">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+
+
+
+
