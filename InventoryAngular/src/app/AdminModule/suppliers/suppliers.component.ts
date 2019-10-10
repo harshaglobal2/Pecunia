@@ -277,7 +277,6 @@ export class SuppliersComponent extends InventoryComponentBase implements OnInit
   
   onBtnSortClick()
   {
-    console.log(this.sortBy);
     this.suppliers.sort((a, b) =>
     {
       let comparison = 0;
@@ -294,8 +293,7 @@ export class SuppliersComponent extends InventoryComponentBase implements OnInit
       }
       if (this.sortDirection == "DESC")
         comparison = comparison * -1;
-
-      console.log(value1, value2, comparison);
+      
       return comparison;
     });
 

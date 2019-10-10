@@ -1,0 +1,39 @@
+Creating a component:
+
+	1. Create a component folder:
+			app\AdminModule
+				- suppliers
+						- suppliers.component.ts
+						- suppliers.component.html
+						- suppliers.component.scss
+
+	2. Add component to AdminModule:
+			app\AdminModule
+				- admin.module.ts
+							declarations: [ SuppliersComponent ],
+							exports: [ SuppliersComponent ]
+
+							export class  AdminModule
+							{
+							}
+
+	3. Add component's route in AdminRoute file:
+			app\AdminModule
+					- admin.routing.ts
+							
+							{ path: "suppliers", component: SuppliersComponent }
+
+
+	4. Add routerLink in app.component.html:
+			<li class="nav-item">
+				<a class="nav-link" [routerLink]="[ '/admin', 'suppliers' ]" *ngIf="userAccountsService.isLoggedIn" [routerLinkActive]="['active']">Suppliers</a>
+			</li>
+
+
+
+Adding an entity:
+	1. Add model calss:			Models\Supplier.ts
+	2. Add Fake backend:		inventory-data.service.ts
+	3. Add service class:		Services\suppliers.service.ts
+
+
