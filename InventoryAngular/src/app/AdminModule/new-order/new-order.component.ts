@@ -4,12 +4,11 @@ import { SuppliersService } from '../../Services/suppliers.service';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import * as $ from "jquery";
 import { InventoryComponentBase } from '../../inventory-component';
-import { OrderDetail } from 'src/app/Models/order-detail';
-import { RawMaterial } from 'src/app/Models/raw-material';
-import { Order } from 'src/app/Models/order';
-import { RawMaterialsService } from 'src/app/Services/raw-materials.service';
-import { OrderDetailsService } from 'src/app/Services/order-details.service';
-import { OrdersService } from 'src/app/Services/orders.service';
+import { RawMaterial } from '../../Models/raw-material';
+import { Order } from '../../Models/order';
+import { RawMaterialsService } from '../../Services/raw-materials.service';
+import { OrderDetailsService } from '../../Services/order-details.service';
+import { OrdersService } from '../../Services/orders.service';
 
 @Component({
   selector: 'app-suppliers',
@@ -42,7 +41,7 @@ export class NewOrderComponent extends InventoryComponentBase implements OnInit
           rawMaterialCode: new FormControl(null, [ Validators.required ]),
           rawMaterialName: new FormControl(null),
           rawMaterialID: new FormControl("", [Validators.required]),
-          unitPrice: new FormControl(null),
+          unitPrice: new FormControl(100),
           quantity: new FormControl(1, [Validators.required, Validators.pattern(/^[0-9]*$/) ]),
           totalAmount: new FormControl(null)
         })
@@ -69,6 +68,58 @@ export class NewOrderComponent extends InventoryComponentBase implements OnInit
       {
         console.log(error);
       });
+  }
+
+  onBtnAddRawMaterialClick()
+  {
+    (this.newOrderForm.get('orderDetails') as FormArray).push(new FormGroup({
+      orderID: new FormControl(null),
+      rawMaterialCode: new FormControl(null, [Validators.required]),
+      rawMaterialName: new FormControl(null),
+      rawMaterialID: new FormControl("", [Validators.required]),
+      unitPrice: new FormControl(100),
+      quantity: new FormControl(1, [Validators.required, Validators.pattern(/^[0-9]*$/)]),
+      totalAmount: new FormControl(null)
+    }));
+  }
+
+  onQuantityChange(index: number)
+  {
+    var currentFormGroup: FormGroup = (this.newOrderForm.get('orderDetails') as FormArray).at(index) as FormGroup;
+    var quantity = Number(currentFormGroup.get('quantity').value);
+    var unitPrice = Number(currentFormGroup.get('unitPrice').value);
+
+    currentFormGroup.patchValue({
+      totalAmount: quantity * unitPrice
+    });
+  }
+
+  onRawMaterialDropDownChange(index: number)
+  {
+    var currentFormGroup: FormGroup = (this.newOrderForm.get('orderDetails') as FormArray).at(index) as FormGroup;
+    var currentRawMaterialID = currentFormGroup.get('rawMaterialID').value;
+    this.rawMaterialsService.GetRawMaterialByRawMaterialID(currentRawMaterialID).subscribe((response : any) => {
+      if (response.length > 0)
+      {
+        currentFormGroup.patchValue({
+          rawMaterialName: response[0].rawMaterialName,
+          unitPrice: response[0].unitPrice
+        });
+      }
+    },
+      (error) =>
+      {
+        console.log(error);
+      });
+  }
+
+
+  onRawMaterialDeleteClick(index: number)
+  {
+    if (confirm("Are you sure to delete?"))
+    {
+      (this.newOrderForm.get('orderDetails') as FormArray).removeAt(index);
+    }
   }
 
 

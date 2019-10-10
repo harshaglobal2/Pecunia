@@ -38,12 +38,12 @@ export class RawMaterialsService
 
   GetRawMaterialByRawMaterialID(RawMaterialID: number): Observable<RawMaterial>
   {
-    return this.httpClient.get<RawMaterial>(`/api/rawmaterials?rawmaterialID=${RawMaterialID}`);
+    return this.httpClient.get<RawMaterial>(`/api/rawmaterials?rawMaterialID=${RawMaterialID}`);
   }
 
   GetRawMaterialsByRawMaterialName(RawMaterialName: string): Observable<RawMaterial[]>
   {
-    return this.httpClient.get<RawMaterial[]>(`/api/rawmaterials?rawmaterialName=${RawMaterialName}`);
+    return this.httpClient.get<RawMaterial[]>(`/api/rawmaterials?rawMaterialName=${RawMaterialName}`);
   }
 
   uuidv4()

@@ -159,11 +159,11 @@
               <input type="text" placeholder="Supplier Name" class="form-control" id="supplierName" formControlName="supplierName" [ngClass]="getFormControlCssClass(newSupplierForm.get('supplierName'), newSupplierForm)" />
               <small class="form-text text-muted">Name of the supplier | Can't be duplicate.</small>
 
-              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('supplierName', 'required', newSupplierForm)">{{getFormControlErrorMessage('supplierName', 'required')}}</span>
+              <span class="text-danger" *ngIf="newSupplierForm.get('supplierName').invalid && newSupplierForm.get('supplierName').errors.required && (newSupplierForm.get('supplierName').touched || newSupplierForm.get('supplierName').dirty || newSupplierForm.submitted)">Supplier Name can't be blank</span>
 
-              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('supplierName', 'minlength', newSupplierForm)">{{getFormControlErrorMessage('supplierName', 'minlength')}}</span>
+              <span class="text-danger" *ngIf="newSupplierForm.get('supplierName').invalid && newSupplierForm.get('supplierName').errors.minlength && (newSupplierForm.get('supplierName').touched || newSupplierForm.get('supplierName').dirty || newSupplierForm.submitted)">Supplier Name can't be less than 2 characters</span>
 
-              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('supplierName', 'maxlength', newSupplierForm)">{{getFormControlErrorMessage('supplierName', 'maxlength')}}</span>
+              <span class="text-danger" *ngIf="newSupplierForm.get('supplierName').invalid && newSupplierForm.get('supplierName').errors.minlength && (newSupplierForm.get('supplierName').touched || newSupplierForm.get('supplierName').dirty || newSupplierForm.submitted)">Supplier Name can't be more than 40 characters</span>
             </div>
           </div>
 
