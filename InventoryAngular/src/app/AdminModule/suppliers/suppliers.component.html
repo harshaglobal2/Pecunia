@@ -156,50 +156,59 @@
           <div class="form-group form-row">
             <label for="supplierName" class="col-form-label col-md-4">Supplier Name: *</label>
             <div class="col-md-8">
-              <input type="text" placeholder="Supplier Name" class="form-control" id="supplierName" formControlName="supplierName" [ngClass]="getFormControlCssClass(newSupplierForm.get('supplierName'), newSupplierForm)" />
+              <input type="text" placeholder="Supplier Name" class="form-control" id="supplierName" formControlName="supplierName" [ngClass]="{
+                     'is-valid': newSupplierForm.get('supplierName').valid && (newSupplierForm.get('supplierName').touched || newSupplierForm.submitted),
+                     'is-invalid': newSupplierForm.get('supplierName').invalid && (newSupplierForm.get('supplierName').touched || newSupplierForm.submitted) }" />
+
               <small class="form-text text-muted">Name of the supplier | Can't be duplicate.</small>
 
               <span class="text-danger" *ngIf="newSupplierForm.get('supplierName').invalid && newSupplierForm.get('supplierName').errors.required && (newSupplierForm.get('supplierName').touched || newSupplierForm.get('supplierName').dirty || newSupplierForm.submitted)">Supplier Name can't be blank</span>
 
               <span class="text-danger" *ngIf="newSupplierForm.get('supplierName').invalid && newSupplierForm.get('supplierName').errors.minlength && (newSupplierForm.get('supplierName').touched || newSupplierForm.get('supplierName').dirty || newSupplierForm.submitted)">Supplier Name can't be less than 2 characters</span>
 
-              <span class="text-danger" *ngIf="newSupplierForm.get('supplierName').invalid && newSupplierForm.get('supplierName').errors.minlength && (newSupplierForm.get('supplierName').touched || newSupplierForm.get('supplierName').dirty || newSupplierForm.submitted)">Supplier Name can't be more than 40 characters</span>
+              <span class="text-danger" *ngIf="newSupplierForm.get('supplierName').invalid && newSupplierForm.get('supplierName').errors.maxlength && (newSupplierForm.get('supplierName').touched || newSupplierForm.get('supplierName').dirty || newSupplierForm.submitted)">Supplier Name can't be more than 40 characters</span>
             </div>
           </div>
 
           <div class="form-group form-row">
             <label for="supplierMobile" class="col-form-label col-md-4">Mobile:</label>
             <div class="col-md-8">
-              <input type="text" placeholder="Mobile" class="form-control" id="supplierMobile" formControlName="supplierMobile" [ngClass]="getFormControlCssClass(newSupplierForm.get('supplierMobile'), newSupplierForm)" />
+              <input type="text" placeholder="Mobile" class="form-control" id="supplierMobile" formControlName="supplierMobile" [ngClass]="{
+                     'is-valid': newSupplierForm.get('supplierMobile').valid && (newSupplierForm.get('supplierMobile').touched || newSupplierForm.submitted),
+                     'is-invalid': newSupplierForm.get('supplierMobile').invalid && (newSupplierForm.get('supplierMobile').touched || newSupplierForm.submitted) }" />
               <small class="form-text text-muted">10 digit mobile number of the supplier | Can't be duplicate.</small>
 
-              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('supplierMobile', 'required', newSupplierForm)">{{getFormControlErrorMessage('supplierMobile', 'required')}}</span>
+              <span class="text-danger" *ngIf="newSupplierForm.get('supplierMobile').invalid && newSupplierForm.get('supplierMobile').errors.required && (newSupplierForm.get('supplierMobile').touched || newSupplierForm.get('supplierMobile').dirty || newSupplierForm.submitted)">Mobile number can't be blank</span>
 
-              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('supplierMobile', 'pattern', newSupplierForm)">{{getFormControlErrorMessage('supplierMobile', 'pattern')}}</span>
+              <span class="text-danger" *ngIf="newSupplierForm.get('supplierMobile').invalid && newSupplierForm.get('supplierMobile').errors.pattern && (newSupplierForm.get('supplierMobile').touched || newSupplierForm.get('supplierMobile').dirty || newSupplierForm.submitted)">Please enter 10 digit mobile number</span>
             </div>
           </div>
 
           <div class="form-group form-row">
             <label for="email" class="col-form-label col-md-4">Email:</label>
             <div class="col-md-8">
-              <input type="text" placeholder="Email" class="form-control" id="email" formControlName="email" [ngClass]="getFormControlCssClass(newSupplierForm.get('email'), newSupplierForm)" />
+              <input type="text" placeholder="Email" class="form-control" id="email" formControlName="email" [ngClass]="{
+                     'is-valid': newSupplierForm.get('email').valid && (newSupplierForm.get('email').touched || newSupplierForm.submitted),
+                     'is-invalid': newSupplierForm.get('email').invalid && (newSupplierForm.get('email').touched || newSupplierForm.submitted) }" />
               <small class="form-text text-muted">Email address of the supplier | Can't be duplicate.</small>
 
-              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('email', 'required', newSupplierForm)">{{getFormControlErrorMessage('email', 'required')}}</span>
+              <span class="text-danger" *ngIf="newSupplierForm.get('email').invalid && newSupplierForm.get('email').errors.required && (newSupplierForm.get('email').touched || newSupplierForm.get('email').dirty || newSupplierForm.submitted)">Email can't be blank</span>
 
-              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('email', 'email', newSupplierForm)">{{getFormControlErrorMessage('email', 'email')}}</span>
+              <span class="text-danger" *ngIf="newSupplierForm.get('email').invalid && newSupplierForm.get('email').errors.email && (newSupplierForm.get('email').touched || newSupplierForm.get('email').dirty || newSupplierForm.submitted)">Email is invalid</span>
             </div>
           </div>
 
           <div class="form-group form-row">
             <label for="password" class="col-form-label col-md-4">Password:</label>
             <div class="col-md-8">
-              <input type="password" placeholder="Password" class="form-control" id="password" formControlName="password" [ngClass]="getFormControlCssClass(newSupplierForm.get('password'), newSupplierForm)" />
+              <input type="password" placeholder="Password" class="form-control" id="password" formControlName="password" [ngClass]="{
+                     'is-valid': newSupplierForm.get('password').valid && (newSupplierForm.get('password').touched || newSupplierForm.submitted),
+                     'is-invalid': newSupplierForm.get('password').invalid && (newSupplierForm.get('password').touched || newSupplierForm.submitted) }" />
               <small class="form-text text-muted">At least one uppercase letter, one lowercase letter and one digit.</small>
 
-              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('password', 'required', newSupplierForm)">{{getFormControlErrorMessage('password', 'required')}}</span>
+              <span class="text-danger" *ngIf="newSupplierForm.get('password').invalid && newSupplierForm.get('password').errors.required && (newSupplierForm.get('password').touched || newSupplierForm.get('password').dirty || newSupplierForm.submitted)">Password can't be blank</span>
 
-              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('password', 'pattern', newSupplierForm)">{{getFormControlErrorMessage('password', 'pattern')}}</span>
+              <span class="text-danger" *ngIf="newSupplierForm.get('password').invalid && newSupplierForm.get('password').errors.pattern && (newSupplierForm.get('password').touched || newSupplierForm.get('password').dirty || newSupplierForm.submitted)">Password should contain should be between 6 to 15 characters long, with at least one uppercase letter, one lowercase letter and one digit</span>
             </div>
           </div>
 
@@ -238,38 +247,44 @@
           <div class="form-group form-row">
             <label for="supplierName" class="col-form-label col-md-4">Supplier Name:</label>
             <div class="col-md-8">
-              <input type="text" placeholder="Supplier Name" class="form-control" id="supplierName" formControlName="supplierName" [ngClass]="getFormControlCssClass(editSupplierForm.get('supplierName'), editSupplierForm)" />
+              <input type="text" placeholder="Supplier Name" class="form-control" id="supplierName" formControlName="supplierName" [ngClass]="{
+                     'is-valid': editSupplierForm.get('supplierName').valid && (editSupplierForm.get('supplierName').touched || editSupplierForm.submitted),
+                     'is-invalid': editSupplierForm.get('supplierName').invalid && (editSupplierForm.get('supplierName').touched || editSupplierForm.submitted) }" />
               <small class="form-text text-muted">Name of the supplier | Can't be duplicate.</small>
 
-              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('supplierName', 'required', editSupplierForm)">{{getFormControlErrorMessage('supplierName', 'required')}}</span>
+              <span class="text-danger" *ngIf="editSupplierForm.get('supplierName').invalid && editSupplierForm.get('supplierName').errors.required && (editSupplierForm.get('supplierName').touched || editSupplierForm.get('supplierName').dirty || editSupplierForm.submitted)">Supplier Name can't be blank</span>
 
-              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('supplierName', 'minlength', editSupplierForm)">{{getFormControlErrorMessage('supplierName', 'minlength')}}</span>
+              <span class="text-danger" *ngIf="editSupplierForm.get('supplierName').invalid && editSupplierForm.get('supplierName').errors.minlength && (editSupplierForm.get('supplierName').touched || editSupplierForm.get('supplierName').dirty || editSupplierForm.submitted)">Supplier Name can't be less than 2 characters</span>
 
-              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('supplierName', 'maxlength', editSupplierForm)">{{getFormControlErrorMessage('supplierName', 'maxlength')}}</span>
+              <span class="text-danger" *ngIf="editSupplierForm.get('supplierName').invalid && editSupplierForm.get('supplierName').errors.maxlength && (editSupplierForm.get('supplierName').touched || editSupplierForm.get('supplierName').dirty || editSupplierForm.submitted)">Supplier Name can't be more than 40 characters</span>
             </div>
           </div>
 
           <div class="form-group form-row">
             <label for="supplierMobile" class="col-form-label col-md-4">Mobile:</label>
             <div class="col-md-8">
-              <input type="text" placeholder="Mobile" class="form-control" id="supplierMobile" formControlName="supplierMobile" [ngClass]="getFormControlCssClass(editSupplierForm.get('supplierMobile'), editSupplierForm)" />
+              <input type="text" placeholder="Mobile" class="form-control" id="supplierMobile" formControlName="supplierMobile" [ngClass]="{
+                     'is-valid': editSupplierForm.get('supplierMobile').valid && (editSupplierForm.get('supplierMobile').touched || editSupplierForm.submitted),
+                     'is-invalid': editSupplierForm.get('supplierMobile').invalid && (editSupplierForm.get('supplierMobile').touched || editSupplierForm.submitted) }" />
               <small class="form-text text-muted">10 digit mobile number of the supplier | Can't be duplicate.</small>
 
-              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('supplierMobile', 'required', editSupplierForm)">{{getFormControlErrorMessage('supplierMobile', 'required')}}</span>
+              <span class="text-danger" *ngIf="editSupplierForm.get('supplierMobile').invalid && editSupplierForm.get('supplierMobile').errors.required && (editSupplierForm.get('supplierMobile').touched || editSupplierForm.get('supplierMobile').dirty || editSupplierForm.submitted)">Mobile number can't be blank</span>
 
-              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('supplierMobile', 'pattern', editSupplierForm)">{{getFormControlErrorMessage('supplierMobile', 'pattern')}}</span>
+              <span class="text-danger" *ngIf="editSupplierForm.get('supplierMobile').invalid && editSupplierForm.get('supplierMobile').errors.pattern && (editSupplierForm.get('supplierMobile').touched || editSupplierForm.get('supplierMobile').dirty || editSupplierForm.submitted)">Please enter 10 digit mobile number</span>
             </div>
           </div>
 
           <div class="form-group form-row">
             <label for="email" class="col-form-label col-md-4">Email:</label>
             <div class="col-md-8">
-              <input type="text" placeholder="Email" class="form-control" id="email" formControlName="email" [ngClass]="getFormControlCssClass(editSupplierForm.get('email'), editSupplierForm)" />
+              <input type="text" placeholder="Email" class="form-control" id="email" formControlName="email" [ngClass]="{
+                     'is-valid': editSupplierForm.get('email').valid && (editSupplierForm.get('email').touched || editSupplierForm.submitted),
+                     'is-invalid': editSupplierForm.get('email').invalid && (editSupplierForm.get('email').touched || editSupplierForm.submitted) }" />
               <small class="form-text text-muted">Email address of the supplier | Can't be duplicate.</small>
 
-              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('email', 'required', editSupplierForm)">{{getFormControlErrorMessage('email', 'required')}}</span>
+              <span class="text-danger" *ngIf="editSupplierForm.get('email').invalid && editSupplierForm.get('email').errors.required && (editSupplierForm.get('email').touched || editSupplierForm.get('email').dirty || editSupplierForm.submitted)">Email can't be blank</span>
 
-              <span class="text-danger" *ngIf="getCanShowFormControlErrorMessage('email', 'email', editSupplierForm)">{{getFormControlErrorMessage('email', 'email')}}</span>
+              <span class="text-danger" *ngIf="editSupplierForm.get('email').invalid && editSupplierForm.get('email').errors.email && (editSupplierForm.get('email').touched || editSupplierForm.get('email').dirty || editSupplierForm.submitted)">Email is invalid</span>
             </div>
           </div>
 
