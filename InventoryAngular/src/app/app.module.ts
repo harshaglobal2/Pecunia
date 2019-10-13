@@ -11,6 +11,7 @@ import { AboutComponent } from './Components/about/about.component';
 import { LoginComponent } from './Components/login/login.component';
 import { AdminModule } from './AdminModule/admin.module';
 import { InventoryDataService } from './InMemoryWebAPIServices/inventory-data.service';
+import { OrdersService } from './Services/orders.service';
 
 @NgModule({
   declarations: [
@@ -24,10 +25,10 @@ import { InventoryDataService } from './InMemoryWebAPIServices/inventory-data.se
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    environment.production ? HttpClientInMemoryWebApiModule.forRoot(InventoryDataService, { delay: 1000 }) : [],
+    HttpClientInMemoryWebApiModule.forRoot(InventoryDataService, { delay: 1000 }),
     AdminModule
   ],
-  providers: [],
+  providers: [OrdersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -117,7 +117,7 @@
 
       <tbody>
         <tr *ngFor="let supplier of suppliers; let index = index">
-          <td style="font-size:120%" *ngIf="viewSupplierCheckBoxes.supplierName">{{supplier.supplierName}}</td>
+          <td style="font-size:120%" *ngIf="viewSupplierCheckBoxes.supplierName">{{supplier.supplierName | uppercase}}</td>
           <td *ngIf="viewSupplierCheckBoxes.mobile">{{supplier.supplierMobile}}</td>
           <td *ngIf="viewSupplierCheckBoxes.email">{{supplier.email}}</td>
           <td *ngIf="viewSupplierCheckBoxes.createdOn">{{supplier.creationDateTime}}</td>
