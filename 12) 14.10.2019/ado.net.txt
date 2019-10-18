@@ -1,0 +1,11 @@
+adhoc query:
+	- insert into employees(empid, empname, salary)
+       values(101, 'abc', 1000)
+
+parameterized query:
+	insert into employees(empid, empname, salary)
+       values(@empid, @empname, @salary)
+
+
+SqlConnection
+	- 

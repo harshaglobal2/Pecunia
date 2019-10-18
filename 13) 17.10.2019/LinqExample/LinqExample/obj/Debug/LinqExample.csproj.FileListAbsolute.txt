@@ -1,0 +1,7 @@
+C:\Pecunia\LinqExample\LinqExample\bin\Debug\LinqExample.exe.config
+C:\Pecunia\LinqExample\LinqExample\bin\Debug\LinqExample.exe
+C:\Pecunia\LinqExample\LinqExample\bin\Debug\LinqExample.pdb
+C:\Pecunia\LinqExample\LinqExample\obj\Debug\LinqExample.csprojAssemblyReference.cache
+C:\Pecunia\LinqExample\LinqExample\obj\Debug\LinqExample.csproj.CoreCompileInputs.cache
+C:\Pecunia\LinqExample\LinqExample\obj\Debug\LinqExample.exe
+C:\Pecunia\LinqExample\LinqExample\obj\Debug\LinqExample.pdb
