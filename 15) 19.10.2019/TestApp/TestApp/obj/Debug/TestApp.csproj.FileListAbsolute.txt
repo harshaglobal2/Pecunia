@@ -1,7 +1,0 @@
-C:\Users\Harsha\Desktop\TestApp\TestApp\bin\Debug\TestApp.exe.config
-C:\Users\Harsha\Desktop\TestApp\TestApp\bin\Debug\TestApp.exe
-C:\Users\Harsha\Desktop\TestApp\TestApp\bin\Debug\TestApp.pdb
-C:\Users\Harsha\Desktop\TestApp\TestApp\obj\Debug\TestApp.csprojAssemblyReference.cache
-C:\Users\Harsha\Desktop\TestApp\TestApp\obj\Debug\TestApp.csproj.CoreCompileInputs.cache
-C:\Users\Harsha\Desktop\TestApp\TestApp\obj\Debug\TestApp.exe
-C:\Users\Harsha\Desktop\TestApp\TestApp\obj\Debug\TestApp.pdb
