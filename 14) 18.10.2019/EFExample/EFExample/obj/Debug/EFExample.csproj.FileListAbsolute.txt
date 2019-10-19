@@ -10,3 +10,15 @@ C:\Pecunia\13) 17.10.2019\EFExample\EFExample\obj\Debug\EFExample.csproj.CoreCom
 C:\Pecunia\13) 17.10.2019\EFExample\EFExample\obj\Debug\EFExample.csproj.CopyComplete
 C:\Pecunia\13) 17.10.2019\EFExample\EFExample\obj\Debug\EFExample.exe
 C:\Pecunia\13) 17.10.2019\EFExample\EFExample\obj\Debug\EFExample.pdb
+C:\Pecunia\14) 18.10.2019\EFExample\EFExample\obj\Debug\EFExample.csprojAssemblyReference.cache
+C:\Pecunia\14) 18.10.2019\EFExample\EFExample\obj\Debug\EFExample.csproj.CoreCompileInputs.cache
+C:\Pecunia\14) 18.10.2019\EFExample\EFExample\obj\Debug\EFExample.exe
+C:\Pecunia\14) 18.10.2019\EFExample\EFExample\obj\Debug\EFExample.pdb
+C:\Pecunia\14) 18.10.2019\EFExample\EFExample\bin\Debug\EFExample.exe.config
+C:\Pecunia\14) 18.10.2019\EFExample\EFExample\bin\Debug\EFExample.exe
+C:\Pecunia\14) 18.10.2019\EFExample\EFExample\bin\Debug\EFExample.pdb
+C:\Pecunia\14) 18.10.2019\EFExample\EFExample\bin\Debug\EntityFramework.dll
+C:\Pecunia\14) 18.10.2019\EFExample\EFExample\bin\Debug\EntityFramework.SqlServer.dll
+C:\Pecunia\14) 18.10.2019\EFExample\EFExample\bin\Debug\EntityFramework.xml
+C:\Pecunia\14) 18.10.2019\EFExample\EFExample\bin\Debug\EntityFramework.SqlServer.xml
+C:\Pecunia\14) 18.10.2019\EFExample\EFExample\obj\Debug\EFExample.csproj.CopyComplete

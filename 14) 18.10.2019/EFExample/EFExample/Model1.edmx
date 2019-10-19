@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="companyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="companyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Employees">
           <Key>
             <PropertyRef Name="EmpID" />
@@ -13,11 +13,13 @@
           <Property Name="EmpName" Type="nvarchar(max)" />
           <Property Name="Salary" Type="decimal" Precision="18" Scale="0" />
         </EntityType>
+        <Function Name="sp_searchemployees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="str" Type="nvarchar(max)" Mode="In" />
+        </Function>
         <EntityContainer Name="companyModelStoreContainer">
           <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="companyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -26,12 +28,23 @@
             <PropertyRef Name="EmpID" />
           </Key>
           <Property Name="EmpID" Type="Int32" Nullable="false" />
-          <Property Name="EmpName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Salary" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Details" Type="companyModel.MoreDetails" Nullable="false" />
         </EntityType>
         <EntityContainer Name="companyEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <FunctionImport Name="sp_searchemployees" ReturnType="Collection(companyModel.sp_searchemployees_Result)">
+            <Parameter Name="str" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="MoreDetails">
+          <Property Type="String" Name="EmpName" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Salary" Precision="18" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="sp_searchemployees_Result">
+          <Property Type="Int32" Name="EmpID" Nullable="false" />
+          <Property Type="String" Name="EmpName" Nullable="true" />
+          <Property Type="Decimal" Name="Salary" Nullable="true" Precision="18" Scale="0" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -42,11 +55,22 @@
             <EntityTypeMapping TypeName="companyModel.Employee">
               <MappingFragment StoreEntitySet="Employees">
                 <ScalarProperty Name="EmpID" ColumnName="EmpID" />
-                <ScalarProperty Name="EmpName" ColumnName="EmpName" />
-                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ComplexProperty Name="Details">
+                  <ScalarProperty Name="Salary" ColumnName="Salary" />
+                  <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+                </ComplexProperty>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_searchemployees" FunctionName="companyModel.Store.sp_searchemployees">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="companyModel.sp_searchemployees_Result">
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

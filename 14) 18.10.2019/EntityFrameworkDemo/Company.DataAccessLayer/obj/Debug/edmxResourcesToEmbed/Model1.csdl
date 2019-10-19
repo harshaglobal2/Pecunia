@@ -5,7 +5,7 @@
       <PropertyRef Name="EmpID" />
     </Key>
     <Property Name="EmpID" Type="Int32" Nullable="false" />
-    <Property Name="EmpName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeeName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Salary" Type="Decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityContainer Name="companyEntities" annotation:LazyLoadingEnabled="true">

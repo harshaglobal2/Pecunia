@@ -12,6 +12,8 @@ namespace EFExample
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class companyEntities : DbContext
     {
@@ -26,5 +28,14 @@ namespace EFExample
         }
     
         public virtual DbSet<Employee> Employees { get; set; }
+    
+        public virtual ObjectResult<sp_searchemployees_Result> sp_searchemployees(string str)
+        {
+            var strParameter = str != null ?
+                new ObjectParameter("str", str) :
+                new ObjectParameter("str", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_searchemployees_Result>("sp_searchemployees", strParameter);
+        }
     }
 }

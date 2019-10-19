@@ -5,10 +5,21 @@
       <EntityTypeMapping TypeName="companyModel.Employee">
         <MappingFragment StoreEntitySet="Employees">
           <ScalarProperty Name="EmpID" ColumnName="EmpID" />
-          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
-          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ComplexProperty Name="Details">
+            <ScalarProperty Name="Salary" ColumnName="Salary" />
+            <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          </ComplexProperty>
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_searchemployees" FunctionName="companyModel.Store.sp_searchemployees">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="companyModel.sp_searchemployees_Result">
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

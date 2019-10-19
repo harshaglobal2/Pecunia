@@ -5,10 +5,21 @@
       <PropertyRef Name="EmpID" />
     </Key>
     <Property Name="EmpID" Type="Int32" Nullable="false" />
-    <Property Name="EmpName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Salary" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Details" Type="companyModel.MoreDetails" Nullable="false" />
   </EntityType>
   <EntityContainer Name="companyEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <FunctionImport Name="sp_searchemployees" ReturnType="Collection(companyModel.sp_searchemployees_Result)">
+      <Parameter Name="str" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
+  <ComplexType Name="MoreDetails">
+    <Property Type="String" Name="EmpName" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="Salary" Precision="18" Scale="0" />
+  </ComplexType>
+  <ComplexType Name="sp_searchemployees_Result">
+    <Property Type="Int32" Name="EmpID" Nullable="false" />
+    <Property Type="String" Name="EmpName" Nullable="true" />
+    <Property Type="Decimal" Name="Salary" Nullable="true" Precision="18" Scale="0" />
+  </ComplexType>
 </Schema>

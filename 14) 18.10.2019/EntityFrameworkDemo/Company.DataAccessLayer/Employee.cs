@@ -15,7 +15,7 @@ namespace Company.DataAccessLayer
     public partial class Employee
     {
         public int EmpID { get; set; }
-        public string EmpName { get; set; }
+        public string EmployeeName { get; set; }
         public Nullable<decimal> Salary { get; set; }
     }
 }

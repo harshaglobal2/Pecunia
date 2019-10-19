@@ -12,10 +12,13 @@ namespace EFExample
         {
             companyEntities companyEntities = new companyEntities();
 
-            List<Employee> employees = 
-                companyEntities.Employees
-                .Where(emp => emp.EmpName == "Scott")
-                .ToList();
+            //List<Employee> employees = 
+            //    companyEntities.Employees
+            //    .Where(emp => emp.Details.EmpName == "Scott")
+            //    .ToList();
+
+            var employees =
+                companyEntities.sp_searchemployees("s");
 
             foreach (var item in employees)
             {

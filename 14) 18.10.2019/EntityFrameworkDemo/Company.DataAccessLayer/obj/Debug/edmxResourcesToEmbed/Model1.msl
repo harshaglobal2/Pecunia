@@ -5,7 +5,7 @@
       <EntityTypeMapping TypeName="companyModel.Employee">
         <MappingFragment StoreEntitySet="Employees">
           <ScalarProperty Name="EmpID" ColumnName="EmpID" />
-          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmpName" />
           <ScalarProperty Name="Salary" ColumnName="Salary" />
         </MappingFragment>
       </EntityTypeMapping>
