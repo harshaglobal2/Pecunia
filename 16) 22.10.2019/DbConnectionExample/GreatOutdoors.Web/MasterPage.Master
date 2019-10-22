@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="GreatOutdoors.Web.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="StyleSheet1.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div class="nav">
+            <div style="float:left; color:white; width:200px">
+                <h4>Inventory</h4>
+            </div>
+
+            <div style="float:left">
+                <asp:Menu ID="NavMenu" runat="server" Orientation="Horizontal">
+                <Items>
+                    <asp:MenuItem Text="Home" NavigateUrl="~/Default.aspx" />
+                    <asp:MenuItem Text="Products" NavigateUrl="~/Products.aspx" />
+                </Items>
+            </asp:Menu>
+            </div>
+            
+            
+        </div>
+
+        <div class="container">
+
+            <div class="left-box">
+                Left box
+            </div>
+
+            <div class="right-box">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            </div>
+
+        </div>
+    </form>
+</body>
+</html>

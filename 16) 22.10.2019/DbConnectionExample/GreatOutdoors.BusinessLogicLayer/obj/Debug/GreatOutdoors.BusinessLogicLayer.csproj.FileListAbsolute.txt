@@ -1,0 +1,13 @@
+C:\Users\Harsha\Desktop\DbConnectionExample\GreatOutdoors.BusinessLogicLayer\bin\Debug\GreatOutdoors.BusinessLogicLayer.dll
+C:\Users\Harsha\Desktop\DbConnectionExample\GreatOutdoors.BusinessLogicLayer\bin\Debug\GreatOutdoors.BusinessLogicLayer.pdb
+C:\Users\Harsha\Desktop\DbConnectionExample\GreatOutdoors.BusinessLogicLayer\bin\Debug\GreatOutdoors.DataAccessLayer.dll
+C:\Users\Harsha\Desktop\DbConnectionExample\GreatOutdoors.BusinessLogicLayer\bin\Debug\GreatOutdoors.Entities.dll
+C:\Users\Harsha\Desktop\DbConnectionExample\GreatOutdoors.BusinessLogicLayer\bin\Debug\System.ValueTuple.dll
+C:\Users\Harsha\Desktop\DbConnectionExample\GreatOutdoors.BusinessLogicLayer\bin\Debug\GreatOutdoors.DataAccessLayer.pdb
+C:\Users\Harsha\Desktop\DbConnectionExample\GreatOutdoors.BusinessLogicLayer\bin\Debug\GreatOutdoors.Entities.pdb
+C:\Users\Harsha\Desktop\DbConnectionExample\GreatOutdoors.BusinessLogicLayer\bin\Debug\System.ValueTuple.xml
+C:\Users\Harsha\Desktop\DbConnectionExample\GreatOutdoors.BusinessLogicLayer\obj\Debug\GreatOutdoors.BusinessLogicLayer.csprojAssemblyReference.cache
+C:\Users\Harsha\Desktop\DbConnectionExample\GreatOutdoors.BusinessLogicLayer\obj\Debug\GreatOutdoors.BusinessLogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\Harsha\Desktop\DbConnectionExample\GreatOutdoors.BusinessLogicLayer\obj\Debug\GreatOutdoors.BusinessLogicLayer.csproj.CopyComplete
+C:\Users\Harsha\Desktop\DbConnectionExample\GreatOutdoors.BusinessLogicLayer\obj\Debug\GreatOutdoors.BusinessLogicLayer.dll
+C:\Users\Harsha\Desktop\DbConnectionExample\GreatOutdoors.BusinessLogicLayer\obj\Debug\GreatOutdoors.BusinessLogicLayer.pdb
