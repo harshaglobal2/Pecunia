@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="companyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProductName" Type="varchar" MaxLength="40" />
+          <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <Function Name="usp_CreateProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProductID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ProductName" Type="varchar" Mode="In" />
+          <Parameter Name="UnitPrice" Type="decimal" Mode="In" />
+        </Function>
+        <Function Name="usp_DeleteProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProductID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="usp_GetProductByProductID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProductID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="usp_GetProducts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_UpdateProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProductID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ProductName" Type="varchar" Mode="In" />
+          <Parameter Name="UnitPrice" Type="decimal" Mode="In" />
+        </Function>
+        <EntityContainer Name="companyModelStoreContainer">
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="companyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Guid" Nullable="false" />
+          <Property Name="ProductName" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityContainer Name="companyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <FunctionImport Name="usp_CreateProduct">
+            <Parameter Name="ProductID" Mode="In" Type="Guid" />
+            <Parameter Name="ProductName" Mode="In" Type="String" />
+            <Parameter Name="UnitPrice" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="usp_DeleteProduct">
+            <Parameter Name="ProductID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="usp_GetProductByProductID" EntitySet="Products" ReturnType="Collection(companyModel.Product)">
+            <Parameter Name="ProductID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="usp_GetProducts" EntitySet="Products" ReturnType="Collection(companyModel.Product)" />
+          <FunctionImport Name="usp_UpdateProduct">
+            <Parameter Name="ProductID" Mode="In" Type="Guid" />
+            <Parameter Name="ProductName" Mode="In" Type="String" />
+            <Parameter Name="UnitPrice" Mode="In" Type="Decimal" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="usp_GetProductByProductID_Result">
+          <Property Type="Guid" Name="ProductID" Nullable="false" />
+          <Property Type="String" Name="ProductName" Nullable="true" MaxLength="40" />
+          <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="18" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="usp_GetProducts_Result">
+          <Property Type="Guid" Name="ProductID" Nullable="false" />
+          <Property Type="String" Name="ProductName" Nullable="true" MaxLength="40" />
+          <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="18" Scale="0" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="companyModelStoreContainer" CdmEntityContainer="companyEntities">
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="companyModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="usp_CreateProduct" FunctionName="companyModel.Store.usp_CreateProduct" />
+          <FunctionImportMapping FunctionImportName="usp_DeleteProduct" FunctionName="companyModel.Store.usp_DeleteProduct" />
+          <FunctionImportMapping FunctionImportName="usp_GetProductByProductID" FunctionName="companyModel.Store.usp_GetProductByProductID">
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_GetProducts" FunctionName="companyModel.Store.usp_GetProducts">
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_UpdateProduct" FunctionName="companyModel.Store.usp_UpdateProduct" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
