@@ -1,6 +1,0 @@
-C:\Users\Harsha\Desktop\DbConnectionExample\GreatOutdoors.Entities\bin\Debug\GreatOutdoors.Entities.dll
-C:\Users\Harsha\Desktop\DbConnectionExample\GreatOutdoors.Entities\bin\Debug\GreatOutdoors.Entities.pdb
-C:\Users\Harsha\Desktop\DbConnectionExample\GreatOutdoors.Entities\obj\Debug\GreatOutdoors.Entities.csprojAssemblyReference.cache
-C:\Users\Harsha\Desktop\DbConnectionExample\GreatOutdoors.Entities\obj\Debug\GreatOutdoors.Entities.csproj.CoreCompileInputs.cache
-C:\Users\Harsha\Desktop\DbConnectionExample\GreatOutdoors.Entities\obj\Debug\GreatOutdoors.Entities.dll
-C:\Users\Harsha\Desktop\DbConnectionExample\GreatOutdoors.Entities\obj\Debug\GreatOutdoors.Entities.pdb

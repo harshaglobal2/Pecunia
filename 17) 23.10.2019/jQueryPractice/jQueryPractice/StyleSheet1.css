@@ -1,0 +1,30 @@
+﻿body
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav
+{
+    background-color: #2483d3;
+    height: 30px;
+    color: white;
+    padding: 10px;
+}
+
+.left-box
+{
+   background-color: #d6d8db;
+   width: 15%;
+   float: left;
+   height: 100vh;
+}
+
+.right-box
+{
+    width: 85%;
+    float: left;
+    height: 100vh;
+}
