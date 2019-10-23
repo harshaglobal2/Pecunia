@@ -1,7 +1,0 @@
-C:\Pecunia\ThreadingExample\ThreadingExample\bin\Debug\ThreadingExample.exe.config
-C:\Pecunia\ThreadingExample\ThreadingExample\bin\Debug\ThreadingExample.exe
-C:\Pecunia\ThreadingExample\ThreadingExample\bin\Debug\ThreadingExample.pdb
-C:\Pecunia\ThreadingExample\ThreadingExample\obj\Debug\ThreadingExample.csprojAssemblyReference.cache
-C:\Pecunia\ThreadingExample\ThreadingExample\obj\Debug\ThreadingExample.csproj.CoreCompileInputs.cache
-C:\Pecunia\ThreadingExample\ThreadingExample\obj\Debug\ThreadingExample.exe
-C:\Pecunia\ThreadingExample\ThreadingExample\obj\Debug\ThreadingExample.pdb

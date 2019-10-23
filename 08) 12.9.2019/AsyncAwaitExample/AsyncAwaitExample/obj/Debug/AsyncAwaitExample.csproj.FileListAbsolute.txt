@@ -1,7 +1,0 @@
-C:\Pecunia\AsyncAwaitExample\AsyncAwaitExample\bin\Debug\AsyncAwaitExample.exe.config
-C:\Pecunia\AsyncAwaitExample\AsyncAwaitExample\bin\Debug\AsyncAwaitExample.exe
-C:\Pecunia\AsyncAwaitExample\AsyncAwaitExample\bin\Debug\AsyncAwaitExample.pdb
-C:\Pecunia\AsyncAwaitExample\AsyncAwaitExample\obj\Debug\AsyncAwaitExample.csprojAssemblyReference.cache
-C:\Pecunia\AsyncAwaitExample\AsyncAwaitExample\obj\Debug\AsyncAwaitExample.csproj.CoreCompileInputs.cache
-C:\Pecunia\AsyncAwaitExample\AsyncAwaitExample\obj\Debug\AsyncAwaitExample.exe
-C:\Pecunia\AsyncAwaitExample\AsyncAwaitExample\obj\Debug\AsyncAwaitExample.pdb
