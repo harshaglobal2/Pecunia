@@ -1,7 +1,0 @@
-C:\Pecunia\BinaryWriterReaderExample\BinaryWriterReaderExample\bin\Debug\BinaryWriterReaderExample.exe.config
-C:\Pecunia\BinaryWriterReaderExample\BinaryWriterReaderExample\bin\Debug\BinaryWriterReaderExample.exe
-C:\Pecunia\BinaryWriterReaderExample\BinaryWriterReaderExample\bin\Debug\BinaryWriterReaderExample.pdb
-C:\Pecunia\BinaryWriterReaderExample\BinaryWriterReaderExample\obj\Debug\BinaryWriterReaderExample.csprojAssemblyReference.cache
-C:\Pecunia\BinaryWriterReaderExample\BinaryWriterReaderExample\obj\Debug\BinaryWriterReaderExample.csproj.CoreCompileInputs.cache
-C:\Pecunia\BinaryWriterReaderExample\BinaryWriterReaderExample\obj\Debug\BinaryWriterReaderExample.exe
-C:\Pecunia\BinaryWriterReaderExample\BinaryWriterReaderExample\obj\Debug\BinaryWriterReaderExample.pdb

@@ -1,7 +1,0 @@
-C:\Pecunia\RegexExample\RegexExample\bin\Debug\RegexExample.exe.config
-C:\Pecunia\RegexExample\RegexExample\bin\Debug\RegexExample.exe
-C:\Pecunia\RegexExample\RegexExample\bin\Debug\RegexExample.pdb
-C:\Pecunia\RegexExample\RegexExample\obj\Debug\RegexExample.csprojAssemblyReference.cache
-C:\Pecunia\RegexExample\RegexExample\obj\Debug\RegexExample.csproj.CoreCompileInputs.cache
-C:\Pecunia\RegexExample\RegexExample\obj\Debug\RegexExample.exe
-C:\Pecunia\RegexExample\RegexExample\obj\Debug\RegexExample.pdb

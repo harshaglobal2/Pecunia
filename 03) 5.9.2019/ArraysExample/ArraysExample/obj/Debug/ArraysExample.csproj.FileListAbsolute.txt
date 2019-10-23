@@ -1,7 +1,0 @@
-C:\Pecunia\ArraysExample\ArraysExample\bin\Debug\ArraysExample.exe.config
-C:\Pecunia\ArraysExample\ArraysExample\bin\Debug\ArraysExample.exe
-C:\Pecunia\ArraysExample\ArraysExample\bin\Debug\ArraysExample.pdb
-C:\Pecunia\ArraysExample\ArraysExample\obj\Debug\ArraysExample.csprojAssemblyReference.cache
-C:\Pecunia\ArraysExample\ArraysExample\obj\Debug\ArraysExample.csproj.CoreCompileInputs.cache
-C:\Pecunia\ArraysExample\ArraysExample\obj\Debug\ArraysExample.exe
-C:\Pecunia\ArraysExample\ArraysExample\obj\Debug\ArraysExample.pdb

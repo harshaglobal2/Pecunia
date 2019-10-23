@@ -1,7 +1,0 @@
-C:\Pecunia\StringBuilderExample\StringBuilderExample\bin\Debug\StringBuilderExample.exe.config
-C:\Pecunia\StringBuilderExample\StringBuilderExample\bin\Debug\StringBuilderExample.exe
-C:\Pecunia\StringBuilderExample\StringBuilderExample\bin\Debug\StringBuilderExample.pdb
-C:\Pecunia\StringBuilderExample\StringBuilderExample\obj\Debug\StringBuilderExample.csprojAssemblyReference.cache
-C:\Pecunia\StringBuilderExample\StringBuilderExample\obj\Debug\StringBuilderExample.csproj.CoreCompileInputs.cache
-C:\Pecunia\StringBuilderExample\StringBuilderExample\obj\Debug\StringBuilderExample.exe
-C:\Pecunia\StringBuilderExample\StringBuilderExample\obj\Debug\StringBuilderExample.pdb

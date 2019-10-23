@@ -1,7 +1,0 @@
-C:\Pecunia\OOPProject\OOPProject\obj\Debug\OOPProject.csprojAssemblyReference.cache
-C:\Pecunia\OOPProject\OOPProject\obj\Debug\OOPProject.csproj.CoreCompileInputs.cache
-C:\Pecunia\OOPProject\OOPProject\bin\Debug\OOPProject.exe.config
-C:\Pecunia\OOPProject\OOPProject\bin\Debug\OOPProject.exe
-C:\Pecunia\OOPProject\OOPProject\bin\Debug\OOPProject.pdb
-C:\Pecunia\OOPProject\OOPProject\obj\Debug\OOPProject.exe
-C:\Pecunia\OOPProject\OOPProject\obj\Debug\OOPProject.pdb

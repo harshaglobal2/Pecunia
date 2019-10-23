@@ -1,7 +1,0 @@
-C:\Pecunia\TaskParallelExample\TaskParallelExample\bin\Debug\TaskParallelExample.exe.config
-C:\Pecunia\TaskParallelExample\TaskParallelExample\bin\Debug\TaskParallelExample.exe
-C:\Pecunia\TaskParallelExample\TaskParallelExample\bin\Debug\TaskParallelExample.pdb
-C:\Pecunia\TaskParallelExample\TaskParallelExample\obj\Debug\TaskParallelExample.csprojAssemblyReference.cache
-C:\Pecunia\TaskParallelExample\TaskParallelExample\obj\Debug\TaskParallelExample.csproj.CoreCompileInputs.cache
-C:\Pecunia\TaskParallelExample\TaskParallelExample\obj\Debug\TaskParallelExample.exe
-C:\Pecunia\TaskParallelExample\TaskParallelExample\obj\Debug\TaskParallelExample.pdb

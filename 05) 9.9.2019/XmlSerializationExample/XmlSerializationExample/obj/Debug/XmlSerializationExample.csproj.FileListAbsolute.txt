@@ -1,7 +1,0 @@
-C:\Pecunia\XmlSerializationExample\XmlSerializationExample\bin\Debug\XmlSerializationExample.exe.config
-C:\Pecunia\XmlSerializationExample\XmlSerializationExample\bin\Debug\XmlSerializationExample.exe
-C:\Pecunia\XmlSerializationExample\XmlSerializationExample\bin\Debug\XmlSerializationExample.pdb
-C:\Pecunia\XmlSerializationExample\XmlSerializationExample\obj\Debug\XmlSerializationExample.csprojAssemblyReference.cache
-C:\Pecunia\XmlSerializationExample\XmlSerializationExample\obj\Debug\XmlSerializationExample.csproj.CoreCompileInputs.cache
-C:\Pecunia\XmlSerializationExample\XmlSerializationExample\obj\Debug\XmlSerializationExample.exe
-C:\Pecunia\XmlSerializationExample\XmlSerializationExample\obj\Debug\XmlSerializationExample.pdb

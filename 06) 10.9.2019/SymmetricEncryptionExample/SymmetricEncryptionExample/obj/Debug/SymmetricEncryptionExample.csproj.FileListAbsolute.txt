@@ -1,7 +1,0 @@
-C:\Pecunia\SymmetricEncryptionExample\SymmetricEncryptionExample\bin\Debug\SymmetricEncryptionExample.exe.config
-C:\Pecunia\SymmetricEncryptionExample\SymmetricEncryptionExample\bin\Debug\SymmetricEncryptionExample.exe
-C:\Pecunia\SymmetricEncryptionExample\SymmetricEncryptionExample\bin\Debug\SymmetricEncryptionExample.pdb
-C:\Pecunia\SymmetricEncryptionExample\SymmetricEncryptionExample\obj\Debug\SymmetricEncryptionExample.csprojAssemblyReference.cache
-C:\Pecunia\SymmetricEncryptionExample\SymmetricEncryptionExample\obj\Debug\SymmetricEncryptionExample.csproj.CoreCompileInputs.cache
-C:\Pecunia\SymmetricEncryptionExample\SymmetricEncryptionExample\obj\Debug\SymmetricEncryptionExample.exe
-C:\Pecunia\SymmetricEncryptionExample\SymmetricEncryptionExample\obj\Debug\SymmetricEncryptionExample.pdb

@@ -1,7 +1,0 @@
-C:\Pecunia\CollectionExample\CollectionExample\bin\Debug\CollectionExample.exe.config
-C:\Pecunia\CollectionExample\CollectionExample\bin\Debug\CollectionExample.exe
-C:\Pecunia\CollectionExample\CollectionExample\bin\Debug\CollectionExample.pdb
-C:\Pecunia\CollectionExample\CollectionExample\obj\Debug\CollectionExample.csprojAssemblyReference.cache
-C:\Pecunia\CollectionExample\CollectionExample\obj\Debug\CollectionExample.csproj.CoreCompileInputs.cache
-C:\Pecunia\CollectionExample\CollectionExample\obj\Debug\CollectionExample.exe
-C:\Pecunia\CollectionExample\CollectionExample\obj\Debug\CollectionExample.pdb
