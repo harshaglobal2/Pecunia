@@ -15,10 +15,10 @@ namespace Inventory.Entities
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class companyEntities : DbContext
+    public partial class company2Entities : DbContext
     {
-        public companyEntities()
-            : base("name=companyEntities")
+        public company2Entities()
+            : base("name=company2Entities")
         {
         }
     
@@ -27,77 +27,121 @@ namespace Inventory.Entities
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Person> Persons { get; set; }
     
-        public virtual int usp_CreateProduct(Nullable<System.Guid> productID, string productName, Nullable<decimal> unitPrice)
+        public virtual int usp_CreatePersons(Nullable<System.Guid> personID, string personName, string email, string password, Nullable<int> age, Nullable<System.DateTime> dateOfJoining, string gender, Nullable<bool> isRegistered, string state)
         {
-            var productIDParameter = productID.HasValue ?
-                new ObjectParameter("ProductID", productID) :
-                new ObjectParameter("ProductID", typeof(System.Guid));
+            var personIDParameter = personID.HasValue ?
+                new ObjectParameter("PersonID", personID) :
+                new ObjectParameter("PersonID", typeof(System.Guid));
     
-            var productNameParameter = productName != null ?
-                new ObjectParameter("ProductName", productName) :
-                new ObjectParameter("ProductName", typeof(string));
+            var personNameParameter = personName != null ?
+                new ObjectParameter("PersonName", personName) :
+                new ObjectParameter("PersonName", typeof(string));
     
-            var unitPriceParameter = unitPrice.HasValue ?
-                new ObjectParameter("UnitPrice", unitPrice) :
-                new ObjectParameter("UnitPrice", typeof(decimal));
+            var emailParameter = email != null ?
+                new ObjectParameter("Email", email) :
+                new ObjectParameter("Email", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_CreateProduct", productIDParameter, productNameParameter, unitPriceParameter);
+            var passwordParameter = password != null ?
+                new ObjectParameter("Password", password) :
+                new ObjectParameter("Password", typeof(string));
+    
+            var ageParameter = age.HasValue ?
+                new ObjectParameter("Age", age) :
+                new ObjectParameter("Age", typeof(int));
+    
+            var dateOfJoiningParameter = dateOfJoining.HasValue ?
+                new ObjectParameter("DateOfJoining", dateOfJoining) :
+                new ObjectParameter("DateOfJoining", typeof(System.DateTime));
+    
+            var genderParameter = gender != null ?
+                new ObjectParameter("Gender", gender) :
+                new ObjectParameter("Gender", typeof(string));
+    
+            var isRegisteredParameter = isRegistered.HasValue ?
+                new ObjectParameter("IsRegistered", isRegistered) :
+                new ObjectParameter("IsRegistered", typeof(bool));
+    
+            var stateParameter = state != null ?
+                new ObjectParameter("State", state) :
+                new ObjectParameter("State", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_CreatePersons", personIDParameter, personNameParameter, emailParameter, passwordParameter, ageParameter, dateOfJoiningParameter, genderParameter, isRegisteredParameter, stateParameter);
         }
     
-        public virtual int usp_DeleteProduct(Nullable<System.Guid> productID)
+        public virtual int usp_DeletePerson(Nullable<System.Guid> personID)
         {
-            var productIDParameter = productID.HasValue ?
-                new ObjectParameter("ProductID", productID) :
-                new ObjectParameter("ProductID", typeof(System.Guid));
+            var personIDParameter = personID.HasValue ?
+                new ObjectParameter("PersonID", personID) :
+                new ObjectParameter("PersonID", typeof(System.Guid));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_DeleteProduct", productIDParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_DeletePerson", personIDParameter);
         }
     
-        public virtual ObjectResult<Product> usp_GetProductByProductID(Nullable<System.Guid> productID)
+        public virtual ObjectResult<Person> usp_GetPersonByPersonID(Nullable<System.Guid> personID)
         {
-            var productIDParameter = productID.HasValue ?
-                new ObjectParameter("ProductID", productID) :
-                new ObjectParameter("ProductID", typeof(System.Guid));
+            var personIDParameter = personID.HasValue ?
+                new ObjectParameter("PersonID", personID) :
+                new ObjectParameter("PersonID", typeof(System.Guid));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Product>("usp_GetProductByProductID", productIDParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Person>("usp_GetPersonByPersonID", personIDParameter);
         }
     
-        public virtual ObjectResult<Product> usp_GetProductByProductID(Nullable<System.Guid> productID, MergeOption mergeOption)
+        public virtual ObjectResult<Person> usp_GetPersonByPersonID(Nullable<System.Guid> personID, MergeOption mergeOption)
         {
-            var productIDParameter = productID.HasValue ?
-                new ObjectParameter("ProductID", productID) :
-                new ObjectParameter("ProductID", typeof(System.Guid));
+            var personIDParameter = personID.HasValue ?
+                new ObjectParameter("PersonID", personID) :
+                new ObjectParameter("PersonID", typeof(System.Guid));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Product>("usp_GetProductByProductID", mergeOption, productIDParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Person>("usp_GetPersonByPersonID", mergeOption, personIDParameter);
         }
     
-        public virtual ObjectResult<Product> usp_GetProducts()
+        public virtual ObjectResult<Person> usp_GetPersons()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Product>("usp_GetProducts");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Person>("usp_GetPersons");
         }
     
-        public virtual ObjectResult<Product> usp_GetProducts(MergeOption mergeOption)
+        public virtual ObjectResult<Person> usp_GetPersons(MergeOption mergeOption)
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Product>("usp_GetProducts", mergeOption);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Person>("usp_GetPersons", mergeOption);
         }
     
-        public virtual int usp_UpdateProduct(Nullable<System.Guid> productID, string productName, Nullable<decimal> unitPrice)
+        public virtual int usp_UpdatePerson(Nullable<System.Guid> personID, string personName, string email, Nullable<int> age, Nullable<System.DateTime> dateOfJoining, string gender, Nullable<bool> isRegistered, string state)
         {
-            var productIDParameter = productID.HasValue ?
-                new ObjectParameter("ProductID", productID) :
-                new ObjectParameter("ProductID", typeof(System.Guid));
+            var personIDParameter = personID.HasValue ?
+                new ObjectParameter("PersonID", personID) :
+                new ObjectParameter("PersonID", typeof(System.Guid));
     
-            var productNameParameter = productName != null ?
-                new ObjectParameter("ProductName", productName) :
-                new ObjectParameter("ProductName", typeof(string));
+            var personNameParameter = personName != null ?
+                new ObjectParameter("PersonName", personName) :
+                new ObjectParameter("PersonName", typeof(string));
     
-            var unitPriceParameter = unitPrice.HasValue ?
-                new ObjectParameter("UnitPrice", unitPrice) :
-                new ObjectParameter("UnitPrice", typeof(decimal));
+            var emailParameter = email != null ?
+                new ObjectParameter("Email", email) :
+                new ObjectParameter("Email", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_UpdateProduct", productIDParameter, productNameParameter, unitPriceParameter);
+            var ageParameter = age.HasValue ?
+                new ObjectParameter("Age", age) :
+                new ObjectParameter("Age", typeof(int));
+    
+            var dateOfJoiningParameter = dateOfJoining.HasValue ?
+                new ObjectParameter("DateOfJoining", dateOfJoining) :
+                new ObjectParameter("DateOfJoining", typeof(System.DateTime));
+    
+            var genderParameter = gender != null ?
+                new ObjectParameter("Gender", gender) :
+                new ObjectParameter("Gender", typeof(string));
+    
+            var isRegisteredParameter = isRegistered.HasValue ?
+                new ObjectParameter("IsRegistered", isRegistered) :
+                new ObjectParameter("IsRegistered", typeof(bool));
+    
+            var stateParameter = state != null ?
+                new ObjectParameter("State", state) :
+                new ObjectParameter("State", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_UpdatePerson", personIDParameter, personNameParameter, emailParameter, ageParameter, dateOfJoiningParameter, genderParameter, isRegisteredParameter, stateParameter);
         }
     }
 }

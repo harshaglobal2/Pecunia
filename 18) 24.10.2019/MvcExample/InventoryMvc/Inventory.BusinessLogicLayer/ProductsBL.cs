@@ -9,49 +9,54 @@ using Inventory.Entities;
 
 namespace Capgemini.GreatOutdoors.BusinessLogicLayer
 {
-    public class ProductsBL
+    public class PersonsBL : IDisposable
     {
-        public (bool, Guid) AddProduct(Product product)
+        public (bool, Guid) AddPerson(Person person)
         {
-            using (ProductsDAL productsDAL = new ProductsDAL())
+            using (PersonsDAL personsDAL = new PersonsDAL())
             {
-                return productsDAL.AddProduct(product);
+                return personsDAL.AddPerson(person);
             }
         }
 
-        public bool UpdateProduct(Product product)
+        public bool UpdatePerson(Person person)
         {
-            using (ProductsDAL productsDAL = new ProductsDAL())
+            using (PersonsDAL personsDAL = new PersonsDAL())
             {
-                return productsDAL.UpdateProduct(product);
+                return personsDAL.UpdatePerson(person);
             }
         }
 
-        public bool DeleteProduct(Product product)
+        public bool DeletePerson(Person person)
         {
-            using (ProductsDAL productsDAL = new ProductsDAL())
+            using (PersonsDAL personsDAL = new PersonsDAL())
             {
-                return productsDAL.DeleteProduct(product);
+                return personsDAL.DeletePerson(person);
             }
         }
 
-        public List<Product> GetProducts()
+        public List<Person> GetPersons()
         {
-            using (ProductsDAL productsDAL = new ProductsDAL())
+            using (PersonsDAL personsDAL = new PersonsDAL())
             {
-                return productsDAL.GetProducts();
+                return personsDAL.GetPersons();
             }
         }
 
 
-        public Product GetProductByProductID(Guid ProductID)
+        public Person GetPersonByPersonID(Guid PersonID)
         {
-            using (ProductsDAL productsDAL = new ProductsDAL())
+            using (PersonsDAL personsDAL = new PersonsDAL())
             {
-                return productsDAL.GetProductByProductID(ProductID);
+                return personsDAL.GetPersonByPersonID(PersonID);
             }
+        }
+
+        public void Dispose()
+        {
         }
     }
 }
+
 
 

@@ -11,10 +11,16 @@ namespace Inventory.Entities
 {
     using System;
     
-    public partial class usp_GetProducts_Result
+    public partial class usp_GetPersons_Result
     {
-        public System.Guid ProductID { get; set; }
-        public string ProductName { get; set; }
-        public Nullable<decimal> UnitPrice { get; set; }
+        public System.Guid PersonID { get; set; }
+        public string PersonName { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public Nullable<int> Age { get; set; }
+        public Nullable<System.DateTime> DateOfJoining { get; set; }
+        public string Gender { get; set; }
+        public Nullable<bool> IsRegistered { get; set; }
+        public string State { get; set; }
     }
 }
