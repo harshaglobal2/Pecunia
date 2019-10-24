@@ -71,3 +71,9 @@ end
 go
 
 
+insert into Persons(PersonID, PersonName,
+Email) values(
+newid(), 'Scott', 'scott@gmail.com')
+insert into Persons(PersonID, PersonName,
+Email) values(
+newid(), 'Allen', 'allen@gmail.com')

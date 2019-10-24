@@ -23,8 +23,9 @@
     <div class="container-fluid">
         <h2>Create Person</h2>
 
-        @using (Html.BeginForm())
+        @using (Html.BeginForm("Create", "Persons", FormMethod.Post))
         {
+            @Html.HiddenFor(temp => temp.PersonID)
             <div class="row">
 
                 <div class="col-md-6 mx-auto">
@@ -59,7 +60,7 @@
                         @Html.TextBoxFor(temp => temp.DateOfJoining,
                             new { @class = "form-control col-lg-9", placeholder = "Date of Joining", type = "date" })
                     </div>
-
+                    
                     <div class="form-group form-row">
                         @Html.LabelFor(temp => temp.State,
                             new { @class="col-form-label col-lg-3" })
@@ -114,6 +115,7 @@
                     </div>
 
                     <div class="border-top text-right pt-2">
+                        <a href="@Url.Action("Index", "Persons")">Back to persons list</a>
                         <button class="btn btn-success">Create</button>
                     </div>
                 </div>

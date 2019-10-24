@@ -1,0 +1,40 @@
+﻿@model List<Inventory.Mvc.Models.PersonViewModel>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/umd/popper.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Persons</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Person Name</th>
+                <th>Email</th>
+            </tr>
+            
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.PersonName</td>
+                    <td>@item.Email</td>
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+
+    <a href="@Url.Action("Create", "Persons")">Add New Person</a>
+</body>
+</html>
