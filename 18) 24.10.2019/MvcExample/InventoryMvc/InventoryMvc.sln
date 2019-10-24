@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.DataAccessLayer",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.BusinessLogicLayer", "Inventory.BusinessLogicLayer\Inventory.BusinessLogicLayer.csproj", "{18D6415D-40EF-4BA0-9A14-C10A275725C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.Mvc", "Inventory.Mvc\Inventory.Mvc.csproj", "{8FCBB45F-9619-4315-848E-8A456202A937}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{18D6415D-40EF-4BA0-9A14-C10A275725C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18D6415D-40EF-4BA0-9A14-C10A275725C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18D6415D-40EF-4BA0-9A14-C10A275725C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FCBB45F-9619-4315-848E-8A456202A937}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FCBB45F-9619-4315-848E-8A456202A937}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FCBB45F-9619-4315-848E-8A456202A937}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FCBB45F-9619-4315-848E-8A456202A937}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
