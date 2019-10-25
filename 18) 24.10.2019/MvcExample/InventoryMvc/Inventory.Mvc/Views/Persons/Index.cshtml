@@ -1,7 +1,7 @@
 ﻿@model List<Inventory.Mvc.Models.PersonViewModel>
 
 <!DOCTYPE html>
-
+    
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -28,6 +28,9 @@
                 <tr>
                     <td>@item.PersonName</td>
                     <td>@item.Email</td>
+                    <td>
+                        <a href="@Url.Action("Edit", "Persons",new { id = item.PersonID })">Edit</a>
+                    </td>
                 </tr>
             }
 

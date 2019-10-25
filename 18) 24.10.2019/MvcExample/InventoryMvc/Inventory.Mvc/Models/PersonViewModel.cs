@@ -10,6 +10,7 @@ namespace Inventory.Mvc.Models
 
         [Required(ErrorMessage = "Person Name can't be blank")]
         [RegularExpression("^[A-Za-z ]*$", ErrorMessage = "Person Name should contain alphabets only")]
+        [Display(Name = "Person Name")]
         public string PersonName { get; set; }
 
         [Required(ErrorMessage = "Email can't be blank")]
@@ -25,7 +26,7 @@ namespace Inventory.Mvc.Models
 
         public bool IsRegistered { get; set; }
 
-        public string State { get; set; }
+        public Guid StateID { get; set; }
     }
 }
 
