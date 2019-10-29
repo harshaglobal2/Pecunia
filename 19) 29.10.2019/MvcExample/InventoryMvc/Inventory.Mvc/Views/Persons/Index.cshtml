@@ -1,0 +1,33 @@
+﻿@model List<Inventory.Mvc.Models.PersonViewModel>
+@using System.Web.Optimization
+
+
+<h1>Persons</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Person Name</th>
+            <th>Email</th>
+        </tr>
+
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.PersonName</td>
+                <td>@item.Email</td>
+                <td>
+                    @*<a href="@Url.Action("Edit", "Persons", new { PersonID = item.PersonID })">Edit</a>*@
+                    <a href="/harsha/@item.PersonID">Edit</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+
+<a href="@Url.Action("Create", "Persons")">Add New Person</a>
+
