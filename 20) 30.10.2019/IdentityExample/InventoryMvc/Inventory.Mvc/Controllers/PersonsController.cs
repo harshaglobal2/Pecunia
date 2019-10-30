@@ -9,6 +9,7 @@ using Inventory.Mvc.Models;
 
 namespace Inventory.Mvc.Controllers
 {
+    [Authorize]
     public class PersonsController : Controller
     {
         // URL: Persons/Create

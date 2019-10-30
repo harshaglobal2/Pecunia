@@ -80,6 +80,7 @@ namespace Inventory.Mvc.Identity
         {
         }
 
+        //Executes when an object of ApplicationUserManager is created
         public static ApplicationUserManager Create(
         IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
         {
@@ -112,4 +113,10 @@ namespace Inventory.Mvc.Identity
 }
 
 
+
+/*Packages required:
+Install-package Microsoft.AspNet.Identity.EntityFramework
+Install-package Microsoft.AspNet.Identity.Owin
+Install-package Microsoft.Owin.Host.SystemWeb
+*/
 
