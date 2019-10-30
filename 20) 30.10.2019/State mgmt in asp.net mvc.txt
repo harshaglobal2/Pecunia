@@ -1,0 +1,32 @@
+State Management in asp.net:
+	1. ViewBag
+				- Controller to view
+				- Per request
+				- dynamic
+	2. ViewData
+				- Controller to view
+				- Per request
+				- Dictionary
+	3. Session
+				- Accessible to all controllers & all views
+				- Per browser (client)
+				- Dictionary
+	4. Application
+				- Accessible to all controllers & all views
+				- Common to all browsers (clients)
+				- Dictionary
+	5. Cache
+				- Accessible to all controllers & all views
+				- Common to all browsers (clients)
+				- Dictionary
+				- We can set expiration time
+	6. Cookies
+				- Accessible to all controllers & all views
+				- Per browser (client)
+				- Create cookie :		Response.Cookies.Add("cookie name", value)
+				- Retrieve cookie:		Request.Cookies["cookiename"]
+				- We can set expiration time
+				- Stored in the browser
+
+
+
