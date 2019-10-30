@@ -1,0 +1,110 @@
+﻿@using System.Web.Optimization
+@using Inventory.Mvc.Models
+@model PersonViewModel
+
+
+@Scripts.Render("~/scripts/jqueryvalidation")
+<style>
+    .field-validation-error
+    {
+        color: red;
+    }
+
+    .my-color
+    {
+        color: blue;
+    }
+</style>
+
+<div class="container-fluid">
+    <h2>Edit Person</h2>
+
+    @using (Html.BeginForm("Edit", "Persons", FormMethod.Post))
+    {
+        @Html.HiddenFor(temp => temp.PersonID)
+        <div class="row">
+
+            <div class="col-md-6 mx-auto">
+
+                <div class="form-group form-row">
+                    @Html.LabelFor(temp => temp.PersonName,
+                        new { @class="col-form-label col-lg-3 my-color" })
+                    <div class="col-lg-9">
+                        @Html.TextBoxFor(temp => temp.PersonName,
+                        new { @class = "form-control", placeholder = "Person Name" })
+                        @Html.ValidationMessageFor(temp => temp.PersonName)
+                    </div>
+                </div>
+
+                <div class="form-group form-row">
+                    @Html.LabelFor(temp => temp.Email,
+                        new { @class="col-form-label col-lg-3" })
+                    @Html.TextBoxFor(temp => temp.Email,
+                        new { @class = "form-control col-lg-9", placeholder = "Email" })
+                </div>
+
+                <div class="form-group form-row">
+                    @Html.LabelFor(temp => temp.Age,
+                        new { @class="col-form-label col-lg-3" })
+                    @Html.TextBoxFor(temp => temp.Age,
+                        new { @class = "form-control col-lg-9", placeholder = "Age" })
+                </div>
+
+                <div class="form-group form-row">
+                    @Html.LabelFor(temp => temp.DateOfJoining,
+                        new { @class="col-form-label col-lg-3" })
+                    @Html.TextBoxFor(temp => temp.DateOfJoining,
+                        new { @class = "form-control col-lg-9", placeholder = "Date of Joining", type = "date" })
+                </div>
+
+                <div class="form-group form-row">
+                    @Html.LabelFor(temp => temp.StateID,
+                        new { @class="col-form-label col-lg-3" })
+                    @Html.DropDownListFor(temp => temp.StateID, ViewBag.PersonsList as SelectList,
+                        new { @class = "form-control col-lg-9" })
+                </div>
+
+                <div class="form-group form-check">
+                    @Html.CheckBoxFor(temp => temp.IsRegistered,
+                        new { @class = "form-check-input" })
+                    @Html.LabelFor(temp => temp.IsRegistered,
+                        new { @class= "form-check-label" })
+                </div>
+
+                <div class="form-group form-row">
+                    @Html.LabelFor(temp => temp.Gender,
+                        new { @class= "col-lg-3" })
+
+                    <div class="col-lg-9">
+                        @Html.RadioButtonFor(temp => temp.Gender,
+                            new { @class = "form-check-input", value = "Male", id="Male" })
+                        <label for="Male">Male</label>
+
+                        @Html.RadioButtonFor(temp => temp.Gender,
+                        new { @class = "form-check-input", value = "Female", id="Female" })
+                        <label for="Female">Female</label>
+
+                        @Html.RadioButtonFor(temp => temp.Gender,
+                        new { @class = "form-check-input", value = "Other", id="Other" })
+                        <label for="Other">Other</label>
+
+                    </div>
+                </div>
+
+                <div class="border-top text-right pt-2">
+                    <a href="@Url.Action("Index", "Persons")" class="btn btn-secondary">Cancel</a>
+                    <button class="btn btn-success">Update</button>
+                    <button class="btn btn-success"
+                            formaction="@Url.Action("Delete", "Persons")"
+                            onclick="return confirm('Are you sure to delete')">
+                        Delete
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    }
+
+</div>
+
+

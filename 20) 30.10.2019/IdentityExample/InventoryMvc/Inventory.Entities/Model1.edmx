@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="company2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Persons">
+          <Key>
+            <PropertyRef Name="PersonID" />
+          </Key>
+          <Property Name="PersonID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PersonName" Type="varchar" MaxLength="40" />
+          <Property Name="Email" Type="varchar" MaxLength="40" />
+          <Property Name="Password" Type="varchar" MaxLength="40" />
+          <Property Name="Age" Type="int" />
+          <Property Name="DateOfJoining" Type="datetime" />
+          <Property Name="Gender" Type="varchar" MaxLength="10" />
+          <Property Name="IsRegistered" Type="bit" />
+          <Property Name="State" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Function Name="usp_CreatePersons" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PersonID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="PersonName" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="Age" Type="int" Mode="In" />
+          <Parameter Name="DateOfJoining" Type="datetime" Mode="In" />
+          <Parameter Name="Gender" Type="varchar" Mode="In" />
+          <Parameter Name="IsRegistered" Type="bit" Mode="In" />
+          <Parameter Name="State" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_DeletePerson" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PersonID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="usp_GetPersonByPersonID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PersonID" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="usp_GetPersons" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_UpdatePerson" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PersonID" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="PersonName" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="Age" Type="int" Mode="In" />
+          <Parameter Name="DateOfJoining" Type="datetime" Mode="In" />
+          <Parameter Name="Gender" Type="varchar" Mode="In" />
+          <Parameter Name="IsRegistered" Type="bit" Mode="In" />
+          <Parameter Name="State" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="company2ModelStoreContainer">
+          <EntitySet Name="Persons" EntityType="Self.Persons" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="company2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="PersonID" />
+          </Key>
+          <Property Name="PersonID" Type="Guid" Nullable="false" />
+          <Property Name="PersonName" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="DateOfJoining" Type="DateTime" Precision="3" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IsRegistered" Type="Boolean" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="company2Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Persons" EntityType="Self.Person" />
+          <FunctionImport Name="usp_CreatePersons">
+            <Parameter Name="PersonID" Mode="In" Type="Guid" />
+            <Parameter Name="PersonName" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="Age" Mode="In" Type="Int32" />
+            <Parameter Name="DateOfJoining" Mode="In" Type="DateTime" />
+            <Parameter Name="Gender" Mode="In" Type="String" />
+            <Parameter Name="IsRegistered" Mode="In" Type="Boolean" />
+            <Parameter Name="State" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_DeletePerson">
+            <Parameter Name="PersonID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="usp_GetPersonByPersonID" EntitySet="Persons" ReturnType="Collection(company2Model.Person)">
+            <Parameter Name="PersonID" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="usp_GetPersons" EntitySet="Persons" ReturnType="Collection(company2Model.Person)" />
+          <FunctionImport Name="usp_UpdatePerson">
+            <Parameter Name="PersonID" Mode="In" Type="Guid" />
+            <Parameter Name="PersonName" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Age" Mode="In" Type="Int32" />
+            <Parameter Name="DateOfJoining" Mode="In" Type="DateTime" />
+            <Parameter Name="Gender" Mode="In" Type="String" />
+            <Parameter Name="IsRegistered" Mode="In" Type="Boolean" />
+            <Parameter Name="State" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="usp_GetPersonByPersonID_Result">
+          <Property Type="Guid" Name="PersonID" Nullable="false" />
+          <Property Type="String" Name="PersonName" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="40" />
+          <Property Type="Int32" Name="Age" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfJoining" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+          <Property Type="Boolean" Name="IsRegistered" Nullable="true" />
+          <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="usp_GetPersons_Result">
+          <Property Type="Guid" Name="PersonID" Nullable="false" />
+          <Property Type="String" Name="PersonName" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="40" />
+          <Property Type="Int32" Name="Age" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfJoining" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+          <Property Type="Boolean" Name="IsRegistered" Nullable="true" />
+          <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="company2ModelStoreContainer" CdmEntityContainer="company2Entities">
+          <EntitySetMapping Name="Persons">
+            <EntityTypeMapping TypeName="company2Model.Person">
+              <MappingFragment StoreEntitySet="Persons">
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="PersonName" ColumnName="PersonName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="DateOfJoining" ColumnName="DateOfJoining" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="IsRegistered" ColumnName="IsRegistered" />
+                <ScalarProperty Name="State" ColumnName="State" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="usp_CreatePersons" FunctionName="company2Model.Store.usp_CreatePersons" />
+          <FunctionImportMapping FunctionImportName="usp_DeletePerson" FunctionName="company2Model.Store.usp_DeletePerson" />
+          <FunctionImportMapping FunctionImportName="usp_GetPersonByPersonID" FunctionName="company2Model.Store.usp_GetPersonByPersonID">
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_GetPersons" FunctionName="company2Model.Store.usp_GetPersons">
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_UpdatePerson" FunctionName="company2Model.Store.usp_UpdatePerson" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
