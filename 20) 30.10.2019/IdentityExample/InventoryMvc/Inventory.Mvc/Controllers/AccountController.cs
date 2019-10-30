@@ -25,18 +25,26 @@ namespace Inventory.Mvc.Controllers
         {
             if (ModelState.IsValid)
             {
+                //Get User Manager from Identity
                 var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+
+                //Get Authentication Manager from Identity
                 var authManager = HttpContext.GetOwinContext().Authentication;
 
+                //Get User from Identity based on Email and Password
                 ApplicationUser user = userManager.Find(loginViewModel.Email, loginViewModel.Password);
                 if (user != null)
                 {
+                    //Create identity based on existing user for signin
                     var identity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
 
+                    //User signs-in here
                     authManager.SignIn(new AuthenticationProperties { IsPersistent = false }, identity);
                     return RedirectToAction("Index", "Home");
                 }
             }
+
+            //If validation fails
             ModelState.AddModelError("", "Invalid email or password");
             return View(loginViewModel);
         }
@@ -53,24 +61,35 @@ namespace Inventory.Mvc.Controllers
         {
             if (ModelState.IsValid)
             {
+                //Get User Manager from Identity
                 var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+
+                //Get Authentication Manager from Identity
                 var authManager = HttpContext.GetOwinContext().Authentication;
 
+                //Create new ApplicationUser object with details
                 ApplicationUser user = new ApplicationUser() {
                     Email = registerViewModel.Email,
                     UserName = registerViewModel.Email,
                     Role = "Admin"
                 };
+
+                //Call Create method of UserManager (BL)
                 var chkUser = userManager.Create(user, registerViewModel.Password);
 
+                //If user created successfully
                 if (chkUser.Succeeded)
                 {
+                    //Create identity based on existing user for signin
                     var identity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
 
+                    //User signs-in here
                     authManager.SignIn(new AuthenticationProperties { IsPersistent = false }, identity);
                     return RedirectToAction("Index", "Home");
                 }
             }
+
+            //If validation fails
             ModelState.AddModelError("", "Invalid email or password");
             return View(registerViewModel);
         }
@@ -78,7 +97,10 @@ namespace Inventory.Mvc.Controllers
         // GET: Account/Logout
         public ActionResult Logout()
         {
+            //Get Authentication Manager from Identity
             var authManager = HttpContext.GetOwinContext().Authentication;
+
+            //User signs-out here
             authManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("Index", "Home");
         }
