@@ -39,29 +39,44 @@
                 <div class="form-group form-row">
                     @Html.LabelFor(temp => temp.Email,
                         new { @class="col-form-label col-lg-3" })
-                    @Html.TextBoxFor(temp => temp.Email,
-                        new { @class = "form-control col-lg-9", placeholder = "Email" })
+
+                    <div class="col-lg-9">
+                        @Html.TextBoxFor(temp => temp.Email,
+                            new { @class = "form-control", placeholder = "Email" })
+                        @Html.ValidationMessageFor(temp => temp.Email)
+                    </div>
                 </div>
 
                 <div class="form-group form-row">
                     @Html.LabelFor(temp => temp.Age,
                         new { @class="col-form-label col-lg-3" })
-                    @Html.TextBoxFor(temp => temp.Age,
-                        new { @class = "form-control col-lg-9", placeholder = "Age" })
+                    <div class="col-lg-9">
+                        @Html.TextBoxFor(temp => temp.Age,
+                            new { @class = "form-control", placeholder = "Age" })
+                        @Html.ValidationMessageFor(temp => temp.Age)
+                    </div>
+
                 </div>
 
                 <div class="form-group form-row">
                     @Html.LabelFor(temp => temp.DateOfJoining,
                         new { @class="col-form-label col-lg-3" })
-                    @Html.TextBoxFor(temp => temp.DateOfJoining,
-                        new { @class = "form-control col-lg-9", placeholder = "Date of Joining", type = "date" })
+                    <div class="col-lg-9">
+                        @Html.TextBoxFor(temp => temp.DateOfJoining,
+                            new { @class = "form-control", placeholder = "Date of Joining", type = "date" })
+                        @Html.ValidationMessageFor(temp => temp.DateOfJoining)
+                    </div>
                 </div>
 
                 <div class="form-group form-row">
                     @Html.LabelFor(temp => temp.StateID,
                         new { @class="col-form-label col-lg-3" })
-                    @Html.DropDownListFor(temp => temp.StateID, ViewBag.PersonsList as SelectList,
-                        new { @class = "form-control col-lg-9" })
+                    <div class="col-lg-9">
+                        @Html.DropDownListFor(temp => temp.StateID, ViewBag.PersonsList as SelectList,
+                            new { @class = "form-control" })
+                        @Html.ValidationMessageFor(temp => temp.DateOfJoining)
+                    </div>
+
                 </div>
 
                 <div class="form-group form-check">

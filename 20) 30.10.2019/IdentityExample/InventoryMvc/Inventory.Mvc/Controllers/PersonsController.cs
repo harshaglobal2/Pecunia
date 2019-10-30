@@ -17,8 +17,6 @@ namespace Inventory.Mvc.Controllers
             //Creating and initializing viewmodel object
             PersonViewModel personViewModel = new PersonViewModel()
             {
-                PersonName = "Harsha",
-                DateOfJoining = DateTime.Now
             };
 
             //Creating object of PersonsBL
@@ -42,7 +40,6 @@ namespace Inventory.Mvc.Controllers
 
             //Add Persons to ViewBag
             ViewBag.PersonsList = new SelectList(persons, "PersonID", "PersonName");
-            ViewData["PersonsList"] = new SelectList(persons, "PersonID", "PersonName");
 
             //Calling view & passing viewmodel object to view
             return View(personViewModel);
@@ -60,6 +57,10 @@ namespace Inventory.Mvc.Controllers
             person.PersonName = personVM.PersonName;
             person.Email = personVM.Email;
             person.Age = personVM.Age;
+            person.DateOfJoining = personVM.DateOfJoining;
+            person.Gender = personVM.Gender;
+            person.IsRegistered = personVM.IsRegistered;
+            person.State = Convert.ToString(personVM.StateID);
 
             //Invoke the AddPerson method BL
             (bool isAdded, Guid newGuid) = personBL.AddPerson(person);

@@ -15,17 +15,15 @@ namespace Inventory.WcfService
         public List<PersonDataContract> GetPersons()
         {
             //Create factory
-            //DbProviderFactory factory = DbProviderFactories.GetFactory(System.Configuration.ConfigurationManager.ConnectionStrings["InventoryConnectionString"].ProviderName);
-
-            DbProviderFactory factory = DbProviderFactories.GetFactory("System.Data.SqlClient");
+            DbProviderFactory factory = DbProviderFactories.GetFactory(System.Configuration.ConfigurationManager.ConnectionStrings["InventoryConnectionString"].ProviderName);
 
             //Create connection
             DbConnection connection = factory.CreateConnection();
-            connection.ConnectionString = "data source=localhost; user id=sa; password=123; initial catalog=company";
+            connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["InventoryConnectionString"].ConnectionString;
 
             //Create command
             DbCommand command = connection.CreateCommand();
-            command.CommandText = "dbo.usp_GetProducts";
+            command.CommandText = "dbo.usp_GetPersons";
             command.Connection = connection;
             command.CommandType = System.Data.CommandType.StoredProcedure;
 
