@@ -1,0 +1,73 @@
+<div class="row">
+  <div class="col-lg-2">
+    <h5 class="mt-1">
+      Persons <span class="badge badge-secondary float-right" *ngIf="persons.length> 0">{{persons.length}}</span>
+    </h5>
+  </div>
+
+  <div class="col-lg-10">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Person Name</th>
+          <th>Email</th>
+          <th>Age</th>
+          <th class="text-secondary">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let person of persons; let i = index">
+          <td>{{i+1}}</td>
+          <td>{{person.PersonName}}</td>
+          <td>{{person.Email}}</td>
+          <td>{{person.Age}}</td>
+          <td>
+            <button class="btn btn-secondary" data-toggle="modal" data-target="#EditPersonModal" (click)="onEditClick(i)">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<form [formGroup]="editPersonForm">
+  <div class="modal fade" tabindex="-1" role="dialog" id="EditPersonModal">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-secondary text-white">
+          <h5 class="modal-title">Edit Person</h5>
+          <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+
+          <div class="form-group form-row">
+            <label for="PersonName" class="col-md-3 col-form-label">Person Name:</label>
+            <div class="col-md-9">
+              <input type="text" class="form-control" formControlName="PersonName" id="PersonName" placeholder="Person Name" [ngClass]="{
+                     'is-valid': editPersonForm.get('PersonName').valid && (editPersonForm.get('PersonName').touched || editPersonForm.submitted),
+
+                     'is-invalid': editPersonForm.get('PersonName').invalid && (editPersonForm.get('PersonName').touched || editPersonForm.submitted) }" />
+            </div>
+          </div>
+
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnUpdatePersonCancel">Cancel</button>
+
+          <button type="submit" class="btn btn-success" (click)="onUpdatePersonClick()" [disabled]="editPersonButtonDisabled">
+            <span *ngIf="!editPersonButtonDisabled"><i class="fa fa-save"></i> Save</span>
+            <span *ngIf="editPersonButtonDisabled"><i class="fa fa-circle-o-notch  fa-spin"></i> Saving</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+

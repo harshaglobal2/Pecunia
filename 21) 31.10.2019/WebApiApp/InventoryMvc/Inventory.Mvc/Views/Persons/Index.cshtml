@@ -1,0 +1,45 @@
+﻿@model List<Inventory.Mvc.Models.PersonViewModel>
+@using System.Web.Optimization
+
+
+<h1>Persons</h1>
+<table class="table" id="personsgrid">
+    <thead>
+        <tr>
+            <th>Person Name</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.PersonName</td>
+                <td>@item.Email</td>
+                <td>
+                    @*<a href="@Url.Action("Edit", "Persons", new { PersonID = item.PersonID })">Edit</a>*@
+                    <a href="/harsha/@item.PersonID">Edit</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+
+@{  Html.RenderPartial("CreateButton"); }
+
+@*<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.js"></script>
+<link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+<script>
+    $(document).ready(function ()
+    {
+        $("#personsgrid").DataTable();
+    });
+</script>*@
+
